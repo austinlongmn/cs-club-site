@@ -1,21 +1,47 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import onlyWarn from "eslint-plugin-only-warn";
+import unusedImports from "eslint-plugin-unused-imports";
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+  // import.meta.dirname is available after Node.js v20.11.0
+  baseDirectory: import.meta.dirname
 });
 
 const eslintConfig = [
   {
-    plugins: {
-      "only-warn": import("eslint-plugin-only-warn"),
-    },
+    ignores: [
+      "src/components/ui"
+    ]
   },
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    plugins: {
+      "only-warn": onlyWarn
+    }
+  },
+  {
+    plugins: {
+      "unused-imports": unusedImports
+    },
+    rules: {
+      "unused-imports/no-unused-imports": "warn"
+    }
+  },
+  {
+    rules: {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "warn", // or "error"
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_"
+        }
+      ]
+    }
+  },
+  ...compat.config({
+    extends: ["next/core-web-vitals", "next/typescript"]
+  })
 ];
 
 export default eslintConfig;
