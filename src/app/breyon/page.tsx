@@ -14,6 +14,8 @@ export default function Home() {
       <Text>
         In addition to software development, I enjoy go-kart racing, constantly chasing the perfect lap and refining my driving technique. I have also developed programs for AKC agility scoring, combining my love for technology with the precision required in competition settings.
       </Text>
+
+      
     </Box>
   );
 }
