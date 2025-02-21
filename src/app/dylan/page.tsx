@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Box, Button, Heading, Text, VStack, Container, Flex, Image } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack, Container, Flex } from "@chakra-ui/react";
+import { Image } from "@/components/ui/image";
+import { Button } from "@/components/ui/button";
 import { RiMailLine } from "react-icons/ri";
 
 export const metadata: Metadata = {
@@ -33,7 +35,7 @@ export default function Dylan() {
                     For Systems Analysis and Design class here at Northwestern, I worked together with Isaac Grosser who has since graduated to provide Atkinson Refinishing Services with some great invoicing options to improve efficiency of the company.
                 </Text>
                 
-                <Image src="src/app/dylan/assets/atkinson-poster.png" alt="Systems A & D Photo"/>
+                <Image width="2592" height="3840" src="/images/dylan/atkinson-poster.png" alt="Systems A & D Photo" />
 
             </VStack>
             </Box>
