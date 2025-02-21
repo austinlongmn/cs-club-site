@@ -1,6 +1,42 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 
+interface Project {
+  name: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+function ProjectCard(project: ProjectCardProps) {
+  const proj = project.project;
+
+  return (
+    <Box>
+      <Heading>{proj.name}</Heading>
+      <Text>{proj.description}</Text>
+      <img src={proj.image} alt={proj.name} />
+      <a href={proj.link}>View Project</a>
+    </Box>
+  );
+}
+
+
 export default function Home() {
+
+  const projects: Project[] = [
+    {
+      name: "ProKart Website",
+      description: "A website for ProKart Indoor that allows users to view the track schedule",
+      image: "/images/breyon/prokart-icon.png",
+      link: "https://www.prokartmg.com"
+    }
+  ];
+  
+
   return (
     <Box padding="10">
       <Heading className="text-6xl pt-10 pb-5">Breyon Gunn</Heading>
@@ -14,6 +50,12 @@ export default function Home() {
       <Text>
         In addition to software development, I enjoy go-kart racing, constantly chasing the perfect lap and refining my driving technique. I have also developed programs for AKC agility scoring, combining my love for technology with the precision required in competition settings.
       </Text>
+      <br />
+      <br />
+
+      {projects.map((project, index) => (
+        <ProjectCard key={index} project={project} />
+      ))}
 
       
     </Box>
