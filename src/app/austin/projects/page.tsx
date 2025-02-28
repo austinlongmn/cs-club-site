@@ -10,6 +10,7 @@ function ProjectPreview(props: ProjectPreviewProps) {
   const project = props.project
   return (
     <div key={props.listKey}>
+      <Text>The key is {props.listKey}</Text>
       <Text>{project.title}</Text>
       <Text>{project.description}</Text>
     </div>
