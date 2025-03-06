@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /breyon
+Disallow: /breyon/
+Disallow: /austin
+Disallow: /austin/

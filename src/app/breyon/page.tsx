@@ -1,3 +1,4 @@
+import { Image } from "@/components/ui/image";
 import { Box, Heading, Text } from "@chakra-ui/react";
 
 interface Project {
@@ -15,10 +16,10 @@ function ProjectCard(project: ProjectCardProps) {
   const proj = project.project;
 
   return (
-    <Box>
+    <Box width={200} height={300} style={{ alignContent: "center" }}>
       <Heading>{proj.name}</Heading>
       <Text>{proj.description}</Text>
-      <img src={proj.image} alt={proj.name} />
+      <Image src={proj.image} alt={proj.name} width={100} height={100} />
       <a href={proj.link}>View Project</a>
     </Box>
   );
@@ -33,6 +34,12 @@ export default function Home() {
       description: "A website for ProKart Indoor that allows users to view the track schedule",
       image: "/images/breyon/prokart-icon.png",
       link: "https://www.prokartmg.com"
+    },
+    {
+      name: "Driver's license scanning software",
+      description: "Software that scans driver's licenses, extracts the data, and fills out a form",
+      image: "/images/breyon/license-icon.png",
+      link: ""
     }
   ];
   
