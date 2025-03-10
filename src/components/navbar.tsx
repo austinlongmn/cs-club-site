@@ -2,6 +2,7 @@
 import { Heading, Box, Flex, Text } from "@chakra-ui/react";
 import { Link } from "@/components/ui/link";
 import Image from "next/image" //"@/components/ui/image";
+import CSCLogo from "@/svg/csc-logo.svg"
 
 // Pages:
 // - Home
@@ -15,8 +16,7 @@ export default function Navbar() {
       <nav className="bg-gray-900 w-full fixed h-[var(--navbar-height)]">
         <Flex className="gap-4">
           <Flex>
-            <Image src="/images/general/csc-icon.png" alt="CSC Logo" width={929} height={630} className="h-[var(--navbar-height)] w-auto p-2 " />
-            <Heading className="text-4xl italic">UNW Computer Science Club</Heading>
+            <Image src={CSCLogo} alt="CSC Logo" width={929} height={630} className="h-[var(--navbar-height)] w-auto p-2 " />
           </Flex>
           <Box className="flex-grow"/>
           <Flex className="gap-4">
