@@ -8,11 +8,6 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
-  // Define custom routes if needed
-  server.get('/a', (req, res) => {
-    return app.render(req, res, '/a')
-  })
-
   // Let Next.js handle all other routes
   server.all('*', (req, res) => {
     return handle(req, res)
