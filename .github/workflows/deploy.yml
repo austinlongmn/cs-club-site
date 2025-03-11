@@ -16,7 +16,7 @@ jobs:
 
       - run: .github/scripts/deploy.bash
         env:
-          WEBSERVER_SSH_PORT: ${{ variables.WEBSERVER_SSH_PORT }}
-          WEBSERVER_SSH_USER: ${{ variables.WEBSERVER_SSH_USER }}
-          WEBSERVER_SSH_HOST: ${{ variables.WEBSERVER_SSH_HOST }}
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          WEBSERVER_SSH_HOST: ${{ secrets.WEBSERVER_SSH_HOST }}
+          WEBSERVER_SSH_PORT: ${{ secrets.WEBSERVER_SSH_PORT }}
+          WEBSERVER_SSH_USER: ${{ secrets.WEBSERVER_SSH_USER }}
