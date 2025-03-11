@@ -1,0 +1,22 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: .github/scripts/deploy.bash
+        env:
+          WEBSERVER_SSH_PORT: ${{ variables.WEBSERVER_SSH_PORT }}
+          WEBSERVER_SSH_USER: ${{ variables.WEBSERVER_SSH_USER }}
+          WEBSERVER_SSH_HOST: ${{ variables.WEBSERVER_SSH_HOST }}
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
