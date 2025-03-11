@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --max-warnings=0",
+    "prettier:check": "prettier . --check"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.4.0",
@@ -28,6 +29,7 @@
     "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "postcss": "^8",
+    "prettier": "^3.5.3",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
