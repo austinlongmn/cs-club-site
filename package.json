@@ -6,8 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "fix-warnings": "next lint --fix && prettier . --write",
     "lint": "next lint --max-warnings=0",
-    "prettier:check": "prettier . --check"
+    "prettier:check": "prettier . --check",
+    "prettier:fix": "prettier . --write",
+    "lint:fix": "next lint --fix"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.4.0",

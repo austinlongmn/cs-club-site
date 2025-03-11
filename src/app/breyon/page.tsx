@@ -25,37 +25,47 @@ function ProjectCard(project: ProjectCardProps) {
   );
 }
 
-
 export default function Home() {
-
   const projects: Project[] = [
     {
       name: "ProKart Website",
-      description: "A website for ProKart Indoor that allows users to view the track schedule",
+      description:
+        "A website for ProKart Indoor that allows users to view the track schedule",
       image: "/images/breyon/prokart-icon.png",
-      link: "https://www.prokartmg.com"
+      link: "https://www.prokartmg.com",
     },
     {
       name: "Driver's license scanning software",
-      description: "Software that scans driver's licenses, extracts the data, and fills out a form",
+      description:
+        "Software that scans driver's licenses, extracts the data, and fills out a form",
       image: "/images/breyon/license-icon.png",
-      link: ""
-    }
+      link: "",
+    },
   ];
-  
 
   return (
     <Box padding="10">
       <Heading className="text-6xl pt-10 pb-5">Breyon Gunn</Heading>
-      
+
       <Text>
-        I’m a software developer and tech enthusiast with a passion for problem-solving, cybersecurity, and competitive programming. With years of experience in software engineering, database management, and system architecture, I enjoy creating innovative solutions and tackling complex challenges.
+        I’m a software developer and tech enthusiast with a passion for
+        problem-solving, cybersecurity, and competitive programming. With years
+        of experience in software engineering, database management, and system
+        architecture, I enjoy creating innovative solutions and tackling complex
+        challenges.
       </Text>
       <Text>
-        When I’m not writing code, you’ll find me organizing programming competitions, mentoring students in computer science, or diving into the latest advancements in technology. I also have a deep interest in ethical hacking, automation, and infrastructure optimization, always looking for new ways to push the limits of what’s possible.
+        When I’m not writing code, you’ll find me organizing programming
+        competitions, mentoring students in computer science, or diving into the
+        latest advancements in technology. I also have a deep interest in
+        ethical hacking, automation, and infrastructure optimization, always
+        looking for new ways to push the limits of what’s possible.
       </Text>
       <Text>
-        In addition to software development, I enjoy go-kart racing, constantly chasing the perfect lap and refining my driving technique. I have also developed programs for AKC agility scoring, combining my love for technology with the precision required in competition settings.
+        In addition to software development, I enjoy go-kart racing, constantly
+        chasing the perfect lap and refining my driving technique. I have also
+        developed programs for AKC agility scoring, combining my love for
+        technology with the precision required in competition settings.
       </Text>
       <br />
       <br />
@@ -63,8 +73,6 @@ export default function Home() {
       {projects.map((project, index) => (
         <ProjectCard key={index} project={project} />
       ))}
-
-      
     </Box>
   );
 }
