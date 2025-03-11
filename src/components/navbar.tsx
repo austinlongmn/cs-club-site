@@ -1,8 +1,8 @@
 "use client";
-import { Heading, Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { Link } from "@/components/ui/link";
-import Image from "next/image" //"@/components/ui/image";
-import CSCLogo from "@/svg/csc-logo.svg"
+import Image from "next/image"; //"@/components/ui/image";
+import CSCLogo from "@/svg/csc-logo.svg";
 
 // Pages:
 // - Home
@@ -12,18 +12,35 @@ import CSCLogo from "@/svg/csc-logo.svg"
 
 export default function Navbar() {
   return (
-    <Box className="container" style={{ "--navbar-height": "6rem" } as React.CSSProperties}>
+    <Box
+      className="container"
+      style={{ "--navbar-height": "6rem" } as React.CSSProperties}
+    >
       <nav className="bg-gray-900 w-full fixed h-[var(--navbar-height)]">
         <Flex className="gap-4">
           <Flex>
-            <Image src={CSCLogo} alt="CSC Logo" width={929} height={630} className="h-[var(--navbar-height)] w-auto p-2 " />
+            <Image
+              src={CSCLogo}
+              alt="CSC Logo"
+              width={929}
+              height={630}
+              className="h-[var(--navbar-height)] w-auto p-2 "
+            />
           </Flex>
-          <Box className="flex-grow"/>
+          <Box className="flex-grow" />
           <Flex className="gap-4">
-            <Link href="/" className="text-white">Home</Link>
-            <Link href="/students" className="text-white">Students</Link>
-            <Link href="/featured-projects" className="text-white">Featured Projects</Link>
-            <Link href="/about" className="text-white">About</Link>
+            <Link href="/" className="text-white">
+              Home
+            </Link>
+            <Link href="/students" className="text-white">
+              Students
+            </Link>
+            <Link href="/featured-projects" className="text-white">
+              Featured Projects
+            </Link>
+            <Link href="/about" className="text-white">
+              About
+            </Link>
           </Flex>
         </Flex>
       </nav>

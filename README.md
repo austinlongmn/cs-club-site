@@ -39,7 +39,6 @@ export default function Page() {
       <Heading>This is your new route!</Heading>
       <Text>Put some cool stuff</Text>
     </>
-  )
+  );
 }
-
 ```
