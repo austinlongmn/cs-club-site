@@ -1,0 +1,51 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: production
+
+jobs:
+  build-and-deploy:
+    environment: production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Get Next.js cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Host Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.WEBSERVER_SSH_HOST }} ${{ secrets.WEBSERVER_HOST_KEY }}" >> ~/.ssh/known_hosts
+
+      - run: .github/scripts/deploy.bash
+        env:
+          SSH_PRIVATE_KEY: |
+            ${{ secrets.DEPLOYMENT_KEY }}
+          WEBSERVER_SSH_HOST: ${{ secrets.WEBSERVER_SSH_HOST }}
+          WEBSERVER_SSH_PORT: ${{ secrets.WEBSERVER_SSH_PORT }}
+          WEBSERVER_SSH_USER: ${{ secrets.WEBSERVER_SSH_USER }}
