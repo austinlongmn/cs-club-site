@@ -5,8 +5,11 @@ on:
     branches:
       - main
 
+concurrency: production
+
 jobs:
   build-and-deploy:
+    environment: production
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

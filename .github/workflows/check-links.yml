@@ -1,8 +1,12 @@
 name: Check for Broken Links
 
 on:
+  workflow_run:
+    workflows: ["Deployment"]
+    types: [completed]
   schedule:
     - cron: "28 2 * * *"
+  workflow_dispatch:
 
 jobs:
   check-links:
