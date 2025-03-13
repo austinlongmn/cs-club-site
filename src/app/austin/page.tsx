@@ -12,9 +12,7 @@ export default function Page() {
         <List.Item>
           My <Link href="https://austinlong.dev">Personal Website</Link>
         </List.Item>
-        <List.Item>
-          The Last Crewman
-        </List.Item>
+        <List.Item>The Last Crewman</List.Item>
         <List.Item>
           <Code>zderad</Code>
         </List.Item>
@@ -23,8 +21,13 @@ export default function Page() {
         </List.Item>
       </List.Root>
 
-	  <Text>I Like using Neovim.</Text>
-	  <Image src="/images/austin/neovim-mark.svg" alt="Neovim logo" width="100" height="100"/>
+      <Text>I Like using Neovim.</Text>
+      <Image
+        src="/images/austin/neovim-mark.svg"
+        alt="Neovim logo"
+        width="100"
+        height="100"
+      />
     </>
   );
 }
