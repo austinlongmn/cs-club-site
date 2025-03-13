@@ -65,6 +65,8 @@ remote_cmd << EOF
 	echo "Moving app into place..."
 	rm -rf ~/app
 	mv ~/app-staging ~/app
+  echo "Installing Node.js modules..."
+  cloudlinux-selector install-modules --json --interpreter nodejs --app-root ~/app
 	echo "Starting app..."
 	cloudlinux-selector start --json --interpreter nodejs --app-root ~/app || \
 		(mv ~/app.bck ~/app && \
