@@ -1,0 +1,19 @@
+name: Check for Broken Links
+
+on:
+  workflow_run:
+    workflows: ["Deployment"]
+    types: [completed]
+  schedule:
+    - cron: "28 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    name: Check broken links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for broken links
+        uses: ruzickap/action-my-broken-link-checker@v2
+        with:
+          url: "https://unwcsclub.dev"

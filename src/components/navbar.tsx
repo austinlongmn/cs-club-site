@@ -1,13 +1,50 @@
 "use client";
+import { Box, Flex } from "@chakra-ui/react";
+import { Link } from "@/components/ui/link";
+import Image from "next/image"; //"@/components/ui/image";
+import CSCLogo from "@/svg/csc-logo.svg";
 
-import { Heading } from "@chakra-ui/react";
+// Pages:
+// - Home
+// - Students
+// - Featured projects
+// - About
 
 export default function Navbar() {
   return (
-    <div className="bg-gray-800 text-white">
-      <nav>
-        <Heading className="text-center p-5">There will be a navigation bar here.</Heading>
+    <Box
+      className="container"
+      style={{ "--navbar-height": "6rem" } as React.CSSProperties}
+    >
+      <nav className="bg-gray-900 w-full fixed h-[var(--navbar-height)]">
+        <Flex className="gap-4">
+          <Flex>
+            <Image
+              src={CSCLogo}
+              alt="CSC Logo"
+              width={929}
+              height={630}
+              className="h-[var(--navbar-height)] w-auto p-2 "
+            />
+          </Flex>
+          <Box className="flex-grow" />
+          <Flex className="gap-4">
+            <Link href="/" className="text-white">
+              Home
+            </Link>
+            <Link href="/students" className="text-white">
+              Students
+            </Link>
+            <Link href="/featured-projects" className="text-white">
+              Featured Projects
+            </Link>
+            <Link href="/about" className="text-white">
+              About
+            </Link>
+          </Flex>
+        </Flex>
       </nav>
-    </div>
+      <Box className="pb-[var(--navbar-height)]" />
+    </Box>
   );
 }
