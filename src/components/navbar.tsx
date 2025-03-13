@@ -35,12 +35,6 @@ export default function Navbar() {
             <Link href="/students" className="text-white">
               Students
             </Link>
-            <Link href="/featured-projects" className="text-white">
-              Featured Projects
-            </Link>
-            <Link href="/about" className="text-white">
-              About
-            </Link>
           </Flex>
         </Flex>
       </nav>
@@ -48,3 +42,11 @@ export default function Navbar() {
     </Box>
   );
 }
+
+// Later links:
+// <Link href="/featured-projects" className="text-white">
+//   Featured Projects
+// </Link>
+// <Link href="/about" className="text-white">
+//   About
+// </Link>
