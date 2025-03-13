@@ -3,14 +3,13 @@ import { Key } from "react";
 
 interface ProjectPreviewProps {
   project: Project;
-  listKey: Key | null | undefined;
+  key: Key | null | undefined;
 }
 
 function ProjectPreview(props: ProjectPreviewProps) {
   const project = props.project;
   return (
-    <div key={props.listKey}>
-      <Text>The key is {props.listKey}</Text>
+    <div>
       <Text>{project.title}</Text>
       <Text>{project.description}</Text>
     </div>
@@ -31,7 +30,7 @@ export default function Projects() {
   return (
     <>
       {projects.map((project, index) => {
-        return <ProjectPreview project={project} listKey={index} />;
+        return <ProjectPreview project={project} key={index} />;
       })}
     </>
   );
