@@ -1,20 +1,31 @@
-const express = require("express");
+const fastify = require("fastify")();
 const next = require("next");
+const host = process.env.HOST || "localhost";
 const port = process.env.PORT || 3000;
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-app.prepare().then(() => {
-  const server = express();
+(async () => {
+  try {
+    await app.prepare();
 
-  // Let Next.js handle all other routes
-  server.all("*", (req, res) => {
-    return handle(req, res);
-  });
+    fastify.all("/*", (req, reply) => {
+      reply.hijack();
+      handle(req.raw, reply.raw)
+        .then(() => {
+          reply.raw.end();
+        })
+        .catch((err) => {
+          fastify.log.error(err);
+          reply.raw.writeHead(500);
+          reply.raw.end("Internal Server Error");
+        });
+    });
 
-  server.listen(port, (err) => {
-    if (err) throw err;
-    console.log(`> Ready on http://localhost:${port}`);
-  });
-});
+    await fastify.listen({ port, host });
+  } catch (err) {
+    console.log(err);
+    process.exit(1);
+  }
+})();
