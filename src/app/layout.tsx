@@ -5,14 +5,15 @@ import Navbar from "@/components/navbar";
 import { Box } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
-  title: "UNW CS Club - Official Site",
+  title: "UNW CS Club",
   description:
     "This is the official site of University of Northwestern " +
-    "- St.Paul's very own Computer Science Club."
+    "- St.Paul's very own Computer Science Club.",
+  metadataBase: new URL("https://unwcsclub.dev"),
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
