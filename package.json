@@ -7,7 +7,7 @@
     "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "fix-warnings": "next lint --fix && prettier . --write",
+    "fix": "next lint --fix && prettier . --write",
     "lint": "next lint --max-warnings=0",
     "prettier:check": "prettier . --check",
     "prettier:fix": "prettier . --write",
