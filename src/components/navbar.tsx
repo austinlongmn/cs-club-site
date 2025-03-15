@@ -16,7 +16,7 @@ export default function Navbar() {
       className="container"
       style={{ "--navbar-height": "6rem" } as React.CSSProperties}
     >
-      <nav className="bg-gray-900 w-full top-0 left-0 fixed h-[var(--navbar-height)]">
+      <nav className="bg-gray-900 w-full top-0 left-0 fixed h-[var(--navbar-height)] z-50">
         <Flex className="gap-4 max-w-6xl mx-auto sm:px-4">
           <Flex>
             <Image

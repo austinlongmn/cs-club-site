@@ -31,9 +31,7 @@ export default function Dylan() {
   }
 
   return (
-    <Container
-      minH="100vh"
-      w="full"
+    <Box
       display="flex"
       flexDirection="column"
       alignItems="center"
@@ -105,13 +103,13 @@ export default function Dylan() {
 
             <Text fontSize="lg" textAlign="center" py="4">
               My Favorite Projects
-              <List.Root>
-                <List.Item>
-                  Systems Analysis and Design Proejct (featured Below)
-                </List.Item>
-                <List.Item>More to come...</List.Item>
-              </List.Root>
             </Text>
+            <List.Root>
+              <List.Item>
+                Systems Analysis and Design Project (featured Below)
+              </List.Item>
+              <List.Item>More to come...</List.Item>
+            </List.Root>
 
             <Image
               width="2592"
@@ -126,6 +124,6 @@ export default function Dylan() {
           </VStack>
         </Box>
       </motion.div>
-    </Container>
+    </Box>
   );
 }
