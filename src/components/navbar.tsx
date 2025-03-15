@@ -16,8 +16,8 @@ export default function Navbar() {
       className="container"
       style={{ "--navbar-height": "6rem" } as React.CSSProperties}
     >
-      <nav className="bg-gray-900 w-full fixed h-[var(--navbar-height)]">
-        <Flex className="gap-4">
+      <nav className="bg-gray-900 w-full top-0 left-0 fixed h-[var(--navbar-height)]">
+        <Flex className="gap-4 max-w-6xl mx-auto sm:px-4">
           <Flex>
             <Image
               src={CSCLogo}
@@ -35,12 +35,6 @@ export default function Navbar() {
             <Link href="/students" className="text-white">
               Students
             </Link>
-            <Link href="/featured-projects" className="text-white">
-              Featured Projects
-            </Link>
-            <Link href="/about" className="text-white">
-              About
-            </Link>
           </Flex>
         </Flex>
       </nav>
@@ -48,3 +42,11 @@ export default function Navbar() {
     </Box>
   );
 }
+
+// Later links:
+// <Link href="/featured-projects" className="text-white">
+//   Featured Projects
+// </Link>
+// <Link href="/about" className="text-white">
+//   About
+// </Link>
