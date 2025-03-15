@@ -23,13 +23,15 @@ export default function RootLayout({
       <body>
         <Provider>
           <Box backgroundColor="Background">
-            <header>
-              <Navbar />
-            </header>
-            <main className="min-h-screen">{children}</main>
-            <footer>
-              <p>Footer</p>
-            </footer>
+            <Box className="container mx-auto max-w-6xl">
+              <header>
+                <Navbar />
+              </header>
+              <main className="min-h-screen">{children}</main>
+              <footer>
+                <p>Footer</p>
+              </footer>
+            </Box>
           </Box>
         </Provider>
       </body>
