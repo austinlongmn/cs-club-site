@@ -49,12 +49,14 @@ const eslintConfig = [
           "**/*.{tsx}": "PASCAL_CASE",
           "**/*.{ts}": "CAMEL_CASE",
           "src/app/**/*.*": "KEBAB_CASE",
+          "public/**/*": "KEBAB_CASE",
         },
       ],
       "check-file/folder-naming-convention": [
         "warn",
         {
-          "**/*": "KEBAB_CASE",
+          "public/**/*": "KEBAB_CASE",
+          "src/!(app)/**/*": "KEBAB_CASE",
           "src/app/**/*": "NEXT_JS_APP_ROUTER_CASE",
         },
       ],
