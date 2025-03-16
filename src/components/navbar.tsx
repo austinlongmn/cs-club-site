@@ -27,7 +27,7 @@ export default function Navbar() {
               className="h-[var(--navbar-height)] w-auto p-2 "
             />
           </Flex>
-          <Box className="flex-grow" />
+          <Box className="grow" />
           <Flex className="gap-4">
             <Link href="/" className="text-white">
               Home
