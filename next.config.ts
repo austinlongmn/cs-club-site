@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import type { NextConfig } from "next";
-const LicensePlugin = require("webpack-license-plugin");
+import { PHASE_PRODUCTION_BUILD } from "next/constants";
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -8,7 +8,8 @@ const nextConfig: NextConfig = {
   },
 };
 
-if (process.env.NODE_ENV == "production") {
+if (process.env.NEXT_PHASE === PHASE_PRODUCTION_BUILD) {
+  const LicensePlugin = require("webpack-license-plugin");
   nextConfig.webpack = (config, _options) => {
     if (!config.plugins) {
       config.plugins = [];
