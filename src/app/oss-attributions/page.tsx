@@ -45,7 +45,7 @@ export default async function AttributionPage() {
           <li key={index} className="border-b pb-2">
             <strong>{lib.name}</strong> v{lib.version} - {lib.license}
             {lib.repository && (
-              <a href={lib.repository} className="text-blue-500 ml-2">
+              <a href={lib.repository} className="ml-2 text-blue-500">
                 [Repo]
               </a>
             )}
