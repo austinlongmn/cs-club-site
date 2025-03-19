@@ -1,31 +1,16 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import {
   Box,
   Heading,
   Text,
   VStack,
   Flex,
-  IconButton,
   List,
   Image,
 } from "@chakra-ui/react";
 import { Button } from "@/components/ui/button";
 import { RiMailLine } from "react-icons/ri";
-import { motion } from "framer-motion";
 
 export default function Dylan() {
-  const [isClient, setIsClient] = useState(false);
-
-  // Client-side only
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return null;
-  }
 
   return (
     <Box
@@ -41,11 +26,6 @@ export default function Dylan() {
         </Heading>
       </Flex>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
         <Box
           p={10}
           maxW="900px"
@@ -108,7 +88,6 @@ export default function Dylan() {
             />
           </VStack>
         </Box>
-      </motion.div>
     </Box>
   );
 }
