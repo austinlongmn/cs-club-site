@@ -1,27 +1,30 @@
-import { Image } from "@/components/ui/image";
-import { Link } from "@/components/ui/link";
-import { Code, Heading, List, Text } from "@chakra-ui/react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Page() {
   return (
     <>
-      <Heading>Austin Long</Heading>
-      <Text>I am a software developer.</Text>
-      <Text>Here are some projects I have worked on.</Text>
-      <List.Root>
-        <List.Item>
+      <h1>Austin Long</h1>
+      <p>I am a software developer.</p>
+      <p>Here are some projects I have worked on.</p>
+      <ul>
+        <li>
           My <Link href="https://austinlong.dev">Personal Website</Link>
-        </List.Item>
-        <List.Item>The Last Crewman</List.Item>
-        <List.Item>
-          <Code>zderad</Code>
-        </List.Item>
-        <List.Item>
-          <Code>ptsched</Code>
-        </List.Item>
-      </List.Root>
+        </li>
+        <li>The Last Crewman</li>
+        <li>
+          <pre>
+            <code>zderad</code>
+          </pre>
+        </li>
+        <li>
+          <pre>
+            <code>ptsched</code>
+          </pre>
+        </li>
+      </ul>
 
-      <Text>I Like using Neovim.</Text>
+      <p>I Like using Neovim.</p>
       <Image
         src="/images/austin/neovim-mark.svg"
         alt="Neovim logo"

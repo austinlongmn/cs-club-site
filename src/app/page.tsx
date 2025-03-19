@@ -1,14 +1,10 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
-
 export default function Home() {
   return (
-    <Box padding="10">
+    <div className="p-10">
       <link rel="icon" href="/favicon.ico" sizes="any" />
-      <Heading className="text-6xl pt-10 pb-5">
-        Welcome to the CS Club Site!
-      </Heading>
-      <Text>Cool stuff coming your way soon!</Text>
-      <Text>Hello, World!</Text>
-    </Box>
+      <h1 className="pt-10 pb-5 text-6xl">Welcome to the CS Club Site!</h1>
+      <p>Cool stuff coming your way soon!</p>
+      <p>Hello, World!</p>
+    </div>
   );
 }

@@ -62,6 +62,20 @@ const eslintConfig = [
   },
   ...compat.config({
     extends: ["next/core-web-vitals", "next/typescript"],
+    rules: {
+      "react/forbid-elements": [
+        "warn",
+        {
+          forbid: [
+            {
+              element: "a",
+              message:
+                "use <Link> instead. You can import it from 'next/link'. See more here: https://nextjs.org/docs/app/api-reference/components/link",
+            },
+          ],
+        },
+      ],
+    },
   }),
 ];
 

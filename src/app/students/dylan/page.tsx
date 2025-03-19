@@ -1,128 +1,58 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import {
-  Box,
-  Heading,
-  Text,
-  VStack,
-  Flex,
-  IconButton,
-  List,
-  Image,
-} from "@chakra-ui/react";
-import { useColorMode } from "@/components/ui/color-mode";
-import { Button } from "@/components/ui/button";
-import { RiMailLine, RiSunLine, RiMoonLine } from "react-icons/ri";
-import { motion } from "framer-motion";
+import { RiMailLine } from "react-icons/ri";
+import Image from "next/image";
 
 export default function Dylan() {
-  const [isClient, setIsClient] = useState(false);
-  const { colorMode, toggleColorMode } = useColorMode();
-
-  // Client-side only
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return null;
-  }
-
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      transition="background 0.5s ease"
-    >
-      <Flex justifyContent="space-between" width="100%" p={5}>
-        <Heading size="5xl" color="white">
-          Dylan Weakly
-        </Heading>
-        <IconButton
-          aria-label="Toggle Dark Mode"
-          as={colorMode === "light" ? RiMoonLine : RiSunLine}
-          onClick={toggleColorMode}
-          size="lg"
-          colorScheme="gray"
-        />
-      </Flex>
+    <div className="flex flex-col items-center justify-center transition-all duration-500">
+      <div className="flex w-full justify-between p-5">
+        <h1 className="text-5xl text-white">Dylan Weakly</h1>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Box
-          p={10}
-          maxW="900px"
-          mx="auto"
-          bg={
-            colorMode === "light"
-              ? "rgba(255, 255, 255, 0.2)"
-              : "rgba(0, 0, 0, 0.5)"
-          }
-          backdropFilter="blur(10px)"
-          borderWidth="5px"
-          borderColor="#16C2FF"
-          shadow="xl"
-          rounded="3xl"
-          color="white"
-        >
-          <VStack align="center">
-            <Button variant="surface" colorScheme="blue" fontSize="2xl">
-              <RiMailLine />
-              Email Dylan
-            </Button>
-            <Text fontSize="sm" textAlign="center">
-              Developer Website Coming Soon
-            </Text>
+      <div className="mx-auto max-w-3xl rounded-3xl border-5 border-[#16C2FF] p-10 text-white shadow-xl backdrop-blur-lg">
+        <div className="flex flex-col items-center">
+          <button className="flex items-center gap-2 rounded-lg bg-blue-500 px-6 py-3 text-2xl text-white hover:bg-blue-500">
+            <RiMailLine />
+            Email Dylan
+          </button>
+          <p className="mt-2 text-center text-sm">
+            Developer Website Coming Soon
+          </p>
 
-            <Text fontSize="md" py="4">
-              I am currently a sophomore Computer Science major with a
-              Cybersecurity minor. I am currently learning web development with
-              basic HTML, CSS, and JavaScript as well as learning the React
-              framework.
-            </Text>
+          <p className="text-md py-4 text-center">
+            I am currently a sophomore Computer Science major with a
+            Cybersecurity minor. I am currently learning web development with
+            basic HTML, CSS, and JavaScript as well as learning the React
+            framework.
+          </p>
 
-            <Text fontSize="md" py="3" textAlign="right">
-              Some of my interests outside of Computer Science include going on
-              hikes with my family (yeah, shocking!), checking out cool cars,
-              and serving on the production team at my church.
-            </Text>
+          <p className="text-md py-3 text-right">
+            Some of my interests outside of Computer Science include going on
+            hikes with my family (yeah, shocking!), checking out cool cars, and
+            serving on the production team at church.
+          </p>
 
-            <Text fontSize="md" py="3">
-              For Systems Analysis and Design class here at Northwestern, I
-              worked together with Isaac Grosser who has since graduated to
-              provide Atkinson Refinishing Services with some great invoicing
-              options to improve efficiency of the company.
-            </Text>
+          <p className="text-md py-3 text-center">
+            For Systems Analysis and Design class here at Northwestern, I worked
+            together with Isaac Grosser who has since graduated to provide
+            Atkinson Refinishing Services with some great invoicing options to
+            improve efficiency of the company.
+          </p>
 
-            <Text fontSize="lg" textAlign="center" py="4">
-              My Favorite Projects
-            </Text>
-            <List.Root>
-              <List.Item>
-                Systems Analysis and Design Project (featured Below)
-              </List.Item>
-              <List.Item>More to come...</List.Item>
-            </List.Root>
+          <h2 className="py-4 text-center text-lg">My Favorite Projects</h2>
+          <ul className="list-inside list-disc">
+            <li>Systems Analysis and Design Project (featured Below)</li>
+            <li>More to come...</li>
+          </ul>
 
-            <Image
-              width="2592"
-              height="3840"
-              src="/images/dylan/atkinson-poster.png"
-              alt="Systems A & D Photo"
-              style={{ borderRadius: "0.5rem" }}
-              shadow="md"
-              transition="transform 0.3s ease"
-              _hover={{ transform: "scale(1.05)" }}
-            />
-          </VStack>
-        </Box>
-      </motion.div>
-    </Box>
+          <Image
+            className="mt-10 rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+            width={1300}
+            height={1000}
+            src="/images/dylan/atkinson-poster.png"
+            alt="Systems A&amp;D Poster"
+          />
+        </div>
+      </div>
+    </div>
   );
 }

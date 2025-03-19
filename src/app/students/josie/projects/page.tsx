@@ -1,4 +1,3 @@
-import { Text } from "@chakra-ui/react";
 import { Key } from "react";
 
 interface ProjectPreviewProps {
@@ -10,8 +9,8 @@ function ProjectPreview(props: ProjectPreviewProps) {
   const project = props.project;
   return (
     <div>
-      <Text>{project.title}</Text>
-      <Text>{project.description}</Text>
+      <p>{project.title}</p>
+      <p>{project.description}</p>
     </div>
   );
 }
