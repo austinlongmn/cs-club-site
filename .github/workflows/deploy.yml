@@ -49,3 +49,6 @@ jobs:
           WEBSERVER_SSH_HOST: ${{ secrets.WEBSERVER_SSH_HOST }}
           WEBSERVER_SSH_PORT: ${{ secrets.WEBSERVER_SSH_PORT }}
           WEBSERVER_SSH_USER: ${{ secrets.WEBSERVER_SSH_USER }}
+
+      - name: Check website
+        run: "curl -fsSL https://unwcsclub.dev/ >/dev/null"
