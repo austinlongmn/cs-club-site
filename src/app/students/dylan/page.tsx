@@ -1,4 +1,5 @@
-import { RiMailLine } from "react-icons/ri";
+import { RiMailLine } from 'react-icons/ri';
+import Image from 'next/image'
 
 export default function Dylan() {
 
@@ -50,8 +51,10 @@ export default function Dylan() {
               <li>More to come...</li>
             </ul>
 
-            <img
-              className="w-[1300px] h-[1000px] rounded-lg shadow-md transition-transform duration-300 hover:scale-105 mt-10"
+            <Image
+              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105 mt-10"
+              width={1300}
+              height={1000}
               src="/images/dylan/atkinson-poster.png"
               alt="Systems A&amp;D Poster"
             />
