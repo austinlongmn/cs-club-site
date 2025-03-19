@@ -15,19 +15,19 @@ export default function Navbar() {
       className="container"
       style={{ "--navbar-height": "6rem" } as React.CSSProperties}
     >
-      <nav className="bg-gray-900 w-full top-0 left-0 fixed h-[var(--navbar-height)] z-50">
-        <div className="flex gap-4 max-w-6xl mx-auto sm:px-4">
+      <nav className="border-foreground fixed top-0 left-0 z-50 h-[var(--navbar-height)] w-full border-b backdrop-blur-lg">
+        <div className="mx-auto flex max-w-6xl gap-4 sm:px-4">
           <div className="flex">
             <Image
               src={CSCLogo}
               alt="CSC Logo"
               width={929}
               height={630}
-              className="h-[var(--navbar-height)] w-auto p-2 "
+              className="h-[var(--navbar-height)] w-auto p-2"
             />
           </div>
           <div className="grow" />
-          <div className="gap-4 flex">
+          <div className="flex gap-4">
             <Link href="/" className="text-white">
               Home
             </Link>

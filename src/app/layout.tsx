@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <div className="bg-black text-white">
+        <div className="bg-background text-foreground">
           <div className="container mx-auto max-w-6xl">
             <header>
               <Navbar />

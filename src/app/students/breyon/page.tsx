@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <Box padding="10">
-      <Heading className="text-6xl pt-10 pb-5">Breyon Gunn</Heading>
+      <Heading className="pt-10 pb-5 text-6xl">Breyon Gunn</Heading>
 
       <Text>
         I’m a software developer and tech enthusiast with a passion for
