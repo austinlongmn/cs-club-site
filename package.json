@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:turbo": "next dev --turbopack",
-    "build": "next build && node scripts/copy-attribution.js",
+    "build": "PROJECT_PHASE=production_build next build && node scripts/copy-attribution.js",
     "start": "NODE_ENV=production node server.js",
     "fix": "next lint --fix && prettier . --write",
     "lint": "next lint --max-warnings=0",
