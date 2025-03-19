@@ -1,4 +1,4 @@
-import { Heading, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -11,16 +11,16 @@ export default function Page() {
             width: 50%;
             }
     `}</style>
-      <Heading>This is Andrew&apos;s Route!</Heading>
-      <Text className="center">Welcome to this empty page.</Text>
+      <h1>This is Andrew&apos;s Route!</h1>
+      <p className="center">Welcome to this empty page.</p>
       <section id="youtube">
-        <a
+        <Link
           href="https://www.youtube.com/watch?v=C12rXla0uuo&pp=ygUOY2xvbmUgd2FycyBzZm0%3D"
           style={{ color: "blue" }}
         >
           {" "}
           Funny video I enjoy
-        </a>
+        </Link>
       </section>
     </>
   );

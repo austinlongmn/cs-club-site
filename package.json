@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "dev:turbo": "next dev --turbopack",
+    "dev": "next dev --turbopack",
     "build": "PROJECT_PHASE=production_build next build && node scripts/copy-attribution.js",
     "start": "NODE_ENV=production node server.js",
     "fix": "next lint --fix && prettier . --write",
