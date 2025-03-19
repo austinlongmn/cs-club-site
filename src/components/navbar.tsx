@@ -27,7 +27,7 @@ export default function Navbar() {
             />
           </div>
           <div className="grow" />
-          <div className="flex gap-4">
+          <div className="flex items-center gap-4">
             <Link href="/" className="text-white">
               Home
             </Link>

@@ -38,7 +38,7 @@ export default function Home() {
       name: "Driver's license scanning software",
       description:
         "Software that scans driver's licenses, extracts the data, and fills out a form",
-      image: "/images/breyon/license-icon.png",
+      image: "/images/breyon/license-icon.png", // FIXME: not found
       link: "",
     },
   ];
