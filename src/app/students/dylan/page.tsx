@@ -11,14 +11,12 @@ import {
   List,
   Image,
 } from "@chakra-ui/react";
-import { useColorMode } from "@/components/ui/color-mode";
 import { Button } from "@/components/ui/button";
-import { RiMailLine, RiSunLine, RiMoonLine } from "react-icons/ri";
+import { RiMailLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 
 export default function Dylan() {
   const [isClient, setIsClient] = useState(false);
-  const { colorMode, toggleColorMode } = useColorMode();
 
   // Client-side only
   useEffect(() => {
@@ -41,13 +39,6 @@ export default function Dylan() {
         <Heading size="5xl" color="white">
           Dylan Weakly
         </Heading>
-        <IconButton
-          aria-label="Toggle Dark Mode"
-          as={colorMode === "light" ? RiMoonLine : RiSunLine}
-          onClick={toggleColorMode}
-          size="lg"
-          colorScheme="gray"
-        />
       </Flex>
 
       <motion.div
@@ -59,11 +50,6 @@ export default function Dylan() {
           p={10}
           maxW="900px"
           mx="auto"
-          bg={
-            colorMode === "light"
-              ? "rgba(255, 255, 255, 0.2)"
-              : "rgba(0, 0, 0, 0.5)"
-          }
           backdropFilter="blur(10px)"
           borderWidth="5px"
           borderColor="#16C2FF"
