@@ -1,5 +1,13 @@
 import { RiMailLine } from "react-icons/ri";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dylan Weakly - UNW CS Club",
+  description:
+    "This is the official site of University of Northwestern " +
+    "- St.Paul's very own Computer Science Club.",
+};
 
 export default function Dylan() {
   return (
@@ -18,7 +26,7 @@ export default function Dylan() {
             Developer Website Coming Soon
           </p>
 
-          <p className="text-md py-4 text-center">
+          <p className="text-md py-4 text-left">
             I am currently a sophomore Computer Science major with a
             Cybersecurity minor. I am currently learning web development with
             basic HTML, CSS, and JavaScript as well as learning the React
@@ -31,7 +39,7 @@ export default function Dylan() {
             serving on the production team at church.
           </p>
 
-          <p className="text-md py-3 text-center">
+          <p className="text-md py-3 text-left">
             For Systems Analysis and Design class here at Northwestern, I worked
             together with Isaac Grosser who has since graduated to provide
             Atkinson Refinishing Services with some great invoicing options to
