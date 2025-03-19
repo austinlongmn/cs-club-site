@@ -6,7 +6,6 @@ libraries:
 
 - [Next.js](https://nextjs.org) - Main server framework
   - [React](https://react.dev) - Frontend
-- [Chakra UI](https://chakra-ui.com) - Styling
 - [Motion](https://motion.dev) - Animation library
 - [Tailwind CSS](https://tailwindcss.com) - Alternative styling
 - [Fastify](https://fastify.dev/) - HTTP server
@@ -32,13 +31,11 @@ slideshow for use inside UNW.
 - Input this code:
 
 ```tsx
-import { Heading, Text } from "@chakra-ui/react";
-
 export default function Page() {
   return (
     <>
-      <Heading>This is your new route!</Heading>
-      <Text>Put some cool stuff</Text>
+      <h1>This is your new route!</h1>
+      <p>Put some cool stuff in here!</p>
     </>
   );
 }
@@ -59,18 +56,11 @@ To learn how to create your own page, take a look at the following resources:
   important one. Go here to learn the basics of how to make a webpage in our
   app.
   - [Tutorial](https://react.dev/reference/react)
-- [Chakra UI
-  documentation](https://chakra-ui.com/docs/components/concepts/overview): Go
-  here to learn what React components to use for certain things in your page.
-  Also go here to learn how to make your components look a certain way.
-  - [Components](https://chakra-ui.com/docs/components/concepts/overview)
-  - [Styling](https://chakra-ui.com/docs/styling/overview)
 - [Motion documentation](https://motion.dev/docs/react-quick-start): look here
   to figure out how to do animations.
 - [Tailwind CSS
   documentation](https://tailwindcss.com/docs/styling-with-utility-classes):
-  look here if you want to do a more advanced, but perhaps higher learning
-  curve styling as an alternative to Chakra-UI's.
+  Look here for information on how to use Tailwind CSS.
 
 ### Development Server
 
@@ -80,16 +70,6 @@ computer, go into the terminal and execute this:
 ```bash
 npm run dev
 ```
-
-If you want the server to go faster, and don't mind a hydration error (you can
-just ignore it), you can use this:
-
-```bash
-npm run dev:turbo
-```
-
-This should use less memory and be orders of speeds faster. However, you might
-notice a little "1 error" in the lower left-hand corner, which you can ignore.
 
 ### FAQ
 
@@ -102,57 +82,8 @@ server](#development-server), navigate to `http://localhost:3000/your-name`.
 
 #### How do I create images?
 
-Creating images with our setup can be a bit tricky, but you can follow these
-instructions:
-
-First, make sure the following is at the top of your file:
-
-```tsx
-import { Image } from "@/componets/ui/image";
-```
-
-Then, place your image under the `public/images/your-name` directory. For
-example, I have `public/images/austin/neovim-mark.svg`. You can also use other
-image types. Then, create an image component:
-
-```tsx
-<Image
-  src="/images/your-name/your-image-filename"
-  alt="Text describing what the image is"
-  width="The exact width of your image in pixels"
-  height="The exact height of your image in pixels"
-/>
-```
-
-Notice that I didn't include the `public` part of the route when I referenced
-the image in the `src` prop. This is because the `public` directory is not part
-of the route, it just tells Next.js that the files in it are not code to be
-executed.
-
-The tricky part is getting the image to be the right size. You cannot simply
-use the `width` and `height` props, as you might think. Instead, you must use
-CSS properties. You can use the custom props `chakraHeight` and `chakraWidth`
-like so:
-
-```tsx
-<Image
-  src="/images/your-name/your-image-filename"
-  alt="Text describing what the image is"
-  width="The exact width of your image in pixels"
-  height="The exact height of your image in pixels"
-  chakraWidth="auto"
-  chakraHeight="100px"
-/>
-```
-
-These correspond to the `width` and `height` props in the Chakra UI
-documentation.
+TODO
 
 ### Where do I import from?
 
-There are a few locations you can import things pre-built React components from
-in our project, and you need to use a specific one for certain components. Take
-a look at this guide:
-
-1. First, see if your component is in the `src/components/ui`, use that.
-1. Otherwise, refer to the Chakra UI documentation.
+TODO

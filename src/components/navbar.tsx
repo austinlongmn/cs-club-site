@@ -1,7 +1,6 @@
 "use client";
-import { Box, Flex } from "@chakra-ui/react";
-import { Link } from "@/components/ui/link";
-import Image from "next/image"; //"@/components/ui/image";
+import Image from "next/image";
+import Link from "next/link";
 import CSCLogo from "@/svg/csc-logo.svg";
 
 // Pages:
@@ -12,13 +11,13 @@ import CSCLogo from "@/svg/csc-logo.svg";
 
 export default function Navbar() {
   return (
-    <Box
+    <div
       className="container"
       style={{ "--navbar-height": "6rem" } as React.CSSProperties}
     >
       <nav className="bg-gray-900 w-full top-0 left-0 fixed h-[var(--navbar-height)] z-50">
-        <Flex className="gap-4 max-w-6xl mx-auto sm:px-4">
-          <Flex>
+        <div className="flex gap-4 max-w-6xl mx-auto sm:px-4">
+          <div className="flex">
             <Image
               src={CSCLogo}
               alt="CSC Logo"
@@ -26,20 +25,20 @@ export default function Navbar() {
               height={630}
               className="h-[var(--navbar-height)] w-auto p-2 "
             />
-          </Flex>
-          <Box className="grow" />
-          <Flex className="gap-4">
+          </div>
+          <div className="grow" />
+          <div className="gap-4 flex">
             <Link href="/" className="text-white">
               Home
             </Link>
             <Link href="/students" className="text-white">
               Students
             </Link>
-          </Flex>
-        </Flex>
+          </div>
+        </div>
       </nav>
-      <Box className="pb-[var(--navbar-height)]" />
-    </Box>
+      <div className="pb-[var(--navbar-height)]" />
+    </div>
   );
 }
 
