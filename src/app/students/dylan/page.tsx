@@ -35,7 +35,7 @@ export default function Dylan() {
 
           <p className="text-md py-3 text-right">
             Some of my interests outside of Computer Science include going on
-            hikes with my family (yeah, shocking!), checking out cool cars, and  
+            hikes with my family (yeah, shocking!), checking out cool cars, and
             serving on the production team at church.
           </p>
 
