@@ -10,22 +10,24 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="pb-20">
-      <h1 className="pt-10 pb-10 text-5xl font-bold">
-        Programming Competition Scores
-      </h1>
-      <hr />
+  <div className="pb-20">
+    <h1 className="pt-10 pb-10 text-5xl font-bold text-center">
+      Programming Competition Scores
+    </h1>
+    <hr />
+    <div>
       <h2 className="pt-10 text-3xl">February 2025 Programming Competition</h2>
       <p className="pt-10 text-lg" >Top 3 Winners:</p>
       <p className="text-lg" >Henry Getz, Breyon Gunn, Carter Cook</p>
 
       <Image
         className="pt-10 shadow-md transition-transform duration-300 hover:scale-102"
-        width={400}
+        width={500}
         height={1200}
         src="/images/competition-scores/feb25-prog-comp.png"
         alt="February 2025 Programming Competition Scores"
       />
     </div>
+  </div>
   );
 }
