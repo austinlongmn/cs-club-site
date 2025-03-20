@@ -26,7 +26,7 @@ export default function Home() {
       </h1>
       <p className="pt-5 text-center text-2xl">
         We are the Computer Science Club at the University of Northwestern-St.
-        Paul.
+        Paul in Roseville, Minnesota.
       </p>
       <p className="pb-5 text-center text-2xl">
         We are dedicated to fostering a community of innovation and
