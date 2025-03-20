@@ -14,7 +14,7 @@ export default function Home() {
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <div className="flex items-center justify-center">
         <Image
-          className="items-center rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+          className="items-center rounded-lg shadow-md transition-transform duration-300"
           width={300}
           height={300}
           src="/images/general/csc-logo.png"
