@@ -34,6 +34,9 @@ export default function Navbar() {
             <Link href="/students" className="text-white">
               Students
             </Link>
+            <Link href="/competition-scores" className="text-white">
+              Competition Scores
+            </Link>
           </div>
         </div>
       </nav>
