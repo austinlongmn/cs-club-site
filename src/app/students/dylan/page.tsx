@@ -12,17 +12,17 @@ export const metadata: Metadata = {
 export default function Dylan() {
   return (
     <div className="flex flex-col items-center justify-center transition-all duration-500">
-      <div className="flex justify-between w-full p-5">
-        <h1 className="text-5xl text-white">Dylan Weakly</h1>
+      <div className="flex justify-between p-5">
+        <h1 className="text-5xl text-white text-center">Dylan Weakly</h1>
       </div>
 
-      <div className="p-10 max-w-3xl mx-auto backdrop-blur-lg border-5 border-[#16C2FF] shadow-xl rounded-3xl text-white">
+      <div className="p-10 max-w-4xl mx-auto backdrop-blur-lg border-[#428ad1] border-8 shadow-xl rounded-3xl text-white">
         <div className="flex flex-col items-center">
-          <button className="flex items-center gap-2 bg-blue-500 text-white px-6 py-3 rounded-lg text-2xl hover:bg-blue-500">
+          <button className="flex items-center gap-2 bg-[#428ad1] text-white px-6 py-3 rounded-lg text-2xl hover:bg-blue-700 hover:font-bold">
             <RiMailLine />
             Email Dylan
           </button>
-          <p className="text-sm text-center mt-2">
+          <p className="text-sm text-center mt-5">
             Developer Website Coming Soon
           </p>
 
