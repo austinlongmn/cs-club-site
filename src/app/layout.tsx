@@ -18,17 +18,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body>
-        <div className="bg-background text-foreground">
-          <div className="container mx-auto max-w-6xl">
-            <header>
-              <Navbar />
-            </header>
-            <main className="min-h-screen">{children}</main>
-            <footer>
-              <p>Footer</p>
-            </footer>
-          </div>
+      <body className="bg-background text-foreground">
+        <div className="container mx-auto max-w-6xl">
+          <header>
+            <Navbar />
+          </header>
+          <main className="min-h-screen">{children}</main>
+          <footer>
+            <p>Footer</p>
+          </footer>
         </div>
       </body>
     </html>
