@@ -36,10 +36,8 @@ export default function Home() {
         goal is to inspire and prepare members for future leadership in
         technology.
       </p>
-      <div className="pt-15 flex items-center justify-center">
-        <h2 className="pr-10 text-center text-4xl">
-          Our Club Members
-        </h2>
+      <div className="flex items-center justify-center pt-15">
+        <h2 className="pr-10 text-center text-4xl">Our Club Members</h2>
         <Image
           className="rounded-lg shadow-md transition-transform duration-300 hover:scale-102"
           width={700}
