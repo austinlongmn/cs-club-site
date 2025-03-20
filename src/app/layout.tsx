@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "UNW CS Club",
@@ -26,6 +27,9 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <footer>
             <p>Footer</p>
+            <Link href="/oss-attributions" className="text-white">
+              View Our OSS Attributions
+            </Link>
           </footer>
         </div>
       </body>
