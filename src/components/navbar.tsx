@@ -17,7 +17,7 @@ export default function Navbar() {
     >
       <nav className="border-foreground fixed top-0 left-0 z-50 h-[var(--navbar-height)] w-full border-b backdrop-blur-lg">
         <div className="mx-auto flex max-w-6xl gap-4 sm:px-4">
-          <div className="flex">
+          <Link href="/" className="flex">
             <Image
               src={CSCLogo}
               alt="CSC Logo"
@@ -25,7 +25,7 @@ export default function Navbar() {
               height={630}
               className="h-[var(--navbar-height)] w-auto p-2"
             />
-          </div>
+          </Link>
           <div className="grow" />
           <div className="flex items-center gap-4">
             <Link href="/" className="text-white">
@@ -33,6 +33,9 @@ export default function Navbar() {
             </Link>
             <Link href="/students" className="text-white">
               Students
+            </Link>
+            <Link href="/competition-scores" className="text-white">
+              Competition Scores
             </Link>
           </div>
         </div>
