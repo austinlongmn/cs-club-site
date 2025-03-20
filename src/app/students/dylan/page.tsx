@@ -13,16 +13,16 @@ export default function Dylan() {
   return (
     <div className="flex flex-col items-center justify-center transition-all duration-500">
       <div className="flex justify-between p-5">
-        <h1 className="text-5xl text-white text-center">Dylan Weakly</h1>
+        <h1 className="text-center text-5xl text-white">Dylan Weakly</h1>
       </div>
 
-      <div className="p-10 max-w-4xl mx-auto backdrop-blur-lg border-[#428ad1] border-8 shadow-xl rounded-3xl text-white">
+      <div className="mx-auto max-w-4xl rounded-3xl border-5 border-[#428ad1] p-10 text-white shadow-xl backdrop-blur-lg">
         <div className="flex flex-col items-center">
-          <button className="flex items-center gap-2 bg-[#428ad1] text-white px-6 py-3 rounded-lg text-2xl hover:bg-blue-700 hover:font-bold">
+          <button className="flex items-center gap-2 rounded-lg bg-[#428ad1] px-6 py-3 text-2xl text-white hover:bg-blue-700 hover:font-bold">
             <RiMailLine />
             Email Dylan
           </button>
-          <p className="text-sm text-center mt-5">
+          <p className="mt-5 text-center text-sm">
             Developer Website Coming Soon
           </p>
 
@@ -46,14 +46,14 @@ export default function Dylan() {
             improve efficiency of the company.
           </p>
 
-          <h2 className="text-lg py-4 text-center">My Favorite Projects</h2>
-          <ul className="list-disc list-inside">
+          <h2 className="py-4 text-center text-lg">My Favorite Projects</h2>
+          <ul className="list-inside list-disc">
             <li>Systems Analysis and Design Project (featured Below)</li>
             <li>More to come...</li>
           </ul>
 
           <Image
-            className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105 mt-10"
+            className="mt-10 rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
             width={1300}
             height={1000}
             src="/images/dylan/atkinson-poster.png"

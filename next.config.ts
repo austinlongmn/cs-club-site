@@ -1,11 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  experimental: {
-    optimizePackageImports: ["@chakra-ui/react"],
-  },
-};
+const nextConfig: NextConfig = {};
 
 if (process.env.PROJECT_PHASE === "production_build") {
   const LicensePlugin = require("webpack-license-plugin");
