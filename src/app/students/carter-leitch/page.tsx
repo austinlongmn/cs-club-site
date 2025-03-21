@@ -11,7 +11,7 @@ export default function Page() {
             width: 50%;
             }
     `}</style>
-      <h1>This is Andrew&apos;s Route!</h1>
+      <h1>This is Carter&apos;s Route!</h1>
       <p className="center">Welcome to this empty page.</p>
       <section id="youtube">
         <Link
