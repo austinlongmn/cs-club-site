@@ -11,10 +11,11 @@ export const metadata: Metadata = {
 
 export default function Dylan() {
   return (
-    <div className="flex flex-col mt-10 items-center mx-auto max-w-4xl rounded-4xl justify-center transition-all duration-500 border-8 border-[#428ad1] p-10 text-white shadow-xl backdrop-blur-lg">
+    <div className="mx-auto mt-10 flex max-w-4xl flex-col items-center justify-center rounded-4xl border-8 border-[#428ad1] p-10 text-white shadow-xl backdrop-blur-lg transition-all duration-500">
       <div className="flex w-full items-center justify-between px-10">
         <div className="flex items-center gap-4">
-          <Image className="rounded-full"
+          <Image
+            className="rounded-full"
             src="/images/dylan/dylan.jpg"
             width={150}
             height={200}
@@ -22,7 +23,7 @@ export default function Dylan() {
           />
           <div className="flex flex-col">
             <h2 className="text-4xl font-bold">Dylan Weakly</h2>
-            <h3 className="text-xl mt-3">Sophomore at UNW</h3>
+            <h3 className="mt-3 text-xl">Sophomore at UNW</h3>
           </div>
         </div>
 
@@ -38,22 +39,21 @@ export default function Dylan() {
       </div>
 
       <p className="text-md py-10 text-center">
-        I am a sophomore Computer Science student with a Cybersecurity
-        minor. I enjoy programming with Python, TypeScript, and also with
-        the React web framework, which is being used to make this website. I
-        am currently learning programming with C++. The skills I have
-        learned in software development allow me to practice my problem
-        solving and critical thinking skills while navigating challenges
-        that may arise.
+        I am a sophomore Computer Science student with a Cybersecurity minor. I
+        enjoy programming with Python, TypeScript, and also with the React web
+        framework, which is being used to make this website. I am currently
+        learning programming with C++. The skills I have learned in software
+        development allow me to practice my problem solving and critical
+        thinking skills while navigating challenges that may arise.
       </p>
 
       <p className="text-md py-3 text-center">
-        Some of my interests outside of Computer Science include going
-        hiking with my family at state parks and local parks, checking out
-        cars at car shows, and serving on the production team at church.
+        Some of my interests outside of Computer Science include going hiking
+        with my family at state parks and local parks, checking out cars at car
+        shows, and serving on the production team at church.
       </p>
-      <div className="flex justify-evenly items-center w-full pt-10">
-        <h2 className="py-4 max-w-40 text-center text-3xl font-bold">
+      <div className="flex w-full items-center justify-evenly pt-10">
+        <h2 className="max-w-40 py-4 text-center text-3xl font-bold">
           Classes I have Taken at UNW
         </h2>
         <ul className="list-inside list-disc">
@@ -68,8 +68,10 @@ export default function Dylan() {
         </ul>
       </div>
 
-      <div className="flex justify-evenly items-center w-full pt-10">
-        <h2 className="py-4 max-w-30 text-center text-3xl font-bold">My Favorite Projects</h2>
+      <div className="flex w-full items-center justify-evenly pt-10">
+        <h2 className="max-w-30 py-4 text-center text-3xl font-bold">
+          My Favorite Projects
+        </h2>
         <ul className="max-w-78 list-inside list-disc">
           <li>Systems Analysis and Design Project (featured Below)</li>
           <li>More to come...</li>
