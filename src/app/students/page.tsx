@@ -1,13 +1,13 @@
 import React from "react";
 
 const students = [
-  { id: 1, name: "Breyon Gunn" },
-  { id: 2, name: "Andrew Hayes" },
-  { id: 3, name: "Carter Leitch" },
-  { id: 4, name: "Austin Long" },
-  { id: 5, name: "Josie Mellick" },
-  { id: 6, name: "Josiah Paul" },
-  { id: 7, name: "Dylan Weakly" },
+  { id: "/breyon-gunn", name: "Breyon Gunn" },
+  { id: "/andrew-hayes", name: "Andrew Hayes" },
+  { id: "/carter-leitch", name: "Carter Leitch" },
+  { id: "/austin-long", name: "Austin Long" },
+  { id: "/josie-mellick", name: "Josie Mellick" },
+  { id: "/josiah-paul", name: "Josiah Paul" },
+  { id: "/dylan-weakly", name: "Dylan Weakly" },
   // Add more students as needed
 ];
 
@@ -15,9 +15,14 @@ const StudentsPage: React.FC = () => {
   return (
     <div>
       <h1 className="pt-10 text-5xl font-extrabold">Students List</h1>
-      <ul className="pt-5 text-xl">
+      <ul className="font- pt-5 text-xl text-gray-300">
         {students.map((student) => (
-          <li key={student.id}>{student.name}</li>
+          <li
+            className="mt-3 transition-colors duration-500 ease-in-out hover:font-bold hover:text-white"
+            key={student.id}
+          >
+            <a href={`/students/${student.id}`}>{student.name}</a>
+          </li>
         ))}
       </ul>
     </div>
