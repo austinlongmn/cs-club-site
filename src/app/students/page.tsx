@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const students = [
   { id: "/breyon-gunn", name: "Breyon Gunn" },
@@ -21,7 +22,7 @@ const StudentsPage: React.FC = () => {
             className="mt-3 transition-colors duration-500 ease-in-out hover:font-bold hover:text-white"
             key={student.id}
           >
-            <a href={`/students/${student.id}`}>{student.name}</a>
+            <Link href={`/students/${student.id}`}>{student.name}</Link>
           </li>
         ))}
       </ul>
