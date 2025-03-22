@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import CSCLogo from "@/svg/csc-logo.svg";
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 
 // Pages:
 // - Home
@@ -10,6 +12,8 @@ import CSCLogo from "@/svg/csc-logo.svg";
 // - About
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(true);
+
   return (
     <div
       className="container"
@@ -38,17 +42,21 @@ export default function Navbar() {
               Competition Scores
             </Link>
           </div>
+          <button
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+            }}
+          >
+            Toggle Menu
+          </button>
         </div>
       </nav>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div exit={{ y: -1000 }} className="bg-background fixed top-0 left-0 z-49 h-screen w-screen"></motion.div>
+        )}
+      </AnimatePresence>
       <div className="pb-[var(--navbar-height)]" />
     </div>
   );
 }
-
-// Later links:
-// <Link href="/featured-projects" className="text-white">
-//   Featured Projects
-// </Link>
-// <Link href="/about" className="text-white">
-//   About
-// </Link>
