@@ -47,6 +47,8 @@ export interface ElementProps {
   x: number;
   y: number;
   animationDirection: string | AnimationDirection;
+  width: number;
+  height: number;
 }
 
 export interface AnimationDirection {
@@ -94,7 +96,7 @@ export function Slideshow({
   }, []);
 
   useEffect(() => {
-    if (!previewFrame) {
+    if (previewFrame == null) {
       const scheduleFrame = () => {
         // Timeout to start animating out
         timeouts.current.push(
@@ -143,7 +145,7 @@ export function Slideshow({
         height: size.height,
       }}
     >
-      <div ref={containerRef} className="w-full h-full">
+      <div ref={containerRef} className="h-full w-full">
         {Children.map(children, (child, index) =>
           cloneElement(child, {
             isCurrent: currentFrame === index && animateIn,
@@ -161,7 +163,7 @@ export function Frame({ children, isCurrent, isKeyFrame }: FrameProps) {
   return (
     <FrameContext value={isCurrent}>
       <KeyFrameContext value={isKeyFrame}>
-        <div className="fixed w-full h-full">{children}</div>
+        <div className="fixed h-full w-full">{children}</div>
       </KeyFrameContext>
     </FrameContext>
   );
@@ -171,12 +173,39 @@ function calculateRelativePosition(pos: number, slideshowLength: number) {
   return slideshowLength * pos;
 }
 
-export function Element({ children, x, y, animationDirection }: ElementProps) {
+export function Element({
+  children,
+  x,
+  y,
+  width,
+  height,
+  animationDirection,
+}: ElementProps) {
   let parsedAnimationDirection;
   const slideshowContext = useContext(SlideshowContext);
   const isCurrent = useContext(FrameContext);
   const isKeyFrame = useContext(KeyFrameContext);
+  const elementRef = useRef<HTMLDivElement>(null);
+  const [size, setSize] = useState<{ width: number; height: number }>({
+    width: 0,
+    height: 0,
+  });
 
+  useEffect(() => {
+    const updateSize = () => {
+      if (elementRef.current) {
+        const { width, height } = elementRef.current.getBoundingClientRect();
+        setSize({ width: width, height: height });
+      }
+    };
+
+    const resizeObserver = new ResizeObserver(updateSize);
+    if (elementRef.current) {
+      resizeObserver.observe(elementRef.current);
+    }
+
+    return () => resizeObserver.disconnect();
+  }, []);
   if (typeof animationDirection === "object") {
     parsedAnimationDirection = animationDirection;
   } else {
@@ -184,13 +213,13 @@ export function Element({ children, x, y, animationDirection }: ElementProps) {
       case "up":
         parsedAnimationDirection = createAnimationDirection(
           0,
-          slideshowContext.animationDistance
+          -slideshowContext.animationDistance
         );
         break;
       case "down":
         parsedAnimationDirection = createAnimationDirection(
           0,
-          -slideshowContext.animationDistance
+          slideshowContext.animationDistance
         );
         break;
       case "left":
@@ -213,16 +242,21 @@ export function Element({ children, x, y, animationDirection }: ElementProps) {
     }
   }
 
-  const iniPosX = calculateRelativePosition(
-    x - parsedAnimationDirection.x,
-    slideshowContext.width
-  );
-  const iniPosY = calculateRelativePosition(
-    y - parsedAnimationDirection.y,
-    slideshowContext.height
-  );
-  const posX = calculateRelativePosition(x, slideshowContext.width);
-  const posY = calculateRelativePosition(y, slideshowContext.height);
+  const relX = calculateRelativePosition(0.5, size.width);
+  const relY = calculateRelativePosition(0.5, size.height);
+
+  const iniPosX =
+    calculateRelativePosition(
+      x + parsedAnimationDirection.x,
+      slideshowContext.width
+    ) - relX;
+  const iniPosY =
+    calculateRelativePosition(
+      y + parsedAnimationDirection.y,
+      slideshowContext.height
+    ) - relY;
+  const posX = calculateRelativePosition(x, slideshowContext.width) - relX;
+  const posY = calculateRelativePosition(y, slideshowContext.height) - relY;
 
   const notCurrentState = {
     opacity: 0,
@@ -230,17 +264,31 @@ export function Element({ children, x, y, animationDirection }: ElementProps) {
     y: iniPosY,
   };
   const currentState = { opacity: 1, x: posX, y: posY };
+  const transition = {
+    ease: "easeInOut",
+    duration: slideshowContext.animationTime,
+  };
+
+  console.log(x, relX, posX, size.width, slideshowContext.width);
 
   return (
     <motion.div
       initial={isKeyFrame ? currentState : notCurrentState}
       animate={isCurrent ? currentState : notCurrentState}
       transition={{
-        defuault: { duration: slideshowContext.animationTime },
-        x: { ease: "easeInOut", duration: slideshowContext.animationTime },
-        y: { ease: "easeInOut", duration: slideshowContext.animationTime },
+        opacity: {
+          duration: slideshowContext.animationTime,
+          ease: "easeInOut",
+        },
+        x: transition,
+        y: transition,
       }}
-      className="relative"
+      className="absolute"
+      style={{
+        width: slideshowContext.width * width + "px",
+        height: slideshowContext.height * height + "px",
+      }}
+      ref={elementRef}
     >
       {children}
     </motion.div>
