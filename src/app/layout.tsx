@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Provider } from "@/components/ui/provider";
 import Navbar from "@/components/navbar";
-import { Box } from "@chakra-ui/react";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "UNW CS Club",
@@ -18,22 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head />
-      <body>
-        <Provider>
-          <Box backgroundColor="Background">
-            <Box className="container mx-auto max-w-6xl">
-              <header>
-                <Navbar />
-              </header>
-              <main className="min-h-screen">{children}</main>
-              <footer>
-                <p>Footer</p>
-              </footer>
-            </Box>
-          </Box>
-        </Provider>
+      <body className="bg-background text-foreground">
+        <div className="container mx-auto max-w-6xl">
+          <header>
+            <Navbar />
+          </header>
+          <main className="min-h-screen">{children}</main>
+        </div>
+        <div className="flex gap-4 pt-20 pb-10">
+          <Footer />
+        </div>
       </body>
     </html>
   );

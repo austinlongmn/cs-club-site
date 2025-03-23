@@ -1,5 +1,7 @@
 name: Check for Broken Links
 
+permissions: read-all
+
 on:
   workflow_run:
     workflows: ["Deployment"]
