@@ -1,4 +1,3 @@
-import Link from "next/link";
 import fs from "fs/promises";
 import path from "path";
 
@@ -34,22 +33,21 @@ export default async function AttributionPage() {
   }
 
   return (
-    <>
-      <h1 className="text-2xl font-bold">Open Source Attribution</h1>
+    <div className="p-6">
+      <h1 className="pb-4 text-3xl font-bold sm:text-4xl md:text-6xl">
+        Open Source Attributions
+      </h1>
       <p>
         The following shows the licenses for open source projects bundled in the
         build. Note that this does not include licenses for dependencies not in
         the build.
       </p>
-      <ul className="mt-4 space-y-2">
+      <ul className="mt-4 space-y-2 text-sm">
         {licenses.map((lib: OSSLicenseInfo, index: number) => (
           <li key={index} className="border-b pb-2">
-            <strong>{lib.name}</strong> v{lib.version} - {lib.license}
-            {lib.repository && (
-              <Link href={lib.repository} className="ml-2 text-blue-500">
-                [Repo]
-              </Link>
-            )}
+            <h2 className="py-4 text-2xl">
+              <strong>{lib.name}</strong> v{lib.version} - {lib.license}
+            </h2>
             {lib.noticeText && (
               <pre className="whitespace-pre-wrap">{lib.noticeText}</pre>
             )}
@@ -59,6 +57,6 @@ export default async function AttributionPage() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
