@@ -1,88 +1,92 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 const me = {
   name: "Carter Leitch",
-}
+};
 
 const minorProjects = [
   {
     name: "Project 1",
     description: "Description 1",
-    tech: "Tech 1"
+    tech: "Tech 1",
   },
   {
     name: "Project 2",
     description: "Description 2",
-    tech: "Tech 2"
+    tech: "Tech 2",
   },
   {
     name: "Project 3",
     description: "Description 3",
-    tech: "Tech 3"
+    tech: "Tech 3",
   },
-]
+];
 
 const majorProjects = [
   {
     name: "Project 1",
     description: "Description 1",
-    tech: "Tech 1"
+    tech: "Tech 1",
   },
   {
     name: "Project 2",
     description: "Description 2",
-    tech: "Tech 2"
+    tech: "Tech 2",
   },
   {
     name: "Project 3",
     description: "Description 3",
-    tech: "Tech 3"
+    tech: "Tech 3",
   },
-]
+];
 
-function BigHeader({text}: { text: string }) {
+function BigHeader({ text }: { text: string }) {
   return (
-    <h1 className="justify-center text-white text-center text-5xl m-10">{text}</h1>
+    <h1 className="m-10 justify-center text-center text-5xl text-white">
+      {text}
+    </h1>
   );
 }
 
-function LittleHeader({text}: { text: string }) {
+function LittleHeader({ text }: { text: string }) {
   return (
-    <h1 className="justify-center text-white text-center text-3xl m-5">{text}</h1>
+    <h1 className="m-5 justify-center text-center text-3xl text-white">
+      {text}
+    </h1>
   );
 }
 
-function GitHubButton () {
+function GitHubButton() {
   return (
-    <Link href="https://github.com/cartrleitch" target= "_blank">
-            <Image
-              className="hover:opacity-50 hover:cursor-pointer mt-3 mr-4"
-              src="/images/carter/GitHubLogo.png"
-              alt="Profile photo of Carter Leitch"
-              width={50}
-              height={50}
-            />
+    <Link href="https://github.com/cartrleitch" target="_blank">
+      <Image
+        className="mt-3 mr-4 hover:cursor-pointer hover:opacity-50"
+        src="/images/carter/GitHubLogo.png"
+        alt="Profile photo of Carter Leitch"
+        width={50}
+        height={50}
+      />
     </Link>
   );
 }
 
-function LinkedInButton () {
+function LinkedInButton() {
   return (
     <Link href="https://www.linkedin.com/in/carter-leitch/" target="_blank">
-            <Image
-              className="hover:opacity-50 hover:cursor-pointer mt-3"
-              src="/images/carter/LinkedIn_icon.svg"
-              alt="Profile photo of Carter Leitch"
-              width={50}
-              height={50}
-            />
+      <Image
+        className="mt-3 hover:cursor-pointer hover:opacity-50"
+        src="/images/carter/LinkedIn_icon.svg"
+        alt="Profile photo of Carter Leitch"
+        width={50}
+        height={50}
+      />
     </Link>
   );
 }
 
-export default function Page(){
-  return(
+export default function Page() {
+  return (
     <>
       <div>
         <BigHeader text={me.name} />
@@ -102,12 +106,13 @@ export default function Page(){
       </div>
       <div>
         <LittleHeader text={"About Me"} />
-        <p className="text-white text-center">
+        <p className="text-center text-white">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
           tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies nunc, nec
-          ultricies nunc nunc nec. Nullam tincidunt, nunc nec ultricies ultricies,
-          nunc nunc ultricies nunc, nec ultricies nunc nunc nec. Nullam tincidunt,
-          nunc nec ultricies ultricies, nunc nunc ultricies nunc, nec ultricies
+          ultricies nunc nunc nec. Nullam tincidunt, nunc nec ultricies
+          ultricies, nunc nunc ultricies nunc, nec ultricies nunc nunc nec.
+          Nullam tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies
+          nunc, nec ultricies
         </p>
       </div>
 
