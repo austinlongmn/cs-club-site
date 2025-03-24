@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const me = {
   name: "Carter Leitch",
@@ -51,6 +52,35 @@ function LittleHeader({text}: { text: string }) {
     <h1 className="justify-center text-white text-center text-3xl m-5">{text}</h1>
   );
 }
+
+function GitHubButton () {
+  return (
+    <Link href="https://github.com/cartrleitch" target= "_blank">
+            <Image
+              className="hover:opacity-50 hover:cursor-pointer mt-3 mr-4"
+              src="/images/carter/GitHubLogo.png"
+              alt="Profile photo of Carter Leitch"
+              width={50}
+              height={50}
+            />
+    </Link>
+  );
+}
+
+function LinkedInButton () {
+  return (
+    <Link href="https://www.linkedin.com/in/carter-leitch/" target="_blank">
+            <Image
+              className="hover:opacity-50 hover:cursor-pointer mt-3"
+              src="/images/carter/LinkedIn_icon.svg"
+              alt="Profile photo of Carter Leitch"
+              width={50}
+              height={50}
+            />
+    </Link>
+  );
+}
+
 export default function Page(){
   return(
     <>
@@ -66,20 +96,8 @@ export default function Page(){
           />
         </div>
         <div className="flex justify-center">
-        <Image
-            className="shadow-md transition-transform duration-300 hover:scale-105"
-            src="/images/carter/GitHub-logo.png"
-            alt="Profile photo of Carter Leitch"
-            width={50}
-            height={50}
-          />
-        <Image
-            className="shadow-md transition-transform duration-300 hover:scale-105"
-            src="/images/carter/LinkedIn_icon.svg"
-            alt="Profile photo of Carter Leitch"
-            width={50}
-            height={50}
-          />
+          <GitHubButton />
+          <LinkedInButton />
         </div>
       </div>
       <div>
