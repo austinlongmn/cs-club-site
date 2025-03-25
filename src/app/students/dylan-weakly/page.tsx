@@ -14,7 +14,7 @@ export default function Dylan() {
       <div className="flex w-full items-center justify-center px-10">
         <div className="group relative items-center">
           <Image
-            className="rounded-full transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-[0px_0px_20px_5px_rgba(255, 255, 255, 0.8)]"
+            className="group-hover:shadow-[0px_0px_20px_5px_rgba(255, 255, 255, 0.8)] rounded-full transition-all duration-300 ease-in-out group-hover:scale-105"
             src="/images/dylan/dylan.jpg"
             width={200}
             height={200}
@@ -22,12 +22,14 @@ export default function Dylan() {
           />
         </div>
       </div>
-      <div className="flex flex-col mt-10 md:mt-5 items-center gap-2">
+      <div className="mt-10 flex flex-col items-center gap-2 md:mt-5">
         <h1 className="text-4xl">Dylan Weakly</h1>
         <h3 className="text-3xl">Sophomore at UNW</h3>
       </div>
 
-      <p className="pt-5 md:pt-5 text-sm font-bold">Personal Website Coming Soon...</p>
+      <p className="pt-5 text-sm font-bold md:pt-5">
+        Personal Website Coming Soon...
+      </p>
 
       <p className="mt-10 text-center text-lg">
         I am a sophomore Computer Science student with a Cybersecurity minor. I
@@ -43,7 +45,7 @@ export default function Dylan() {
         with my family at state parks and local parks, checking out cars at car
         shows, and serving on the production team at church.
       </p>
-      <div className="flex w-full flex-col items-center justify-evenly pt-10 pb-10 md:flex-row border-t border-[#428ad1]">
+      <div className="flex w-full flex-col items-center justify-evenly border-t border-[#428ad1] pt-10 pb-10 md:flex-row">
         <h2 className="max-w-40 py-4 text-center text-3xl font-bold">
           Classes I have Taken at UNW
         </h2>
@@ -59,13 +61,16 @@ export default function Dylan() {
         </ul>
       </div>
 
-      <div className="flex w-full flex-col items-center justify-evenly pt-10 pb-10 md:pb-0 md:flex-row border-t border-[#428ad1]">
+      <div className="flex w-full flex-col items-center justify-evenly border-t border-[#428ad1] pt-10 pb-10 md:flex-row md:pb-0">
         <h2 className="max-w-30 py-4 text-center text-3xl font-bold">
           My Favorite Projects
         </h2>
         <ul className="max-w-85 list-inside list-disc text-center text-lg">
           <li>Systems Analysis and Design Project (featured Below)</li>
-          <li>Halloween Trick or Treating Tracker with SQLite and Tkinter in Python</li>
+          <li>
+            Halloween Trick or Treating Tracker with SQLite and Tkinter in
+            Python
+          </li>
         </ul>
       </div>
 
