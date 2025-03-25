@@ -29,13 +29,13 @@ const SlideshowContext = createContext({
 interface FrameContextType {
   isCurrent: boolean;
   isKeyFrame: boolean;
-  marginSize: number;
+  paddingSize?: number;
 }
 
 const FrameContext = createContext({
   isCurrent: false,
   isKeyFrame: false,
-  marginSize: 0,
+  paddingSize: 0,
 } as FrameContextType);
 
 export interface FrameProps {
@@ -43,7 +43,7 @@ export interface FrameProps {
   // These are set by React.cloneElement.
   isCurrent?: boolean;
   isKeyFrame?: boolean;
-  marginSize: number;
+  paddingSize?: number;
 }
 
 export interface SlideshowProps {
@@ -63,7 +63,7 @@ export type StringAnimationDirection =
   | "none"
   | AnimationDirection;
 
-export type MarginSpecifier =
+export type PaddingSpecifier =
   | "left"
   | "right"
   | "top"
@@ -86,7 +86,7 @@ export interface ElementProps {
   animationDirection: StringAnimationDirection;
   width: number;
   height: number;
-  marginPosition?: MarginSpecifier;
+  paddingPosition?: PaddingSpecifier;
 }
 
 export interface AnimationDirection {
@@ -113,8 +113,8 @@ export function Slideshow({
   const timeouts = useRef<NodeJS.Timeout[]>([]); // Track timeouts
   const containerRef = useRef<HTMLDivElement>(null); // FIXME: we need to wait until this is set before rendering things.
   const [size, setSize] = useState<{ width: number; height: number }>({
-    width: 0,
-    height: 0,
+    width: -1,
+    height: -1,
   });
 
   useEffect(() => {
@@ -200,13 +200,13 @@ export function Frame({
   children,
   isCurrent,
   isKeyFrame,
-  marginSize,
+  paddingSize = 0,
 }: FrameProps) {
   if (isCurrent == null || isKeyFrame == null) {
     throw new Error("Frame must be a child of Slideshow.");
   }
   return (
-    <FrameContext value={{ isCurrent, isKeyFrame, marginSize }}>
+    <FrameContext value={{ isCurrent, isKeyFrame, paddingSize }}>
       <div className="fixed h-full w-full">{children}</div>
     </FrameContext>
   );
@@ -238,75 +238,88 @@ function parseAnimationDirection(
   }
 }
 
-function parseMarginSpecifier(
-  specifier: MarginSpecifier,
-  marginSizeX: number,
-  marginSizeY: number
+function parsePaddingSpecifier(
+  specifier: PaddingSpecifier,
+  paddingSize: number
 ) {
-  let margins: object;
+  let paddings: object;
   switch (specifier) {
     case "left":
-      margins = { marginLeft: marginSizeX };
+      paddings = { paddingLeft: paddingSize };
+      break;
     case "right":
-      margins = { marginRight: marginSizeX };
+      paddings = { paddingRight: paddingSize };
+      break;
     case "top":
-      margins = { marginTop: marginSizeY };
+      paddings = { paddingTop: paddingSize };
+      break;
     case "bottom":
-      margins = { marginBottom: marginSizeY };
+      paddings = { paddingBottom: paddingSize };
+      break;
     case "topLeft":
-      margins = { marginLeft: marginSizeX, marginTop: marginSizeY };
+      paddings = { paddingLeft: paddingSize, paddingTop: paddingSize };
+      break;
     case "topRight":
-      margins = { marginRight: marginSizeX, marginTop: marginSizeY };
+      paddings = { paddingRight: paddingSize, paddingTop: paddingSize };
+      break;
     case "bottomLeft":
-      margins = { marginLeft: marginSizeX, marginBottom: marginSizeY };
+      paddings = { paddingLeft: paddingSize, paddingBottom: paddingSize };
+      break;
     case "bottomRight":
-      margins = { marginRight: marginSizeX, marginBottom: marginSizeY };
+      paddings = { paddingRight: paddingSize, paddingBottom: paddingSize };
+      break;
     case "notUp":
-      margins = {
-        marginLeft: marginSizeX,
-        marginRight: marginSizeX,
-        marginBottom: marginSizeY,
+      paddings = {
+        paddingLeft: paddingSize,
+        paddingRight: paddingSize,
+        paddingBottom: paddingSize,
       };
+      break;
     case "notLeft":
-      margins = {
-        marginRight: marginSizeX,
-        marginBottom: marginSizeY,
-        marginTop: marginSizeY,
+      paddings = {
+        paddingRight: paddingSize,
+        paddingBottom: paddingSize,
+        paddingTop: paddingSize,
       };
+      break;
     case "notRight":
-      margins = {
-        marginLeft: marginSizeX,
-        marginBottom: marginSizeY,
-        marginTop: marginSizeY,
+      paddings = {
+        paddingLeft: paddingSize,
+        paddingBottom: paddingSize,
+        paddingTop: paddingSize,
       };
+      break;
     case "notDown":
-      margins = {
-        marginLeft: marginSizeX,
-        marginRight: marginSizeX,
-        marginTop: marginSizeY,
+      paddings = {
+        paddingLeft: paddingSize,
+        paddingRight: paddingSize,
+        paddingTop: paddingSize,
       };
+      break;
     case "all":
-      margins = {
-        marginLeft: marginSizeX,
-        marginRight: marginSizeX,
-        marginBottom: marginSizeY,
-        marginTop: marginSizeY,
+      paddings = {
+        paddingLeft: paddingSize,
+        paddingRight: paddingSize,
+        paddingBottom: paddingSize,
+        paddingTop: paddingSize,
       };
+      break;
     case "none":
-      margins = {
-        marginLeft: 0,
-        marginRight: 0,
-        marginBottom: 0,
-        marginTop: 0,
+      paddings = {
+        paddingLeft: 0,
+        paddingRight: 0,
+        paddingBottom: 0,
+        paddingTop: 0,
       };
+      break;
   }
 
   return {
-    marginLeft: marginSizeX / 2,
-    marginRight: marginSizeX / 2,
-    marginTop: marginSizeY / 2,
-    marginBottom: marginSizeY / 2,
-    ...margins,
+    paddingLeft: paddingSize / 2,
+    paddingRight: paddingSize / 2,
+    paddingTop: paddingSize / 2,
+    paddingBottom: paddingSize / 2,
+    ...paddings,
   };
 }
 
@@ -317,35 +330,21 @@ export function Element({
   width,
   height,
   animationDirection,
-  marginPosition,
+  paddingPosition,
 }: ElementProps) {
   const slideshowContext = useContext(SlideshowContext);
   const frameContext = useContext(FrameContext);
   const elementRef = useRef<HTMLDivElement>(null);
-  const [size, setSize] = useState<{ width: number; height: number }>({
-    width: 0,
-    height: 0,
-  });
 
   const isKeyFrame = frameContext.isKeyFrame;
   const isCurrent = frameContext.isCurrent;
-  const marginSize = frameContext.marginSize;
+  const paddingSize = frameContext.paddingSize ?? 0;
 
-  useEffect(() => {
-    const updateSize = () => {
-      if (elementRef.current) {
-        const { width, height } = elementRef.current.getBoundingClientRect();
-        setSize({ width: width, height: height });
-      }
-    };
+  const size = {
+    width: slideshowContext.width * (width / 100),
+    height: slideshowContext.height * (height / 100),
+  };
 
-    const resizeObserver = new ResizeObserver(updateSize);
-    if (elementRef.current) {
-      resizeObserver.observe(elementRef.current);
-    }
-
-    return () => resizeObserver.disconnect();
-  }, []);
   const parsedAnimationDirection = parseAnimationDirection(
     animationDirection,
     slideshowContext.animationDistance
@@ -378,6 +377,18 @@ export function Element({
     duration: slideshowContext.animationTime,
   };
 
+  const paddings = parsePaddingSpecifier(
+    paddingPosition ?? "none",
+    (paddingSize / 100) *
+      Math.sqrt(slideshowContext.width * slideshowContext.height)
+  );
+
+  const ready = !(slideshowContext.width < 0 || slideshowContext.height < 0);
+
+  if (!ready) {
+    return <></>;
+  }
+
   return (
     <motion.div
       initial={isKeyFrame ? currentState : notCurrentState}
@@ -394,11 +405,7 @@ export function Element({
       style={{
         width: slideshowContext.width * (width / 100),
         height: slideshowContext.height * (height / 100),
-        ...parseMarginSpecifier(
-          marginPosition ?? "none",
-          (marginSize / 100) * slideshowContext.width,
-          (marginSize / 100) * slideshowContext.height
-        ),
+        ...paddings,
       }}
       ref={elementRef}
     >
