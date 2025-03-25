@@ -92,7 +92,7 @@ export default function StadiumResearch() {
             printed for debugging purposes and used as the payload to generate a
             QR code using the qrcode library. Finally, the QR code image is
             saved to an in-memory bytes buffer in PNG format and later returned
-            to the user's phone.
+            to the user&#39;s phone.
           </p>
 
           <h3 className="mt-4 text-xl font-semibold text-gray-300">
