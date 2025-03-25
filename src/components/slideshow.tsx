@@ -18,19 +18,32 @@ interface SlideshowContextType {
   width: number;
   height: number;
 }
+
 const SlideshowContext = createContext({
   animationDistance: 20,
   animationTime: 20,
   width: 0,
   height: 0,
 } as SlideshowContextType);
-const FrameContext = createContext(false);
-const KeyFrameContext = createContext(false);
+
+interface FrameContextType {
+  isCurrent: boolean;
+  isKeyFrame: boolean;
+  marginSize: number;
+}
+
+const FrameContext = createContext({
+  isCurrent: false,
+  isKeyFrame: false,
+  marginSize: 0,
+} as FrameContextType);
 
 export interface FrameProps {
   children: ReactElement<ElementProps>[];
+  // These are set by React.cloneElement.
   isCurrent?: boolean;
   isKeyFrame?: boolean;
+  marginSize: number;
 }
 
 export interface SlideshowProps {
@@ -42,13 +55,38 @@ export interface SlideshowProps {
   children: ReactElement<FrameProps>[];
 }
 
+export type StringAnimationDirection =
+  | "up"
+  | "down"
+  | "left"
+  | "right"
+  | "none"
+  | AnimationDirection;
+
+export type MarginSpecifier =
+  | "left"
+  | "right"
+  | "top"
+  | "bottom"
+  | "topLeft"
+  | "topRight"
+  | "bottomLeft"
+  | "bottomRight"
+  | "none"
+  | "all"
+  | "notLeft"
+  | "notRight"
+  | "notUp"
+  | "notDown";
+
 export interface ElementProps {
   children: JSX.Element;
   x: number;
   y: number;
-  animationDirection: string | AnimationDirection;
+  animationDirection: StringAnimationDirection;
   width: number;
   height: number;
+  marginPosition?: MarginSpecifier;
 }
 
 export interface AnimationDirection {
@@ -156,21 +194,120 @@ export function Slideshow({
     </SlideshowContext>
   );
 }
-export function Frame({ children, isCurrent, isKeyFrame }: FrameProps) {
+
+// Warning: isCurrent and isKeyFrame are set by React.cloneElement.
+export function Frame({
+  children,
+  isCurrent,
+  isKeyFrame,
+  marginSize,
+}: FrameProps) {
   if (isCurrent == null || isKeyFrame == null) {
     throw new Error("Frame must be a child of Slideshow.");
   }
   return (
-    <FrameContext value={isCurrent}>
-      <KeyFrameContext value={isKeyFrame}>
-        <div className="fixed h-full w-full">{children}</div>
-      </KeyFrameContext>
+    <FrameContext value={{ isCurrent, isKeyFrame, marginSize }}>
+      <div className="fixed h-full w-full">{children}</div>
     </FrameContext>
   );
 }
 
 function calculateRelativePosition(pos: number, slideshowLength: number) {
-  return slideshowLength * pos;
+  return slideshowLength * (pos / 100);
+}
+
+function parseAnimationDirection(
+  animationDirection: StringAnimationDirection,
+  animationDistance: number
+): AnimationDirection {
+  if (typeof animationDirection === "object") {
+    return animationDirection;
+  } else {
+    switch (animationDirection) {
+      case "up":
+        return createAnimationDirection(0, -animationDistance);
+      case "down":
+        return createAnimationDirection(0, animationDistance);
+      case "left":
+        return createAnimationDirection(-animationDistance, 0);
+      case "right":
+        return createAnimationDirection(animationDistance, 0);
+      case "none":
+        return createAnimationDirection(0, 0);
+    }
+  }
+}
+
+function parseMarginSpecifier(
+  specifier: MarginSpecifier,
+  marginSizeX: number,
+  marginSizeY: number
+) {
+  let margins: object;
+  switch (specifier) {
+    case "left":
+      margins = { marginLeft: marginSizeX };
+    case "right":
+      margins = { marginRight: marginSizeX };
+    case "top":
+      margins = { marginTop: marginSizeY };
+    case "bottom":
+      margins = { marginBottom: marginSizeY };
+    case "topLeft":
+      margins = { marginLeft: marginSizeX, marginTop: marginSizeY };
+    case "topRight":
+      margins = { marginRight: marginSizeX, marginTop: marginSizeY };
+    case "bottomLeft":
+      margins = { marginLeft: marginSizeX, marginBottom: marginSizeY };
+    case "bottomRight":
+      margins = { marginRight: marginSizeX, marginBottom: marginSizeY };
+    case "notUp":
+      margins = {
+        marginLeft: marginSizeX,
+        marginRight: marginSizeX,
+        marginBottom: marginSizeY,
+      };
+    case "notLeft":
+      margins = {
+        marginRight: marginSizeX,
+        marginBottom: marginSizeY,
+        marginTop: marginSizeY,
+      };
+    case "notRight":
+      margins = {
+        marginLeft: marginSizeX,
+        marginBottom: marginSizeY,
+        marginTop: marginSizeY,
+      };
+    case "notDown":
+      margins = {
+        marginLeft: marginSizeX,
+        marginRight: marginSizeX,
+        marginTop: marginSizeY,
+      };
+    case "all":
+      margins = {
+        marginLeft: marginSizeX,
+        marginRight: marginSizeX,
+        marginBottom: marginSizeY,
+        marginTop: marginSizeY,
+      };
+    case "none":
+      margins = {
+        marginLeft: 0,
+        marginRight: 0,
+        marginBottom: 0,
+        marginTop: 0,
+      };
+  }
+
+  return {
+    marginLeft: marginSizeX / 2,
+    marginRight: marginSizeX / 2,
+    marginTop: marginSizeY / 2,
+    marginBottom: marginSizeY / 2,
+    ...margins,
+  };
 }
 
 export function Element({
@@ -180,16 +317,19 @@ export function Element({
   width,
   height,
   animationDirection,
+  marginPosition,
 }: ElementProps) {
-  let parsedAnimationDirection;
   const slideshowContext = useContext(SlideshowContext);
-  const isCurrent = useContext(FrameContext);
-  const isKeyFrame = useContext(KeyFrameContext);
+  const frameContext = useContext(FrameContext);
   const elementRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState<{ width: number; height: number }>({
     width: 0,
     height: 0,
   });
+
+  const isKeyFrame = frameContext.isKeyFrame;
+  const isCurrent = frameContext.isCurrent;
+  const marginSize = frameContext.marginSize;
 
   useEffect(() => {
     const updateSize = () => {
@@ -206,44 +346,13 @@ export function Element({
 
     return () => resizeObserver.disconnect();
   }, []);
-  if (typeof animationDirection === "object") {
-    parsedAnimationDirection = animationDirection;
-  } else {
-    switch (animationDirection) {
-      case "up":
-        parsedAnimationDirection = createAnimationDirection(
-          0,
-          -slideshowContext.animationDistance
-        );
-        break;
-      case "down":
-        parsedAnimationDirection = createAnimationDirection(
-          0,
-          slideshowContext.animationDistance
-        );
-        break;
-      case "left":
-        parsedAnimationDirection = createAnimationDirection(
-          -slideshowContext.animationDistance,
-          0
-        );
-        break;
-      case "right":
-        parsedAnimationDirection = createAnimationDirection(
-          slideshowContext.animationDistance,
-          0
-        );
-        break;
-      case "none":
-        parsedAnimationDirection = createAnimationDirection(0, 0);
-        break;
-      default:
-        throw new Error("Animation direction is invalid.");
-    }
-  }
+  const parsedAnimationDirection = parseAnimationDirection(
+    animationDirection,
+    slideshowContext.animationDistance
+  );
 
-  const relX = calculateRelativePosition(0.5, size.width);
-  const relY = calculateRelativePosition(0.5, size.height);
+  const relX = calculateRelativePosition(50, size.width);
+  const relY = calculateRelativePosition(50, size.height);
 
   const iniPosX =
     calculateRelativePosition(
@@ -269,8 +378,6 @@ export function Element({
     duration: slideshowContext.animationTime,
   };
 
-  console.log(x, relX, posX, size.width, slideshowContext.width);
-
   return (
     <motion.div
       initial={isKeyFrame ? currentState : notCurrentState}
@@ -285,8 +392,13 @@ export function Element({
       }}
       className="absolute"
       style={{
-        width: slideshowContext.width * width + "px",
-        height: slideshowContext.height * height + "px",
+        width: slideshowContext.width * (width / 100),
+        height: slideshowContext.height * (height / 100),
+        ...parseMarginSpecifier(
+          marginPosition ?? "none",
+          (marginSize / 100) * slideshowContext.width,
+          (marginSize / 100) * slideshowContext.height
+        ),
       }}
       ref={elementRef}
     >

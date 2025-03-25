@@ -5,25 +5,19 @@ export default function Page() {
     <div className="bg-background fixed top-0 right-0 z-51 h-full w-full">
       <Slideshow
         advanceTime={5}
-        animationDistance={0.1}
+        animationDistance={10}
         inBetweenTime={1}
         animationTime={1.5}
       >
         <Frame>
-          <Element
-            x={0.25}
-            y={0.5}
-            width={0.4}
-            height={0.85}
-            animationDirection="up"
-          >
+          <Element x={25} y={50} width={40} height={85} animationDirection="up">
             <div className="h-full w-full bg-red-300" />
           </Element>
           <Element
-            x={0.75}
-            y={0.5}
-            width={0.4}
-            height={0.85}
+            x={75}
+            y={50}
+            width={40}
+            height={85}
             animationDirection="down"
           >
             <div className="h-full w-full bg-amber-300" />
@@ -31,37 +25,31 @@ export default function Page() {
         </Frame>
         <Frame>
           <Element
-            x={0.25}
-            y={0.25}
-            width={0.45}
-            height={0.45}
+            x={25}
+            y={25}
+            width={45}
+            height={45}
             animationDirection="left"
           >
             <div className="h-full w-full bg-green-300" />
           </Element>
-          <Element
-            x={0.75}
-            y={0.25}
-            width={0.45}
-            height={0.45}
-            animationDirection="up"
-          >
+          <Element x={75} y={25} width={45} height={45} animationDirection="up">
             <div className="h-full w-full bg-blue-300" />
           </Element>
           <Element
-            x={0.25}
-            y={0.75}
-            width={0.45}
-            height={0.45}
+            x={25}
+            y={75}
+            width={45}
+            height={45}
             animationDirection="down"
           >
             <div className="h-full w-full bg-green-300" />
           </Element>
           <Element
-            x={0.75}
-            y={0.75}
-            width={0.45}
-            height={0.45}
+            x={75}
+            y={75}
+            width={45}
+            height={45}
             animationDirection="right"
           >
             <div className="h-full w-full bg-blue-300" />
