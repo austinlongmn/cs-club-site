@@ -22,7 +22,7 @@ export default function Footer() {
           OSS Attributions
         </Link>
       </div>
-      <p className="flex text-gray-400 text-center">
+      <p className="flex text-center text-gray-400">
         &copy; {new Date().getFullYear()} Computer Science Club - University of
         Northwestern-St. Paul
       </p>
