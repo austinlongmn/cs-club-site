@@ -23,11 +23,11 @@ export default function Dylan() {
         </div>
       </div>
       <div className="mt-10 flex flex-col items-center gap-2 md:mt-5">
-        <h1 className="text-4xl">Dylan Weakly</h1>
+        <h1 className="text-4xl font-bold">Dylan Weakly</h1>
         <h3 className="text-3xl">Sophomore at UNW</h3>
       </div>
 
-      <p className="pt-5 text-sm font-bold md:pt-5">
+      <p className="pt-5 text-sm md:pt-5">
         Personal Website Coming Soon...
       </p>
 
