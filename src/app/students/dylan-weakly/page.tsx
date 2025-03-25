@@ -42,11 +42,11 @@ export default function Dylan() {
         with my family at state parks and local parks, checking out cars at car
         shows, and serving on the production team at church.
       </p>
-      <div className="flex w-full items-center justify-evenly pt-10">
+      <div className="flex w-full flex-col md:flex-row items-center justify-evenly pt-10">
         <h2 className="max-w-40 py-4 text-center text-3xl font-bold">
           Classes I have Taken at UNW
         </h2>
-        <ul className="list-inside list-disc">
+        <ul className="list-inside list-disc text-center">
           <li>Principles of Computing</li>
           <li>Python Programming</li>
           <li>Systems Analysis and Design</li>
@@ -58,11 +58,11 @@ export default function Dylan() {
         </ul>
       </div>
 
-      <div className="flex w-full items-center justify-evenly pt-10">
+      <div className="flex w-full flex-col md:flex-row items-center justify-evenly pt-10">
         <h2 className="max-w-30 py-4 text-center text-3xl font-bold">
           My Favorite Projects
         </h2>
-        <ul className="max-w-78 list-inside list-disc">
+        <ul className="max-w-78 list-inside list-disc text-center">
           <li>Systems Analysis and Design Project (featured Below)</li>
           <li>More to come...</li>
         </ul>
