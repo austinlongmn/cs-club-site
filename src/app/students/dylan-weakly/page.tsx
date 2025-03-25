@@ -27,9 +27,7 @@ export default function Dylan() {
         <h3 className="text-3xl">Sophomore at UNW</h3>
       </div>
 
-      <p className="pt-5 text-sm md:pt-5">
-        Personal Website Coming Soon...
-      </p>
+      <p className="pt-5 text-sm md:pt-5">Personal Website Coming Soon...</p>
 
       <p className="mt-10 text-center text-lg">
         I am a sophomore Computer Science student with a Cybersecurity minor. I
