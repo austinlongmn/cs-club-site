@@ -1,4 +1,3 @@
-import { RiMailLine } from "react-icons/ri";
 import Image from "next/image";
 import type { Metadata } from "next";
 
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
 export default function Dylan() {
   return (
     <div className="mx-auto mt-10 flex max-w-4xl flex-col items-center justify-center rounded-4xl border-8 border-[#428ad1] p-10 text-white shadow-xl backdrop-blur-lg transition-all duration-500">
-      <div className="flex w-full items-center justify-between px-10">
+      <div className="flex w-full items-center justify-center px-10">
         <div className="flex items-center gap-4">
           <Image
             className="rounded-full"
@@ -23,22 +22,13 @@ export default function Dylan() {
           />
           <div className="flex flex-col">
             <h2 className="text-4xl font-bold">Dylan Weakly</h2>
-            <h3 className="mt-3 text-xl">Sophomore at UNW</h3>
+            <h3 className="mt-5 text-xl">Sophomore at UNW</h3>
+            <p className="mt-2 text-sm">Personal Website Coming Soon...</p>
           </div>
-        </div>
-
-        <div className="flex flex-col items-end gap-2">
-          <button className="flex items-center gap-2 rounded-lg bg-[#428ad1] px-6 py-3 text-2xl text-white hover:bg-blue-700 hover:font-bold">
-            <RiMailLine />
-            Email Dylan
-          </button>
-          <p className="mt-2 text-center text-sm">
-            Developer Website Coming Soon
-          </p>
         </div>
       </div>
 
-      <p className="text-md py-10 text-center">
+      <p className="mt-10 text-md text-center">
         I am a sophomore Computer Science student with a Cybersecurity minor. I
         enjoy programming with Python, TypeScript, and also with the React web
         framework, which is being used to make this website. I am currently
