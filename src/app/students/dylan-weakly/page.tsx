@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Dylan() {
   return (
-    <div className="mx-auto mt-10 mb-10 flex max-w-4xl flex-col items-center justify-center rounded-4xl border-8 border-[#428ad1] p-10 text-white shadow-xl bg-neutral-800 backdrop-blur-lg transition-all duration-500">
+    <div className="mx-auto mt-10 mb-10 flex max-w-4xl flex-col items-center justify-center rounded-4xl border-8 border-[#428ad1] bg-neutral-800 p-10 text-white shadow-xl backdrop-blur-lg transition-all duration-500">
       <div className="flex w-full items-center justify-center px-10">
         <div className="group relative items-center">
           <Image
