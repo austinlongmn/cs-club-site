@@ -1,5 +1,13 @@
+import { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Students - UNW CS Club",
+  description:
+    "This is the official site of University of Northwestern " +
+    "- St.Paul's very own Computer Science Club.",
+};
 
 const students = [
   { id: "/breyon-gunn", name: "Breyon Gunn" },
