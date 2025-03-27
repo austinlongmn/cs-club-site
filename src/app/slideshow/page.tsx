@@ -39,6 +39,7 @@ export default function Page() {
             height={50}
             animationDirection="left"
             paddingPosition="topLeft"
+            animationDelay={0}
           >
             <div className="h-full w-full bg-blue-300" />
           </Element>
@@ -49,6 +50,7 @@ export default function Page() {
             height={50}
             animationDirection="up"
             paddingPosition="topRight"
+            animationDelay={10}
           >
             <div className="h-full w-full bg-green-300" />
           </Element>
@@ -59,6 +61,7 @@ export default function Page() {
             height={50}
             animationDirection="down"
             paddingPosition="bottomLeft"
+            animationDelay={20}
           >
             <div className="h-full w-full bg-green-300" />
           </Element>
@@ -69,6 +72,7 @@ export default function Page() {
             height={50}
             animationDirection="right"
             paddingPosition="bottomRight"
+            animationDelay={30}
           >
             <div className="h-full w-full bg-blue-300" />
           </Element>

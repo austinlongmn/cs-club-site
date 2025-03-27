@@ -36,6 +36,8 @@ export interface ElementProps {
   width: number;
   height: number;
   paddingPosition?: PaddingSpecifier;
+  animationDelay?: number;
+  animationLength?: number;
 }
 
 export interface AnimationDirection {
@@ -160,6 +162,10 @@ function parsePaddingSpecifier(
   };
 }
 
+function calculateRelativeTime(time: number, fullTime: number) {
+  return time * fullTime;
+}
+
 export function Element({
   children,
   x,
@@ -168,6 +174,8 @@ export function Element({
   height,
   animationDirection,
   paddingPosition,
+  animationDelay = 0,
+  animationLength = 100,
 }: ElementProps) {
   const slideshowContext = useContext(SlideshowContext);
   const frameContext = useContext(FrameContext);
@@ -211,7 +219,14 @@ export function Element({
   const currentState = { opacity: 1, x: posX, y: posY };
   const transition = {
     ease: "easeInOut",
-    duration: slideshowContext.animationTime,
+    delay: calculateRelativeTime(
+      animationDelay / 100,
+      slideshowContext.animationTime
+    ),
+    duration: calculateRelativeTime(
+      animationLength / 100,
+      slideshowContext.animationTime
+    ),
   };
 
   const paddings = parsePaddingSpecifier(
@@ -231,10 +246,7 @@ export function Element({
       initial={isKeyFrame ? currentState : notCurrentState}
       animate={isCurrent ? currentState : notCurrentState}
       transition={{
-        opacity: {
-          duration: slideshowContext.animationTime,
-          ease: "easeInOut",
-        },
+        opacity: transition,
         x: transition,
         y: transition,
       }}
