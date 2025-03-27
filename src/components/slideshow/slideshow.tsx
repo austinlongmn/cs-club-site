@@ -67,6 +67,7 @@ export function Slideshow({
     return () => resizeObserver.disconnect();
   }, []);
 
+  // Schedule slide advances
   useEffect(() => {
     if (previewFrame == null) {
       const scheduleFrame = () => {

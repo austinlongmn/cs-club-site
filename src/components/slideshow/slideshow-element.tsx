@@ -1,5 +1,5 @@
 "use client";
-import { useContext, JSX, useRef } from "react";
+import { useContext, useRef, ReactNode } from "react";
 import { motion } from "motion/react";
 import { SlideshowContext } from "./slideshow";
 import { FrameContext } from "./slideshow-frame";
@@ -29,7 +29,7 @@ export type PaddingSpecifier =
   | "notDown";
 
 export interface ElementProps {
-  children: JSX.Element;
+  children: ReactNode;
   x: number;
   y: number;
   animationDirection: StringAnimationDirection;
