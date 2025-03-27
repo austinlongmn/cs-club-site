@@ -14,7 +14,7 @@ export default function Alumni() {
   const paragraphStyle = "text-3xl text-center";
 
   return (
-    <div className="flex flex-col items-center justify-center gap-5 bg-gray-900 pt-20 md:pt-30">
+    <div className="flex flex-col items-center justify-center gap-5 pt-20 md:pt-30">
       <p className={paragraphStyle}>
         There are currently no active alumni pages.
       </p>
