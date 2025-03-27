@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   const linkStyles =
-    "hover:text-white hover:font-bold transition-colors duration-500 ease-in-out";
+    "hover:text-white hover:font-bold transition-colors duration-300 ease-in-out";
 
   return (
     <footer className="flex w-screen flex-col items-center justify-center border-t border-gray-500 pt-10">
@@ -12,6 +12,9 @@ export default function Footer() {
         </Link>
         <Link href="/students" className={linkStyles}>
           Students
+        </Link>
+        <Link href="/alumni" className={linkStyles}>
+          Alumni
         </Link>
         <Link href="/competition-scores" className={linkStyles}>
           Competition Scores
