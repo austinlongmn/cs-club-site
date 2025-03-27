@@ -26,7 +26,7 @@ export default function RootLayout({
           </header>
           <main>{children}</main>
         </div>
-        <div className="flex gap-4 pt-20 pb-10">
+        <div className="flex gap-4 pb-10">
           <Footer />
         </div>
       </body>
