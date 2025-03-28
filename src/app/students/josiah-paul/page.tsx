@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Josiah() {
   return (
     <div>
@@ -16,14 +18,15 @@ export default function Josiah() {
           <br></br>So far, I would say python has been the most fun language to
           learn.
         </p>
-        <a href="https://github.com/JP-STHS" target="_blank">
+        <Link href="https://github.com/JP-STHS" target="_blank">
           <img
             id="github-logo"
             className="pt-6 invert-100"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/960px-Octicons-mark-github.svg.png"
             width={100}
+            alt="Github"
           />
-        </a>
+        </Link>
       </div>
 
       {/* Java Script in React */}
