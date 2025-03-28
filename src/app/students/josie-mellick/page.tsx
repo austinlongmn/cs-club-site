@@ -18,9 +18,10 @@ export default function Page() {
       <h1>
         Projects:
       </h1>
-      <p>
+      <h3>
         Offloading Automation for Jack Links
-
+      </h3>
+      <p>
         A partner and I designed and created a script to automate the multi-step 
         offboarding process. We designed it to work with the pre-existing Microsoft 
         Entra system. This project was completed for UNW's Systems Analysis & Design 
