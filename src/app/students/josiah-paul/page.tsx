@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 export default function Josiah() {
   return (
     <div>
@@ -20,10 +19,10 @@ export default function Josiah() {
         </p>
         <Link href="https://github.com/JP-STHS" target="_blank">
           <img
-            id="github-logo"
             className="pt-6 invert-100"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/960px-Octicons-mark-github.svg.png"
             width={100}
+            height={100}
             alt="Github"
           />
         </Link>
