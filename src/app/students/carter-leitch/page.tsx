@@ -15,7 +15,8 @@ const minorProjects = [
   },
   {
     name: "Political Triangle Quiz",
-    description: "Quiz for mapping your political views. Uses C#, Windows Forms, and .NET.",
+    description:
+      "Quiz for mapping your political views. Uses C#, Windows Forms, and .NET.",
     tech: "Tech 2",
   },
 ];
@@ -23,17 +24,20 @@ const minorProjects = [
 const majorProjects = [
   {
     name: "CoolBibleVerses.Cool",
-    description: "Website for organizing your favorite Bible verses. Uses ASP.NET Core, C#, and a relational database.",
+    description:
+      "Website for organizing your favorite Bible verses. Uses ASP.NET Core, C#, and a relational database.",
     tech: "Tech 1",
   },
   {
     name: "Reimbursement Web App",
-    description: "Web app for managing reimbursements. Uses Python, JustPy, and SQLite.",
+    description:
+      "Web app for managing reimbursements. Uses Python, JustPy, and SQLite.",
     tech: "Tech 2",
   },
   {
     name: "System A&D Project",
-    description: "Analyzed and designed new reimbursement system for Five Oaks church. Used UML, ERD, and Agile principles.",
+    description:
+      "Analyzed and designed new reimbursement system for Five Oaks church. Used UML, ERD, and Agile principles.",
     tech: "Tech 3",
   },
   {
@@ -43,7 +47,8 @@ const majorProjects = [
   },
   {
     name: "CRM Database",
-    description: "Senior Capstone project to augment DefineTheBox CRM to add new functionality. Used Dyanmics 365 and database design principles.",
+    description:
+      "Senior Capstone project to augment DefineTheBox CRM to add new functionality. Used Dyanmics 365 and database design principles.",
     tech: "Tech 4",
   },
 ];
@@ -95,7 +100,7 @@ function LinkedInButton() {
 export default function Page() {
   return (
     <>
-      <div className="bg-neutral-900 p-5 rounded-2xl w-7/8 mx-auto">
+      <div className="mx-auto w-7/8 rounded-2xl bg-neutral-900 p-5">
         <div>
           <BigHeader text={me.name} />
           <div className="flex justify-center">
@@ -116,8 +121,8 @@ export default function Page() {
           <LittleHeader text={"About Me"} />
           <p className="text-center text-white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies nunc, nec
-            ultricies nunc nunc nec. Nullam tincidunt, nunc nec ultricies
+            tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies nunc,
+            nec ultricies nunc nunc nec. Nullam tincidunt, nunc nec ultricies
             ultricies, nunc nunc ultricies nunc, nec ultricies nunc nunc nec.
             Nullam tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies
             nunc, nec ultricies
@@ -127,9 +132,12 @@ export default function Page() {
         <div className="text-center">
           <LittleHeader text="Major Projects" />
           <div>
-          <ul className="grid grid-cols-3 gap-4 justify-center" style={{gridTemplateColumns: "repeat(auto-fit, 200px)"}}>
-          {majorProjects.map((project) => (
-                <li key={project.name} className="flex justify-center w-45">
+            <ul
+              className="grid grid-cols-3 justify-center gap-4"
+              style={{ gridTemplateColumns: "repeat(auto-fit, 200px)" }}
+            >
+              {majorProjects.map((project) => (
+                <li key={project.name} className="flex w-45 justify-center">
                   <FlipTile
                     frontText={project.name}
                     backText={project.description}
@@ -145,9 +153,12 @@ export default function Page() {
         <div className="m-5">
           <LittleHeader text="Minor Projects" />
           <div>
-            <ul className="grid grid-cols-3 gap-4 justify-center" style={{gridTemplateColumns: "repeat(auto-fit, 200px)"}}>
+            <ul
+              className="grid grid-cols-3 justify-center gap-4"
+              style={{ gridTemplateColumns: "repeat(auto-fit, 200px)" }}
+            >
               {minorProjects.map((project) => (
-                <li key={project.name} className="flex justify-center w-45">
+                <li key={project.name} className="flex w-45 justify-center">
                   <FlipTile
                     frontText={project.name}
                     backText={project.description}
