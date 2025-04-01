@@ -10,9 +10,10 @@ import { usePathname } from "next/navigation";
 // Pages:
 // - Home
 // - Students
-// - Featured projects
+// - Alumni
+// - Competition Scores
+// - Featured Projects
 // - About
-//
 
 interface Page {
   description: string;
@@ -27,6 +28,10 @@ const pages: Page[] = [
   {
     description: "Students",
     route: "/students",
+  },
+  {
+    description: "Alumni",
+    route: "/alumni",
   },
   {
     description: "Competition Scores",
