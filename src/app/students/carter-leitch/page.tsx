@@ -23,6 +23,21 @@ const minorProjects = [
     description: "Description 3",
     tech: "Tech 3",
   },
+  {
+    name: "Project 4",
+    description: "Description 4",
+    tech: "Tech 4",
+  },
+  {
+    name: "Project 5",
+    description: "Description 5",
+    tech: "Tech 5",
+  },
+  {
+    name: "Project 6",
+    description: "Description 6",
+    tech: "Tech 6",
+  },
 ];
 
 const majorProjects = [
@@ -119,31 +134,40 @@ export default function Page() {
       </div>
 
       <div className="text-center">
-        <LittleHeader text={"Major Projects"} />
-        <ul>
-          {majorProjects.map((project) => (
-            <li key={project.name} className="m-5">
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <p>{project.tech}</p>
-            </li>
-          ))}
-        </ul>
+        <LittleHeader text="Major Projects" />
+        <div>
+        <ul className="grid grid-cols-3 gap-4 justify-center" style={{gridTemplateColumns: "repeat(auto-fit, 200px)"}}>
+        {majorProjects.map((project) => (
+              <li key={project.name} className="flex justify-center w-45">
+                <FlipTile
+                  frontText={project.name}
+                  backText={project.description}
+                  frontStyle="text-lg"
+                  backStyle="text-sm"
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <div className="text-center">
-        <LittleHeader text={"Minor Projects"} />
-        <ul>
-          {minorProjects.map((project) => (
-            <li key={project.name} className="m-5">
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <p>{project.tech}</p>
-            </li>
-          ))}
-        </ul>
+      <div className="m-5">
+        <LittleHeader text="Minor Projects" />
+        <div>
+          <ul className="grid grid-cols-3 gap-4 justify-center" style={{gridTemplateColumns: "repeat(auto-fit, 200px)"}}>
+            {minorProjects.map((project) => (
+              <li key={project.name} className="flex justify-center w-45">
+                <FlipTile
+                  frontText={project.name}
+                  backText={project.description}
+                  frontStyle="text-lg"
+                  backStyle="text-sm"
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <p> <FlipTile frontText="Cool Bible Verses" backText="A website for storing your favorite Bible verses, uses ASP.NET, C#, and .NET" frontStyle="text-lg" backStyle="text-sm"/></p>
     </>
   );
 }
