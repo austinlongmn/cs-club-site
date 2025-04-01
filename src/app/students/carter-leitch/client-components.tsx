@@ -13,14 +13,8 @@ export default function FlipTile({
   backStyle: string;
 }) {
   const [flipped, setFlipped] = React.useState(false);
-  let tileContent = frontText;
   const handleClick = () => {
     setFlipped(!flipped);
-    if (flipped) {
-      tileContent = frontText;
-    } else {
-      tileContent = backText;
-    }
   };
 
   return (
