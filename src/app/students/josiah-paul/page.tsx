@@ -3,7 +3,6 @@ import Image from "next/image";
 export default function Josiah() {
   return (
     <div>
-      
       <h1 className="m-10 text-center text-[60px]">
         <b>Josiah Paul</b>
       </h1>
@@ -20,10 +19,9 @@ export default function Josiah() {
           learn.
         </p>
         <Link href="https://github.com/JP-STHS" target="_blank">
-        
           <Image
-            className="pt-6 invert-100"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/960px-Octicons-mark-github.svg.png"
+            className="pt-6"
+            src="/images/josiah/github-mark-white.png"
             width={100}
             height={100}
             alt="Github"
