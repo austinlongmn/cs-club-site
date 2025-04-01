@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+import FlipTile from "./clientComponents";
 
 const me = {
   name: "Carter Leitch",
@@ -141,7 +143,7 @@ export default function Page() {
           ))}
         </ul>
       </div>
-      <p></p>
+      <p> <FlipTile frontText="Cool Bible Verses" backText="A website for storing your favorite Bible verses, uses ASP.NET, C#, and .NET" frontStyle="text-lg" backStyle="text-sm"/></p>
     </>
   );
 }
