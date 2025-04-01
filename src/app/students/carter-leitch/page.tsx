@@ -9,52 +9,42 @@ const me = {
 
 const minorProjects = [
   {
-    name: "Project 1",
-    description: "Description 1",
+    name: "Blackjack",
+    description: "Console-based C++ program for playing blackjack. Uses C++.",
     tech: "Tech 1",
   },
   {
-    name: "Project 2",
-    description: "Description 2",
+    name: "Political Triangle Quiz",
+    description: "Quiz for mapping your political views. Uses C#, Windows Forms, and .NET.",
     tech: "Tech 2",
-  },
-  {
-    name: "Project 3",
-    description: "Description 3",
-    tech: "Tech 3",
-  },
-  {
-    name: "Project 4",
-    description: "Description 4",
-    tech: "Tech 4",
-  },
-  {
-    name: "Project 5",
-    description: "Description 5",
-    tech: "Tech 5",
-  },
-  {
-    name: "Project 6",
-    description: "Description 6",
-    tech: "Tech 6",
   },
 ];
 
 const majorProjects = [
   {
-    name: "Project 1",
-    description: "Description 1",
+    name: "CoolBibleVerses.Cool",
+    description: "Website for organizing your favorite Bible verses. Uses ASP.NET Core, C#, and a relational database.",
     tech: "Tech 1",
   },
   {
-    name: "Project 2",
-    description: "Description 2",
+    name: "Reimbursement Web App",
+    description: "Web app for managing reimbursements. Uses Python, JustPy, and SQLite.",
     tech: "Tech 2",
   },
   {
-    name: "Project 3",
-    description: "Description 3",
+    name: "System A&D Project",
+    description: "Analyzed and designed new reimbursement system for Five Oaks church. Used UML, ERD, and Agile principles.",
     tech: "Tech 3",
+  },
+  {
+    name: "Frog Bot",
+    description: "Multi-purpose Discord bot. Uses Python and Discord.py.",
+    tech: "Tech 4",
+  },
+  {
+    name: "CRM Database",
+    description: "Senior Capstone project to augment DefineTheBox CRM to add new functionality. Used Dyanmics 365 and database design principles.",
+    tech: "Tech 4",
   },
 ];
 
@@ -105,67 +95,69 @@ function LinkedInButton() {
 export default function Page() {
   return (
     <>
-      <div>
-        <BigHeader text={me.name} />
-        <div className="flex justify-center">
-          <Image
-            className="border-2 border-blue-800 shadow-md transition-transform duration-300 hover:scale-105"
-            src="/images/carter/crtrltch.jpg"
-            alt="Profile photo of Carter Leitch"
-            width={250}
-            height={200}
-          />
-        </div>
-        <div className="flex justify-center">
-          <GitHubButton />
-          <LinkedInButton />
-        </div>
-      </div>
-      <div>
-        <LittleHeader text={"About Me"} />
-        <p className="text-center text-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies nunc, nec
-          ultricies nunc nunc nec. Nullam tincidunt, nunc nec ultricies
-          ultricies, nunc nunc ultricies nunc, nec ultricies nunc nunc nec.
-          Nullam tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies
-          nunc, nec ultricies
-        </p>
-      </div>
-
-      <div className="text-center">
-        <LittleHeader text="Major Projects" />
+      <div className="bg-neutral-900 p-5 rounded-2xl w-7/8 mx-auto">
         <div>
-        <ul className="grid grid-cols-3 gap-4 justify-center" style={{gridTemplateColumns: "repeat(auto-fit, 200px)"}}>
-        {majorProjects.map((project) => (
-              <li key={project.name} className="flex justify-center w-45">
-                <FlipTile
-                  frontText={project.name}
-                  backText={project.description}
-                  frontStyle="text-lg"
-                  backStyle="text-sm"
-                />
-              </li>
-            ))}
-          </ul>
+          <BigHeader text={me.name} />
+          <div className="flex justify-center">
+            <Image
+              className="border-2 border-blue-800 shadow-md transition-transform duration-300 hover:scale-105"
+              src="/images/carter/crtrltch.jpg"
+              alt="Profile photo of Carter Leitch"
+              width={250}
+              height={200}
+            />
+          </div>
+          <div className="flex justify-center">
+            <GitHubButton />
+            <LinkedInButton />
+          </div>
         </div>
-      </div>
-
-      <div className="m-5">
-        <LittleHeader text="Minor Projects" />
         <div>
+          <LittleHeader text={"About Me"} />
+          <p className="text-center text-white">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies nunc, nec
+            ultricies nunc nunc nec. Nullam tincidunt, nunc nec ultricies
+            ultricies, nunc nunc ultricies nunc, nec ultricies nunc nunc nec.
+            Nullam tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies
+            nunc, nec ultricies
+          </p>
+        </div>
+
+        <div className="text-center">
+          <LittleHeader text="Major Projects" />
+          <div>
           <ul className="grid grid-cols-3 gap-4 justify-center" style={{gridTemplateColumns: "repeat(auto-fit, 200px)"}}>
-            {minorProjects.map((project) => (
-              <li key={project.name} className="flex justify-center w-45">
-                <FlipTile
-                  frontText={project.name}
-                  backText={project.description}
-                  frontStyle="text-lg"
-                  backStyle="text-sm"
-                />
-              </li>
-            ))}
-          </ul>
+          {majorProjects.map((project) => (
+                <li key={project.name} className="flex justify-center w-45">
+                  <FlipTile
+                    frontText={project.name}
+                    backText={project.description}
+                    frontStyle="text-base"
+                    backStyle="text-sm"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="m-5">
+          <LittleHeader text="Minor Projects" />
+          <div>
+            <ul className="grid grid-cols-3 gap-4 justify-center" style={{gridTemplateColumns: "repeat(auto-fit, 200px)"}}>
+              {minorProjects.map((project) => (
+                <li key={project.name} className="flex justify-center w-45">
+                  <FlipTile
+                    frontText={project.name}
+                    backText={project.description}
+                    frontStyle="text-lg"
+                    backStyle="text-sm"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </>
