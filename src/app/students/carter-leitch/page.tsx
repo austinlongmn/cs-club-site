@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import FlipTile from "./clientComponents";
+import FlipTile from "./client-components";
 
 const me = {
   name: "Carter Leitch",
