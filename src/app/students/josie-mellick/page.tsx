@@ -1,9 +1,6 @@
 import Image from 'next/image';
 import Link from "next/link";
 
-
-
-
 export default function Page() {
   return (
     <div>
@@ -39,7 +36,7 @@ export default function Page() {
         <div style={{ height: 40, width: 1 }}></div>
 
         {/* Introduction and bio */}
-        <div className="max-w-2xl mx-auto p-4 bg-gray-900 rounded-lg shadow">
+        <div className="max-w-3xl mx-auto p-4 bg-gray-900 rounded-lg shadow">
           <h2 className="py-4 text-left text-2xl text-white">
               About Me
             </h2>
@@ -60,13 +57,11 @@ export default function Page() {
         </div>
 
         {/* Projects */}
-        <h1 className="text-center text-4xl text-white py-6">
+        <h1 className="text-center text-5xl text-white py-6">
           Projects
         </h1>
 
-
-
-        <div className="max-w-2xl mx-auto p-4 bg-gray-900 rounded-lg shadow">
+        <div className="max-w-3xl mx-auto p-4 bg-gray-900 rounded-lg shadow">
           {/* Systems A & D Jack Links project */}
           <h2 className="py-4 text-left text-2xl text-white">
             Offloading Automation for Jack Links
@@ -75,7 +70,7 @@ export default function Page() {
             A partner and I designed and created a script to automate the multi-step
             offboarding process. We designed it to work with the pre-existing Microsoft
             Entra system. This project was completed for UNW's Systems Analysis & Design
-            class. The poster we made for this project is shown below:
+            class. The poster we made for this project is shown below.
           </p>
 
           <div style={{ height: 20, width: 1 }}></div>
