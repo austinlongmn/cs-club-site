@@ -20,13 +20,13 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className="bg-background text-foreground">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto min-h-screen max-w-6xl">
           <header>
             <Navbar />
           </header>
-          <main className="min-h-screen">{children}</main>
+          <main>{children}</main>
         </div>
-        <div className="flex gap-4 pt-20 pb-10">
+        <div className="flex gap-4 pb-10">
           <Footer />
         </div>
       </body>
