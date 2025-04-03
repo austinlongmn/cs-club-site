@@ -34,7 +34,7 @@ export function Frame({
   }
   return (
     <FrameContext value={{ isCurrent, isKeyFrame, paddingSize }}>
-      <div className="fixed h-full w-full">{children}</div>
+      <div className="absolute h-full w-full">{children}</div>
     </FrameContext>
   );
 }

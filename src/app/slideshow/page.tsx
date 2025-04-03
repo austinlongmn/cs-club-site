@@ -1,8 +1,30 @@
+"use client";
 import { Element, Frame, Slideshow } from "@/components/slideshow";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 export default function Page() {
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useLayoutEffect(() => {
+    function onHashChange() {
+      if (window.location.hash.includes("fullscreen")) {
+        setIsFullscreen(true);
+      } else {
+        setIsFullscreen(false);
+      }
+    }
+
+    window.addEventListener("hashchange", onHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  }, []);
+
   return (
-    <div className="bg-background fixed top-0 right-0 z-51 h-full w-full">
+    <div
+      className={`bg-background aspect-video ${isFullscreen ? "fixed top-0 left-0 z-51 h-screen w-screen" : ""}`}
+    >
       <Slideshow
         advanceTime={10}
         animationDistance={10}
@@ -30,7 +52,7 @@ export default function Page() {
             animationDirection="left"
             paddingPosition="bottomLeft"
           >
-            <div className="h-full w-full bg-emerald-200 rounded-md" />
+            <div className="h-full w-full rounded-md bg-emerald-200" />
           </Element>
         </Frame>
         <Frame paddingSize={5}>
@@ -43,7 +65,7 @@ export default function Page() {
             paddingPosition="topLeft"
             animationDelay={0}
           >
-            <div className="h-full w-full bg-blue-300 rounded-md" />
+            <div className="h-full w-full rounded-md bg-blue-300" />
           </Element>
           <Element
             x={75}
@@ -54,7 +76,7 @@ export default function Page() {
             paddingPosition="topRight"
             animationDelay={10}
           >
-            <div className="h-full w-full bg-green-300 rounded-md" />
+            <div className="h-full w-full rounded-md bg-green-300" />
           </Element>
           <Element
             x={25}
@@ -65,7 +87,7 @@ export default function Page() {
             paddingPosition="bottomLeft"
             animationDelay={20}
           >
-            <div className="h-full w-full bg-green-300 rounded-md" />
+            <div className="h-full w-full rounded-md bg-green-300" />
           </Element>
           <Element
             x={75}
@@ -76,7 +98,7 @@ export default function Page() {
             paddingPosition="bottomRight"
             animationDelay={30}
           >
-            <div className="h-full w-full bg-blue-300 rounded-md" />
+            <div className="h-full w-full rounded-md bg-blue-300" />
           </Element>
         </Frame>
       </Slideshow>

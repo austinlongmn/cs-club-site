@@ -118,7 +118,7 @@ export function Slideshow({
         height: size.height,
       }}
     >
-      <div ref={containerRef} className="h-full w-full">
+      <div ref={containerRef} className="h-full w-full relative">
         {Children.map(children, (child, index) =>
           cloneElement(child, {
             isCurrent: currentFrame === index && animateIn,
