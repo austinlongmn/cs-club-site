@@ -1,3 +1,4 @@
-npm i
-npm run fix
-npm run dev
+@echo off
+call npm i
+call npm run fix
+call npm run dev
