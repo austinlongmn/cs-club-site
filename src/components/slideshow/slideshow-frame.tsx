@@ -20,11 +20,7 @@ export interface FrameProps {
 }
 
 // Warning: animIn is set by React.cloneElement.
-export function Frame({
-  children,
-  animIn,
-  paddingSize = 0,
-}: FrameProps) {
+export function Frame({ children, animIn, paddingSize = 0 }: FrameProps) {
   if (animIn == null) {
     throw new Error("Frame must be a child of Slideshow.");
   }
