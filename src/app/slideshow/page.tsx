@@ -1,6 +1,7 @@
 "use client";
 import { Element, Frame, Slideshow } from "@/components/slideshow";
 import { useEffect, useState } from "react";
+import AustinFrame from "@/app/students/austin-long/frame";
 
 export default function Page() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -28,35 +29,12 @@ export default function Page() {
       className={`bg-background aspect-video ${isFullscreen ? "fixed top-0 left-0 z-51 h-screen w-screen" : ""}`}
     >
       <Slideshow
-        advanceTime={10}
+        advanceTime={20}
         animationDistance={10}
         inBetweenTime={1}
         animationTime={1.5}
       >
-        <Frame paddingSize={5}>
-          <Element
-            x={25}
-            y={10}
-            width={50}
-            height={20}
-            animationDirection="up"
-            paddingPosition="topLeft"
-          >
-            <div className="@container flex h-full w-full items-center justify-center rounded-md bg-emerald-900">
-              <h1 className="text-[calc(10cqmin)]">Austin Long</h1>
-            </div>
-          </Element>
-          <Element
-            x={25}
-            y={60}
-            width={50}
-            height={80}
-            animationDirection="left"
-            paddingPosition="bottomLeft"
-          >
-            <div className="h-full w-full rounded-md bg-emerald-200" />
-          </Element>
-        </Frame>
+        <AustinFrame />
         <Frame paddingSize={5}>
           <Element
             x={25}
