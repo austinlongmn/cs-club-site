@@ -44,3 +44,5 @@ next-env.d.ts
 deploy
 
 public/oss-licenses.json
+
+commit.bat
