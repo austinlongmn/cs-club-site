@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -7,6 +8,17 @@ export default function Page() {
         This is Andrew&apos;s Route!
       </h1>
       <p className="mb-6 text-center">Welcome to this empty page.</p>
+
+       {/* Add the image here */}
+       <div className="mb-6 flex justify-center">
+        <Image
+          src="/images/andrew/ahayeswatermark.jpg"
+          alt="Andrew leaning against a wall"
+          width={300}
+          height={450}
+          className="rounded shadow-lg"
+        />
+      </div>
 
       <section className="mb-6">
         <Link
