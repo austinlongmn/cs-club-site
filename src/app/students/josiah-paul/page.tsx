@@ -54,9 +54,9 @@ export default function Josiah() {
           <p>
             The largest school project I worked on was the Systems Analysis &
             Design final project with{" "}
-            <a href="carter-leitch" target="_blank">
+            <Link href="carter-leitch" target="_blank">
               <u>Carter Leitch.</u>
-            </a>
+            </Link>
           </p>
         </div>
       </div>
