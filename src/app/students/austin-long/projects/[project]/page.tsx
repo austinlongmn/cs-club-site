@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import DOMPurify from "isomorphic-dompurify";
-import { Box, Heading } from "@chakra-ui/react";
+
+import "./styles.css"
 
 export default async function Page({
   params,
@@ -35,9 +36,9 @@ export default async function Page({
   const sanitizedContent = DOMPurify.sanitize(unsafeContent);
 
   return (
-    <Box>
-      <Heading as="h1">{metadata.title ?? "[No Title]"}</Heading>
+    <div>
+      <h1>{metadata.title ?? "[No Title]"}</h1>
       <div dangerouslySetInnerHTML={{ __html: sanitizedContent }}></div>
-    </Box>
+    </div>
   );
 }
