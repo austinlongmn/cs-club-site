@@ -10,7 +10,7 @@ the University of Northwestern - St. Paul. It is created with the following
 libraries:
 
 - [Next.js](https://nextjs.org) - Main server framework
-  - [React](https://react.dev) - Frontend
+- [React](https://react.dev) - Frontend
 - [Motion](https://motion.dev) - Animation library
 - [Tailwind CSS](https://tailwindcss.com) - Alternative styling
 - [Fastify](https://fastify.dev/) - HTTP server
