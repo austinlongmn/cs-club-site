@@ -9,8 +9,8 @@ export default function Page() {
       </h1>
       <p className="mb-6 text-center">Welcome to this empty page.</p>
 
-       {/* Add the image here */}
-       <div className="mb-6 flex justify-center">
+      {/* Add the image here */}
+      <div className="mb-6 flex justify-center">
         <Image
           src="/images/andrew/ahayeswatermark.jpg"
           alt="Andrew leaning against a wall"
@@ -28,7 +28,7 @@ export default function Page() {
           Click text for a funny video I enjoy
         </Link>
         <p className="mt-4 text-center">
-          Here are some projects I'm working on:
+          Here are some projects I&apos;m working on:
         </p>
         <ul className="list-inside list-disc text-center">
           <li>The Last Crewman</li>
@@ -56,7 +56,7 @@ export default function Page() {
             <li>Star Wars</li>
             <li>Doctor Who</li>
             <li>Goblin Slayer</li>
-            <li>Frieren: Beyond Journey's End</li>
+            <li>Frieren: Beyond Journey&apos;s End</li>
           </ul>
         </div>
       </section>
