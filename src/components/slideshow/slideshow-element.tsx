@@ -182,7 +182,7 @@ export function Element({
   const elementRef = useRef<HTMLDivElement>(null);
 
   const isKeyFrame = frameContext.isKeyFrame;
-  const isCurrent = frameContext.isCurrent;
+  const animIn = frameContext.animIn;
   const paddingSize = frameContext.paddingSize ?? 0;
 
   const size = {
@@ -244,7 +244,7 @@ export function Element({
   return (
     <motion.div
       initial={isKeyFrame ? currentState : notCurrentState}
-      animate={isCurrent ? currentState : notCurrentState}
+      animate={animIn ? currentState : notCurrentState}
       transition={{
         opacity: transition,
         x: transition,

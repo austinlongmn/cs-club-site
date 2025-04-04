@@ -3,37 +3,33 @@ import { createContext, ReactElement } from "react";
 import { ElementProps } from "./slideshow-element";
 
 export interface FrameContextType {
-  isCurrent: boolean;
-  isKeyFrame: boolean;
+  animIn: boolean;
   paddingSize?: number;
 }
 
 export const FrameContext = createContext({
-  isCurrent: false,
-  isKeyFrame: false,
+  animIn: false,
   paddingSize: 0,
 } as FrameContextType);
 
 export interface FrameProps {
   children: ReactElement<ElementProps>[];
   // These are set by React.cloneElement.
-  isCurrent?: boolean;
-  isKeyFrame?: boolean;
+  animIn?: boolean;
   paddingSize?: number;
 }
 
-// Warning: isCurrent and isKeyFrame are set by React.cloneElement.
+// Warning: animIn is set by React.cloneElement.
 export function Frame({
   children,
-  isCurrent,
-  isKeyFrame,
+  animIn,
   paddingSize = 0,
 }: FrameProps) {
-  if (isCurrent == null || isKeyFrame == null) {
+  if (animIn == null) {
     throw new Error("Frame must be a child of Slideshow.");
   }
   return (
-    <FrameContext value={{ isCurrent, isKeyFrame, paddingSize }}>
+    <FrameContext value={{ animIn, paddingSize }}>
       <div className="absolute h-full w-full">{children}</div>
     </FrameContext>
   );

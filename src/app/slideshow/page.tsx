@@ -1,11 +1,11 @@
 "use client";
 import { Element, Frame, Slideshow } from "@/components/slideshow";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Page() {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     function onHashChange() {
       if (window.location.hash.includes("fullscreen")) {
         setIsFullscreen(true);
@@ -15,6 +15,8 @@ export default function Page() {
     }
 
     window.addEventListener("hashchange", onHashChange);
+
+    onHashChange();
 
     return () => {
       window.removeEventListener("hashchange", onHashChange);
@@ -40,8 +42,8 @@ export default function Page() {
             animationDirection="up"
             paddingPosition="topLeft"
           >
-            <div className="flex h-full w-full items-center justify-center rounded-md bg-emerald-900">
-              <h1 className="text-7xl">Austin Long</h1>
+            <div className="@container flex h-full w-full items-center justify-center rounded-md bg-emerald-900">
+              <h1 className="text-[calc(10cqmin)]">Austin Long</h1>
             </div>
           </Element>
           <Element

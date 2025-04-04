@@ -7,6 +7,7 @@ import {
   Children,
   cloneElement,
   ReactElement,
+  useLayoutEffect,
 } from "react";
 
 import { FrameProps } from "./slideshow-frame";
@@ -51,7 +52,7 @@ export function Slideshow({
     height: -1,
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const updateSize = () => {
       if (containerRef.current) {
         const { width, height } = containerRef.current.getBoundingClientRect();
@@ -120,9 +121,8 @@ export function Slideshow({
     >
       <div ref={containerRef} className="h-full w-full relative">
         {Children.map(children, (child, index) =>
-          cloneElement(child, {
-            isCurrent: currentFrame === index && animateIn,
-            isKeyFrame: index === (previewFrame ?? 0),
+          currentFrame == index && cloneElement(child, {
+            animIn: animateIn,
           })
         )}
       </div>
