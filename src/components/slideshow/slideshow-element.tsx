@@ -1,7 +1,7 @@
 "use client";
 import { useContext, useRef, ReactNode } from "react";
 import { motion } from "motion/react";
-import { SlideshowContext } from "./slideshow";
+import { FrameIndexContext, SlideshowContext } from "./slideshow";
 import { FrameContext } from "./slideshow-frame";
 
 export type StringAnimationDirection =
@@ -179,9 +179,9 @@ export function Element({
 }: ElementProps) {
   const slideshowContext = useContext(SlideshowContext);
   const frameContext = useContext(FrameContext);
+  const animIn = useContext(FrameIndexContext);
   const elementRef = useRef<HTMLDivElement>(null);
 
-  const animIn = frameContext.animIn;
   const paddingSize = frameContext.paddingSize ?? 0;
 
   const size = {

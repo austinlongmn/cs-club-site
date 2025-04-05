@@ -4,13 +4,9 @@ import {
   useState,
   useRef,
   useEffect,
-  Children,
-  cloneElement,
   ReactElement,
   useLayoutEffect,
 } from "react";
-
-import { FrameProps } from "./slideshow-frame";
 
 export interface SlideshowContextType {
   animationDistance: number;
@@ -18,6 +14,8 @@ export interface SlideshowContextType {
   width: number;
   height: number;
 }
+
+export const FrameIndexContext = createContext(false);
 
 export const SlideshowContext = createContext({
   animationDistance: 20,
@@ -32,7 +30,7 @@ export interface SlideshowProps {
   animationDistance?: number;
   animationTime?: number;
   previewFrame?: number | null;
-  children: ReactElement<FrameProps>[];
+  frames: ReactElement[];
 }
 
 export function Slideshow({
@@ -41,12 +39,12 @@ export function Slideshow({
   inBetweenTime = 0.2,
   animationTime = 1,
   previewFrame = null,
-  children,
+  frames,
 }: SlideshowProps) {
   const [currentFrame, setCurrentFrame] = useState(0);
   const [animateIn, setAnimateIn] = useState(true);
   const timeouts = useRef<NodeJS.Timeout[]>([]); // Track timeouts
-  const containerRef = useRef<HTMLDivElement>(null); // FIXME: we need to wait until this is set before rendering things.
+  const containerRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState<{ width: number; height: number }>({
     width: -1,
     height: -1,
@@ -84,7 +82,7 @@ export function Slideshow({
                 timeouts.current.push(
                   setTimeout(() => {
                     setCurrentFrame(
-                      (prevFrame) => (prevFrame + 1) % Children.count(children)
+                      (prevFrame) => (prevFrame + 1) % frames.length
                     );
                     setAnimateIn(true);
 
@@ -108,7 +106,7 @@ export function Slideshow({
     } else {
       setCurrentFrame(previewFrame);
     }
-  }, [advanceTime, animationTime, children, inBetweenTime, previewFrame]); // Run effect when `children` change
+  }, [advanceTime, animationTime, frames.length, inBetweenTime, previewFrame]);
 
   return (
     <SlideshowContext
@@ -120,14 +118,15 @@ export function Slideshow({
       }}
     >
       <div ref={containerRef} className="relative h-full w-full">
-        {Children.map(
-          children,
-          (child, index) =>
-            currentFrame == index &&
-            cloneElement(child, {
-              animIn: animateIn,
-            })
-        )}
+        {frames.map((frame, index) => {
+          return (
+            currentFrame == index && (
+              <FrameIndexContext key={index} value={animateIn}>
+                {frame}
+              </FrameIndexContext>
+            )
+          );
+        })}
       </div>
     </SlideshowContext>
   );

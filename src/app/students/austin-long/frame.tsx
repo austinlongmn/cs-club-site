@@ -1,8 +1,8 @@
-import { Frame, Element, FrameProps } from "@/components/slideshow";
+import { Frame, Element } from "@/components/slideshow";
 
-export default function SlideshowFrame(props: FrameProps) {
+export default function SlideshowFrame() {
   return (
-    <Frame paddingSize={5} {...props}>
+    <Frame paddingSize={5}>
       <Element
         x={25}
         y={10}
