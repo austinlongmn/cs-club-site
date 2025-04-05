@@ -81,7 +81,7 @@ export default async function Page() {
         <Image
           src={profilePic}
           alt="A headshot of Austin"
-          className="mx-auto h-64 w-auto rounded-md md:h-fit"
+          className="mx-auto h-64 w-auto rounded-md md:h-84"
         />
       </div>
       <Heading2>Projects</Heading2>
