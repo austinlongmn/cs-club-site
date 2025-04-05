@@ -4,6 +4,7 @@ export interface ProjectMetadata {
   title?: string;
   thumbnailURL?: string;
   route?: string;
+  description?: string;
 }
 
 const cdnBasename = "https://projects-md.cdn.austinlong.dev";
