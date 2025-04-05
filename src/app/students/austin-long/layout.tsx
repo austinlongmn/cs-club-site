@@ -1,6 +1,6 @@
 import { Exo_2 } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
-import "highlight.js/styles/base16/chalk.css"
+import "highlight.js/styles/base16/chalk.css";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],

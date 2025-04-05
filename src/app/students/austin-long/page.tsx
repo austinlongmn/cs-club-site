@@ -13,7 +13,7 @@ interface ProjectPreviewProps {
 function ProjectPreview({ project, reverse }: ProjectPreviewProps) {
   return (
     <div
-      className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} mb-10 md:min-h-64 bg-zinc-950 p-4 md:p-10 rounded-md md:rounded-xl`}
+      className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} mb-10 rounded-md bg-zinc-950 p-4 md:min-h-64 md:rounded-xl md:p-10`}
     >
       <div className="flex grow flex-col md:min-h-64">
         <h3
@@ -31,7 +31,7 @@ function ProjectPreview({ project, reverse }: ProjectPreviewProps) {
       </div>
       {project.thumbnailURL && (
         <div className={`pt-10 md:pt-0 ${reverse ? "md:pr-6" : "md:pl-6"}`}>
-          <div className="relative h-64 w-64 mx-auto">
+          <div className="relative mx-auto h-64 w-64">
             <Image
               fill
               src={project.thumbnailURL}
