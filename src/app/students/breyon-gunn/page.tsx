@@ -6,6 +6,7 @@ interface Project {
   description: string;
   image: string;
   link: string;
+  external: boolean;
 }
 
 interface ProjectCardProps {
@@ -30,7 +31,10 @@ function ProjectCard({ project }: ProjectCardProps) {
       </p>
       <div className="mt-4 text-center">
         {project.link ? (
-          <Link href={project.link} target="_blank">
+          <Link
+            href={project.link}
+            target={project.external ? "_blank" : "_self"}
+          >
             <span className="inline-block cursor-pointer rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700">
               View Project
             </span>
@@ -53,6 +57,7 @@ export default function Home() {
         "A website for ProKart Indoor that allows users to view the track schedule.",
       image: "/images/breyon/prokart-icon.png",
       link: "https://www.prokartmg.com",
+      external: true,
     },
     {
       name: "Driver's License Scanning Software",
@@ -60,13 +65,23 @@ export default function Home() {
         "Software that scans driver's licenses, extracts the data, and fills out a form.",
       image: "/images/breyon/id_card.svg",
       link: "",
+      external: false,
     },
     {
-      name: "Stadium Research",
+      name: "Ticket Scanning Software",
       description:
-        "Research of how stadiums are using technology to improve the fan experience.",
-      image: "/images/breyon/stadium.svg",
-      link: "/students/breyon-gunn/stadium-research",
+        "Ticket scanning software that uses a rotating QR code to prevent ticket reuse.",
+      image: "/images/breyon/ticket.svg",
+      link: "/students/breyon-gunn/tickets",
+      external: false,
+    },
+    {
+      name: "PulseView Capture",
+      description:
+        "A real-time video streaming application that allows mobile phones to stream video to an admin panel using WebRTC technology.",
+      image: "/images/breyon/videocam.svg",
+      link: "/students/breyon-gunn/pulse-view-capture",
+      external: false,
     },
   ];
 
