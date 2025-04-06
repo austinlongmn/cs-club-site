@@ -24,13 +24,6 @@ export default function Page() {
             <h1 className="text-7xl text-white">Josie Mellick</h1>
             <p>University of Northwestern - St. Paul</p>
             <Link
-              href="mailto:mellick1110@gmail.com"
-              className="text-blue-400 hover:underline"
-            >
-              mellick1110@gmail.com
-            </Link>
-            {" ------ "}
-            <Link
               href="https://www.linkedin.com/in/josie-mellick-60b430327?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BXxqV4ocSQjyo4ZAktwkKvQ%3D%3D"
               className="text-blue-400 hover:underline"
             >
