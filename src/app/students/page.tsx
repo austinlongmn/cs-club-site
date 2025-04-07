@@ -25,9 +25,9 @@ const students = [
 
 const StudentsPage: React.FC = () => {
   return (
-    <div>
+    <div className="ml-5 md:ml-0">
       <h1 className="pt-10 text-5xl font-extrabold">Students List</h1>
-      <ul className="font- pt-5 text-xl text-gray-300">
+      <ul className="pt-5 text-xl text-gray-300">
         {students.map((student) => (
           <li
             className="mt-3 transition-colors duration-500 ease-in-out hover:font-bold hover:text-white"
