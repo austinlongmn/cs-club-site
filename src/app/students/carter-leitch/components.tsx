@@ -45,3 +45,32 @@ export function LinkedInButton() {
     </Link>
   );
 }
+
+export function BigRainbowText({text}: {text: string}) {
+    return (
+        <div className="flex justify-center">
+            <style>
+                {`
+                    @keyframes rainbow {
+                        0% { color: red; }
+                        14% { color: orange; }
+                        28% { color: yellow; }
+                        42% { color: green; }
+                        57% { color: blue; }
+                        71% { color: indigo; }
+                        85% { color: violet; }
+                        100% { color: red; }
+                    }
+
+                    .rainbow-text {
+                        animation: rainbow 7s linear infinite;
+                    }
+                `}
+            </style>
+            <span className="rainbow-text m-10 justify-center text-center text-5xl">
+                {text}
+            </span>
+        </div> 
+        
+    )
+}

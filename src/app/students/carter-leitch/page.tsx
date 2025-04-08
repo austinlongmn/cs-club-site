@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import FlipTile from "./client-components";
-import { BigHeader, LittleHeader, GitHubButton, LinkedInButton } from "./components";
+import { BigHeader, LittleHeader, GitHubButton, LinkedInButton, BigRainbowText } from "./components";
 import { me, majorProjects, minorProjects, aboutMeText } from "./data";
 
 export default function Page() {
@@ -10,7 +9,7 @@ export default function Page() {
     <>
       <div className="mx-auto w-7/8 rounded-2xl bg-neutral-900 p-5">
         <div>
-          <BigHeader text={me.name} />
+          <BigRainbowText text={me.name} />
           <div className="flex justify-center">
             <Image
               className="border-2 border-blue-800 shadow-md transition-transform duration-300 hover:scale-105"
