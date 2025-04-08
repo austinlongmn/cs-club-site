@@ -1,6 +1,5 @@
 import Image from "next/image";
-import React from "react";
-import FlipTile from "./client-components";
+import { FlipTile, HoverImage } from "./client-components";
 import { BigHeader, LittleHeader, GitHubButton, LinkedInButton, BigRainbowText } from "./components";
 import { me, majorProjects, minorProjects, aboutMeText } from "./data";
 
@@ -28,6 +27,8 @@ export default function Page() {
           <LittleHeader text={"About Me"} />
           <p className="text-center text-white">
             {aboutMeText}
+            <br />
+            <HoverImage text={"Test"} imagePath={"/images/carter/crtrltch.jpg"} />
           </p>
         </div>
 

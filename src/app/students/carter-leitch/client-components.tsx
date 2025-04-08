@@ -1,7 +1,9 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
+import Image from "next/image";
 
-export default function FlipTile({
+
+export function FlipTile({
   frontText,
   backText,
   frontStyle,
@@ -27,6 +29,34 @@ export default function FlipTile({
       >
         <h3>{flipped ? backText : frontText}</h3>
       </div>
+    </div>
+  );
+}
+
+export function HoverImage({text, imagePath}: {text: string, imagePath: string}) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div className="relative flex flex-col items-center">
+      <div
+        className="text-white text-lg cursor-pointer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {text}
+      </div>
+
+      {isHovered && (
+        <div className="absolute bottom-7 translate-x-40 z-50">
+          <Image
+            className="rounded-lg shadow-lg"
+            src={imagePath}
+            alt="Revealed Image"
+            width={250}
+            height={200}
+          />
+        </div>
+      )}
     </div>
   );
 }
