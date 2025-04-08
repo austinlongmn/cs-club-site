@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import FlipTile from "./client-components";
 import { BigHeader, LittleHeader, GitHubButton, LinkedInButton } from "./components";
-import { me, majorProjects, minorProjects } from "./data";
+import { me, majorProjects, minorProjects, aboutMeText } from "./data";
 
 export default function Page() {
   return (
@@ -28,12 +28,7 @@ export default function Page() {
         <div>
           <LittleHeader text={"About Me"} />
           <p className="text-center text-white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies nunc,
-            nec ultricies nunc nunc nec. Nullam tincidunt, nunc nec ultricies
-            ultricies, nunc nunc ultricies nunc, nec ultricies nunc nunc nec.
-            Nullam tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies
-            nunc, nec ultricies
+            {aboutMeText}
           </p>
         </div>
 
