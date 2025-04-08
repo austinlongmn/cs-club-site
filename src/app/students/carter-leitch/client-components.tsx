@@ -39,7 +39,7 @@ export function HoverImage({text, imagePath}: {text: string, imagePath: string})
   return (
     <div className="relative flex flex-col items-center">
       <div
-        className="text-white text-lg cursor-pointer"
+        className="text-white text-lg cursor-pointer underline"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
