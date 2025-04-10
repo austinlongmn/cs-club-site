@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { FlipTile, HoverImage } from "./client-components";
-import { BigHeader, LittleHeader, GitHubButton, LinkedInButton, BigRainbowText } from "./components";
-import { me, majorProjects, minorProjects, aboutMeText } from "./data";
+import {
+  BigHeader,
+  LittleHeader,
+  GitHubButton,
+  LinkedInButton,
+  BigRainbowText,
+} from "./components";
+import { me, majorProjects, minorProjects } from "./data";
 
 export default function Page() {
   return (
@@ -26,9 +32,39 @@ export default function Page() {
         <div>
           <LittleHeader text={"About Me"} />
           <p className="text-center text-white">
-            {aboutMeText}
+            Hello, I am Carter Leitch. I am a Computer Science major with an
+            Applied Mathematics minor. I am passionate about software develop,
+            and most of my projects involves web development. In addition to
+            software development and programming in general, I also enjoy
+            database design and data analysis.
             <br />
-            <HoverImage text={"Test"} imagePath={"/images/carter/crtrltch.jpg"} />
+            I have worked with many programming languages, including C, C++,
+            Java, JavaScript, Python, and C#. I would say I like Python and C#
+            the best, and I especially enjoy working with the .NET framework.
+            <br />
+            Outside of programming and software development, I enjoy playing
+            video games, reading, pickleball, and rock climbing. Over the past
+            few years, I have also enjoyed traveling. I have been to{" "}
+            <HoverImage
+              text={"Panama"}
+              imagePath={"/images/carter/panam1.jpg"}
+            />
+            ,{" "}
+            <HoverImage
+              text={"Canada"}
+              imagePath={"/images/carter/canada1.jpg"}
+            />
+            ,{" "}
+            <HoverImage
+              text={"Japan"}
+              imagePath={"/images/carter/japan1.jpg"}
+            />
+            , and{" "}
+            <HoverImage
+              text={"all around the U.S."}
+              imagePath={"/images/carter/america2.jpg"}
+            />
+            .
           </p>
         </div>
 

@@ -1,7 +1,6 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-
 
 export function FlipTile({
   frontText,
@@ -33,13 +32,19 @@ export function FlipTile({
   );
 }
 
-export function HoverImage({text, imagePath}: {text: string, imagePath: string}) {
+export function HoverImage({
+  text,
+  imagePath,
+}: {
+  text: string;
+  imagePath: string;
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative flex flex-col items-center">
+    <div className="realtive inline-block">
       <div
-        className="text-white text-lg cursor-pointer underline"
+        className="cursor-pointer text-white underline"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -47,7 +52,7 @@ export function HoverImage({text, imagePath}: {text: string, imagePath: string})
       </div>
 
       {isHovered && (
-        <div className="absolute bottom-7 translate-x-40 z-50">
+        <div className="absolute bottom-7 z-50 translate-x-10">
           <Image
             className="rounded-lg shadow-lg"
             src={imagePath}

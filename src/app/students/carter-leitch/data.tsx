@@ -47,6 +47,3 @@ export const majorProjects = [
     tech: "Tech 4",
   },
 ];
-
-export const aboutMeText =
-  "Hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies nunc, nec ultricies nunc nunc nec. Nullam tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies nunc, nec ultricies nunc nunc nec. Nullam tincidunt, nunc nec ultricies ultricies, nunc nunc ultricies nunc, nec ultricies";
