@@ -33,18 +33,18 @@ export default function Page() {
           <LittleHeader text={"About Me"} />
           <p className="text-center text-white">
             Hello, I am Carter Leitch. I am a Computer Science major with an
-            Applied Mathematics minor. I am passionate about software develop,
-            and most of my projects involves web development. In addition to
+            Applied Mathematics minor. I am passionate about software development,
+            and most of my projects involve web development. In addition to
             software development and programming in general, I also enjoy
             database design and data analysis.
             <br />
             I have worked with many programming languages, including C, C++,
             Java, JavaScript, Python, and C#. I would say I like Python and C#
-            the best, and I especially enjoy working with the .NET framework.
+            the most, and I especially enjoy working with the .NET framework.
             <br />
             Outside of programming and software development, I enjoy playing
-            video games, reading, pickleball, and rock climbing. Over the past
-            few years, I have also enjoyed traveling. I have been to{" "}
+            video games, reading, playing pickleball, and rock climbing. Over the past
+            few years, I have also enjoyed traveling quite a bit. I have been to{" "}
             <HoverImage
               text={"Panama"}
               imagePath={"/images/carter/panam1.jpg"}
@@ -64,7 +64,6 @@ export default function Page() {
               text={"all around the U.S."}
               imagePath={"/images/carter/america2.jpg"}
             />
-            .
           </p>
         </div>
 
