@@ -40,7 +40,7 @@ export function HoverImage({
   imagePath: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
-
+  // fix inconsistency with where hover image shows up on different screen sizes
   return (
     <div className="realtive inline-block">
       <div
@@ -50,7 +50,6 @@ export function HoverImage({
       >
         {text}
       </div>
-
       {isHovered && (
         <div className="absolute bottom-7 z-50 translate-x-10">
           <Image
