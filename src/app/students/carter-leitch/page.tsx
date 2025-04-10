@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { FlipTile, HoverImage } from "./client-components";
 import {
-  BigHeader,
   LittleHeader,
   GitHubButton,
   LinkedInButton,
