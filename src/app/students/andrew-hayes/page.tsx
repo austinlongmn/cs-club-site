@@ -21,7 +21,7 @@ export default function Page() {
       </div>
       <div className="flex justify-center">
         {/* GitHub logo button */}
-        <a
+        <Link
           href="https://github.com/andytheroo13"
           target="_blank"
           rel="noopener noreferrer"
@@ -34,7 +34,7 @@ export default function Page() {
             height={40}
             className="transition-transform duration-300 ease-in-out hover:scale-110"
           />
-        </a>
+        </Link>
       </div>
 
       {/*  quote box  */}
