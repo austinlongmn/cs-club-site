@@ -9,8 +9,8 @@ export default function Page() {
       </h1>
       <p className="mb-6 text-center">Welcome to this empty page.</p>
 
-       {/* Add the image here */}
-       <div className="mb-6 flex justify-center">
+      {/* Add the image here */}
+      <div className="mb-6 flex justify-center">
         <Image
           src="/images/andrew/ahayeswatermark.jpg"
           alt="Andrew leaning against a wall"
@@ -18,6 +18,14 @@ export default function Page() {
           height={450}
           className="rounded shadow-lg"
         />
+      </div>
+
+      {/*  quote box  */}
+      <div className="mb-6 rounded-lg bg-gray-800 p-4 text-center shadow-md">
+        <p className="italic text-lg text-green-300">
+          “Sometimes you just gotta ride the wave of bugs and patch it later.”
+        </p>
+        <p className="mt-2 text-sm text-gray-400">– Andrew, probably</p>
       </div>
 
       <section className="mb-6">
