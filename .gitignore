@@ -47,3 +47,6 @@ public/oss-licenses.json
 
 commit.bat
 run.bat
+
+src/app/students/austin-long/models/**/*.bin
+src/app/students/austin-long/models/**/*.gltf
