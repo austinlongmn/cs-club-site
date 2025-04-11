@@ -22,7 +22,7 @@ jobs:
           cache: "npm"
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Get Next.js cache
         uses: actions/cache@v4
@@ -38,7 +38,7 @@ jobs:
         run: npm run build
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
   lint:
     runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
           cache: "npm"
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Get Next.js cache
         uses: actions/cache@v4
@@ -81,7 +81,7 @@ jobs:
           cache: "npm"
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Check Formatting
         run: "npm run prettier:check"
