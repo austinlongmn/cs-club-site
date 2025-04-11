@@ -6,7 +6,7 @@ export default function Page() {
     <>
       <header>
         <h1 className="main-title">
-          <u>Welcome to Daniel's World!</u>
+          <u>Welcome to Daniel&apos;s World!</u>
         </h1>
       </header>
 
@@ -58,7 +58,8 @@ export default function Page() {
         </h2>
         <article className="about-me">
           <p>
-            I'm <mark>Daniel</mark>, a college student with a zest for life.
+            I&apos;m <mark>Daniel</mark>, a college student with a zest for
+            life.
           </p>
           <p>
             <strong>My hobbies include:</strong>
@@ -77,8 +78,8 @@ export default function Page() {
             </li>
           </ul>
           <p className="left-border">
-            As a member of UNW's Computer Science Club, I am proud to actively
-            contribute to designing our club's website.
+            As a member of UNW&apos;s Computer Science Club, I am proud to
+            actively contribute to designing our club&apos;s website.
           </p>
           <details>
             <summary>Why Computer Science?</summary>
@@ -90,15 +91,17 @@ export default function Page() {
           </details>
           <p>
             Beyond academics, I enjoy exploring new technologies and staying
-            updated with industry trends. Recently, I've been diving into{" "}
+            updated with industry trends. Recently, I&apos;ve been diving into{" "}
             <strong>machine learning</strong> and <strong>data science</strong>,
             areas that challenge me to think critically and analytically.
           </p>
           <aside>
             <p>
-              <i>"The best way to predict the future is to create it."</i> This
-              quote resonates deeply with me, as I strive to innovate and leave
-              a positive impact through my work.
+              <i>
+                &quot;The best way to predict the future is to create it.&quot;
+              </i>{" "}
+              This quote resonates deeply with me, as I strive to innovate and
+              leave a positive impact through my work.
             </p>
           </aside>
         </article>
@@ -132,7 +135,7 @@ export default function Page() {
             </tr>
             <tr>
               <td>Club Website</td>
-              <td>Revamped the CS Club's official site.</td>
+              <td>Revamped the CS Club&apos;s official site.</td>
               <td>HTML, CSS, JavaScript</td>
               <td>Ongoing</td>
             </tr>
