@@ -16,8 +16,25 @@ export default function Page() {
           alt="Andrew leaning against a wall"
           width={300}
           height={450}
-          className="rounded shadow-lg"
+          className="rounded shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
         />
+      </div>
+      <div className="flex justify-center">
+        {/* GitHub logo button */}
+        <Link
+          href="https://github.com/andytheroo13"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4"
+        >
+          <Image
+            src="/images/andrew/GitHubLogo.png"
+            alt="GitHub Logo"
+            width={40}
+            height={40}
+            className="transition-transform duration-300 ease-in-out hover:scale-110"
+          />
+        </Link>
       </div>
 
       {/*  quote box  */}
