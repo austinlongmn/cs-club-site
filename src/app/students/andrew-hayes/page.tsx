@@ -22,8 +22,8 @@ export default function Page() {
 
       {/*  quote box  */}
       <div className="mb-6 rounded-lg bg-gray-800 p-4 text-center shadow-md">
-        <p className="italic text-lg text-green-300">
-        “Bugs are like diamonds — the impurities make your program shine.”
+        <p className="text-lg text-green-300 italic">
+          “Bugs are like diamonds — the impurities make your program shine.”
         </p>
         <p className="mt-2 text-sm text-gray-400">– Andrew, probably</p>
       </div>
