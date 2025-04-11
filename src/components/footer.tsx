@@ -5,8 +5,8 @@ export default function Footer() {
     "hover:text-white hover:font-bold transition-colors duration-300 ease-in-out";
 
   return (
-    <footer className="flex w-screen flex-col items-center justify-center border-t border-gray-500 pt-10">
-      <div className="flex gap-10 pb-10 text-gray-400">
+    <footer className="flex w-full flex-col items-center justify-center border-t border-gray-500 px-4 pt-10">
+      <div className="flex w-full max-w-4xl flex-wrap justify-center gap-10 pb-10 text-center text-gray-400">
         <Link href="/" className={linkStyles}>
           Home
         </Link>
@@ -20,12 +20,12 @@ export default function Footer() {
           Competition Scores
         </Link>
       </div>
-      <div className="flex pb-2 text-gray-400">
+      <div className="flex w-full justify-center pb-2 text-gray-400">
         <Link href="/oss-attributions" className={linkStyles}>
           OSS Attributions
         </Link>
       </div>
-      <p className="flex text-center text-gray-400">
+      <p className="w-full px-4 text-center text-gray-400">
         &copy; {new Date().getFullYear()} Computer Science Club - University of
         Northwestern-St. Paul
       </p>
