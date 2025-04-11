@@ -37,6 +37,10 @@ const pages: Page[] = [
     description: "Competition Scores",
     route: "/competition-scores",
   },
+  {
+    description: "About",
+    route: "/about",
+  },
 ];
 
 const lg_num_items = 7;
