@@ -1,4 +1,4 @@
-# CS Club Site
+# [CS Club Site](https://unwcsclub.dev/)
 
 ![GitHub contributors](https://img.shields.io/github/contributors/UNW-Computer-Science-Club/cs-club-site)
 ![Website status](https://img.shields.io/website?url=https%3A%2F%2Funwcsclub.dev%2F)

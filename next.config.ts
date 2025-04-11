@@ -1,7 +1,17 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "projects-md.cdn.austinlong.dev",
+        pathname: "/images/**",
+      },
+    ],
+  },
+};
 
 if (process.env.PROJECT_PHASE === "production_build") {
   const LicensePlugin = require("webpack-license-plugin");
