@@ -18,15 +18,20 @@ export default function Josiah() {
             <br></br>So far, I would say python has been the most fun language
             to learn.
           </p>
-          <Link href="https://github.com/JP-STHS" target="_blank">
-            <Image
-              className="pt-6"
-              src="/images/josiah/github-mark-white.png"
-              width={100}
-              height={100}
-              alt="Github"
-            />
-          </Link>
+          <div className="pt-6 text-center">
+            <Link
+              href="https://github.com/JP-STHS"
+              target="_blank"
+              className="inline-block"
+            >
+              <Image
+                src="/images/josiah/github-mark-white.png"
+                width={100}
+                height={100}
+                alt="Github"
+              />
+            </Link>
+          </div>
         </div>
         <Image
           className="pt-6"
@@ -35,13 +40,7 @@ export default function Josiah() {
           height={100}
           alt="systems analysis and design poster"
         />
-        {/* <Image
-              className="pt-6"
-              src="/images/josiah/indistress.png"
-              width={500}
-              height={100}
-              alt="systems analysis and design poster"
-            /> */}
+
         <div id="projects" className="w-250 px-8 pt-30 text-center text-[25px]">
           <p>
             <b>Projects</b>
@@ -60,13 +59,54 @@ export default function Josiah() {
           </p>
         </div>
       </div>
-      <div id="bottom stuff" className="px-8 pt-30 text-center text-[25px]">
-        <p>
-          <b>Personal Projects</b>
-        </p>
-        <p>some kind of scrolling system here</p>
+      <div className="flex space-x-10">
+        <Image
+          className="pt-6"
+          src="/images/josiah/indistress.png"
+          width={500}
+          height={100}
+          alt="systems analysis and design poster"
+        />
+        <Image
+          className="pt-6"
+          src="/images/josiah/indistress2.png"
+          width={500}
+          height={100}
+          alt="systems analysis and design poster"
+        />
       </div>
-      {/* Java Script in React */}
+
+      <div className="flex justify-center">
+        <div className="w-150 overflow-auto bg-gray-800 whitespace-nowrap">
+          {
+            //  <a
+            //     href="#home"
+            //     className="inline-block px-4 py-3 text-center text-white hover:bg-gray-500"
+            //   >
+            //     Home
+            //   </a>
+            //   <a
+            //     href="#news"
+            //     className="inline-block px-4 py-3 text-center text-white hover:bg-gray-500"
+            //   >
+            //     News
+            //   </a>
+            //   <a
+            //     href="#contact"
+            //     className="inline-block px-4 py-3 text-center text-white hover:bg-gray-500"
+            //   >
+            //     Contact
+            //   </a>
+            //   <a
+            //     href="#about"
+            //     className="inline-block px-4 py-3 text-center text-white hover:bg-gray-500"
+            //   >
+            //     About
+            //   </a>
+          }
+        </div>
+      </div>
+      {/* Java Script in React????*/}
       <script></script>
     </div>
   );
