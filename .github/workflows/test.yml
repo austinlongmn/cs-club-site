@@ -37,9 +37,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Install Dependencies
-        run: npm ci
-
   lint:
     runs-on: ubuntu-latest
     steps:
