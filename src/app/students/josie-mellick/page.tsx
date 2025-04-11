@@ -98,7 +98,9 @@ export default function Page() {
         </div>
 
         {/* Footer note */}
-        <h2 className="py-6 text-center text-2xl text-white">More to come...</h2>
+        <h2 className="py-6 text-center text-2xl text-white">
+          More to come...
+        </h2>
       </div>
     </div>
   );
