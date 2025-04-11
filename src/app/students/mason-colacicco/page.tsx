@@ -52,12 +52,11 @@ export default function Page() {
             experience to get back into topics that I may have forgotten a
             little bit about. It has helped me deepen my understanding of
             fundemental topics and express my understanding of the topics
-            through supporting other's understanding as well.
+            through supporting other&apos;s understanding as well.
           </p>
         </div>
       </div>
       <style jsx>
-        {" "}
         {`
           .project-flex {
             display: flex;
