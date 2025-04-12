@@ -20,6 +20,7 @@ export default async function Page({
       <h1>{projectData.metadata.title ?? "[No Title]"}</h1>
       <div
         dangerouslySetInnerHTML={{ __html: projectData.sanitizedContent }}
+        id="project-contents"
       ></div>
     </div>
   );
