@@ -7,7 +7,7 @@ export interface ProjectMetadata {
   description?: string;
 }
 
-const cdnBasename = "https://projects-md.cdn.austinlong.dev";
+export const cdnBasename = "https://projects-md.cdn.austinlong.dev";
 
 export async function getAllProjects(): Promise<ProjectMetadata[]> {
   const projectsRepsonse = await fetch(`${cdnBasename}/manifest.json`);
@@ -16,28 +16,13 @@ export async function getAllProjects(): Promise<ProjectMetadata[]> {
   return contents;
 }
 
-export async function getMetadata(
-  project: string
-): Promise<ProjectMetadata | null> {
-  if (!project.match(/^[A-Za-z-]+$/)) {
-    return null;
-  }
-  const metadataResponse = await fetch(
-    `${cdnBasename}/${project}.metadata.json`
-  );
-  if (metadataResponse.status == 404) {
-    return null;
-  }
-  return await metadataResponse.json();
-}
-
 export async function getSanitizedProjectContent(
   project: string
 ): Promise<string | null> {
   if (!project.match(/^[A-Za-z-]+$/)) {
     return null;
   }
-  const htmlResponse = await fetch(`${cdnBasename}/${project}.html`);
+  const htmlResponse = await fetch(`${cdnBasename}/${project}/`);
 
   if (htmlResponse.status == 404) {
     return null;
@@ -46,6 +31,19 @@ export async function getSanitizedProjectContent(
   const unsafeContent = await htmlResponse.text();
 
   return DOMPurify.sanitize(unsafeContent);
+}
+
+export async function getMetadata(
+  project: string
+): Promise<ProjectMetadata | null> {
+  const allProjects = await getAllProjects();
+
+  return (
+    allProjects.find((projectMetadata) => {
+      console.log(projectMetadata.route, project);
+      return projectMetadata.route == `/${project}/`;
+    }) ?? null
+  );
 }
 
 export interface Project {
