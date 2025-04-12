@@ -17,7 +17,7 @@
   font-family: var(--font-jetbrains-mono);
   color: var(--color-zinc-300);
   background-color: var(--color-zinc-900);
-  padding-inline: calc(var(--spacing) * 1.0);
+  padding-inline: calc(var(--spacing) * 1);
   padding-block: calc(var(--spacing) * 0.25);
   border-radius: var(--radius-sm);
 }
