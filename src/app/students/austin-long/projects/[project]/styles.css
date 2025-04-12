@@ -1,5 +1,33 @@
-main * {
-  font-size: 1.2rem;
+#project-contents > * {
+  font-size: var(--text-lg);
+  padding-bottom: calc(var(--spacing) * 4);
+}
+
+#project-contents pre {
+  border-radius: var(--radius-sm);
+  padding: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 4);
+}
+
+#project-contents pre code {
+  background-color: transparent;
+}
+
+#project-contents code {
+  font-family: var(--font-jetbrains-mono);
+  color: var(--color-zinc-300);
+  background-color: var(--color-zinc-900);
+  padding-inline: calc(var(--spacing) * 1.0);
+  padding-block: calc(var(--spacing) * 0.25);
+  border-radius: var(--radius-sm);
+}
+
+#project-contents a:hover {
+  color: var(--color-blue-500);
+}
+
+#project-contents a {
+  color: var(--color-blue-600);
 }
 
 main h1 {
@@ -7,12 +35,12 @@ main h1 {
   font-family: var(--font-jetbrains-mono);
 }
 
-main h2 {
+#project-contents h2 {
   font-size: 2rem;
   font-family: var(--font-jetbrains-mono);
 }
 
-main h3 {
+#project-contents h3 {
   font-size: 1.5rem;
   font-family: var(--font-jetbrains-mono);
 }

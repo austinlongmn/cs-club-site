@@ -40,7 +40,6 @@ export async function getMetadata(
 
   return (
     allProjects.find((projectMetadata) => {
-      console.log(projectMetadata.route, project);
       return projectMetadata.route == `/${project}/`;
     }) ?? null
   );
