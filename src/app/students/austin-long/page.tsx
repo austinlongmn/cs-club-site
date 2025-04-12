@@ -1,7 +1,11 @@
 import Image from "next/image";
 import profilePic from "@/../public/images/austin/headshot.jpeg";
 
-import { getAllProjects, ProjectMetadata } from "./lib/projects-md";
+import {
+  getAllProjects,
+  ProjectMetadata,
+  cdnBasename,
+} from "./lib/projects-md";
 import { JSX } from "react";
 import Link from "next/link";
 
@@ -35,7 +39,7 @@ function ProjectPreview({ project, reverse }: ProjectPreviewProps) {
             <Image
               fill
               sizes=""
-              src={project.thumbnailURL}
+              src={cdnBasename + project.thumbnailURL}
               alt={`Thumbnail for ${project.title}`}
               className="rounded-md bg-black object-contain"
             />
