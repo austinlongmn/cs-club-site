@@ -16,11 +16,16 @@ export default async function Page({
   }
 
   return (
-    <div className="pt-5 pb-5">
-      <h1>{projectData.metadata.title ?? "[No Title]"}</h1>
+    <div className="p-5">
+      <h1 className="pb-5 font-(family-name:--font-jetbrains-mono) text-3xl sm:text-5xl">
+        {projectData.metadata.title ?? "[No Title]"}
+      </h1>
+      {projectData.metadata.description && (
+        <p className="pb-4 text-zinc-400">{projectData.metadata.description}</p>
+      )}
       <div
         dangerouslySetInnerHTML={{ __html: projectData.sanitizedContent }}
-        id="project-contents"
+        className="project-contents"
       ></div>
     </div>
   );
