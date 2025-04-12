@@ -1,19 +1,19 @@
-#project-contents > * {
+.project-contents > * {
   font-size: var(--text-lg);
   padding-bottom: calc(var(--spacing) * 4);
 }
 
-#project-contents pre {
+.project-contents pre {
   border-radius: var(--radius-sm);
   padding: calc(var(--spacing) * 4);
   margin-bottom: calc(var(--spacing) * 4);
 }
 
-#project-contents pre code {
+.project-contents pre code {
   background-color: transparent;
 }
 
-#project-contents code {
+.project-contents code {
   font-family: var(--font-jetbrains-mono);
   color: var(--color-zinc-300);
   background-color: var(--color-zinc-900);
@@ -22,25 +22,20 @@
   border-radius: var(--radius-sm);
 }
 
-#project-contents a:hover {
+.project-contents a:hover {
   color: var(--color-blue-500);
 }
 
-#project-contents a {
+.project-contents a {
   color: var(--color-blue-600);
 }
 
-main h1 {
-  font-size: 3rem;
-  font-family: var(--font-jetbrains-mono);
-}
-
-#project-contents h2 {
+.project-contents h2 {
   font-size: 2rem;
   font-family: var(--font-jetbrains-mono);
 }
 
-#project-contents h3 {
+.project-contents h3 {
   font-size: 1.5rem;
   font-family: var(--font-jetbrains-mono);
 }
