@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
 };
 
 if (process.env.PROJECT_PHASE == "production_build") {
-  nextConfig.assetPrefix = "https://cdn.unwcsclub.dev/";
+  nextConfig.assetPrefix = "https://cdn.unwcsclub.dev";
 }
 
 // Generate OSS attributions only when using Webpack (doesn't work with Turbopack)
