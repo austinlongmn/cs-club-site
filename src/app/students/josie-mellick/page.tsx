@@ -5,10 +5,24 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Page() {
-  const [isZoomed, setIsZoomed] = useState(false);
+  type ProjectKey = "jackLinks" | "unreal";
 
-  const handleImageClick = () => {
-    setIsZoomed(!isZoomed);
+  const [expanded, setExpanded] = useState<Record<ProjectKey, boolean>>({
+    jackLinks: false,
+    unreal: false,
+  });
+  
+  const [zoomed, setZoomed] = useState<Record<ProjectKey, boolean>>({
+    jackLinks: false,
+    unreal: false,
+  });
+  
+  const toggleProject = (key: ProjectKey) => {
+    setExpanded((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+  
+  const toggleZoom = (key: ProjectKey) => {
+    setZoomed((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
   return (
@@ -38,6 +52,13 @@ export default function Page() {
             >
               LinkedIn
             </Link>
+            {" ------ "}
+            <Link
+              href="https://github.com/JosieMellick"
+              className="text-blue-400 hover:underline"
+            >
+              GitHub
+            </Link>
           </div>
         </div>
 
@@ -65,36 +86,76 @@ export default function Page() {
         {/* Projects section */}
         <h1 className="py-6 text-center text-5xl text-white">Projects</h1>
 
-        <div className="mx-auto max-w-3xl rounded-lg bg-gray-900 p-4 shadow">
-          <h2 className="py-4 text-left text-2xl text-white">
-            Offloading Automation for Jack Links
+        {/* Jack Links Project */}
+        <div className="mx-auto max-w-3xl rounded-lg bg-gray-900 p-4 shadow mb-6">
+          <h2
+            onClick={() => toggleProject("jackLinks")}
+            className="py-4 text-left text-2xl text-white cursor-pointer hover:text-blue-400 transition-colors duration-200"
+          >
+            ▸ Offloading Automation for Jack Links
           </h2>
-          <p className="text-md py-4 text-left text-white">
-            A partner and I designed and created a script to automate the
-            multi-step offboarding process. We designed it to work with the
-            pre-existing Microsoft Entra system. This project was completed for
-            UNW&apos;s Systems Analysis & Design class. The poster we made for
-            this project is shown below.
-          </p>
 
-          {/* Click-to-enlarge image */}
-          <div className="flex flex-col items-center justify-center">
-            <div
-              onClick={handleImageClick}
-              className="cursor-pointer transition-all duration-300 ease-in-out"
-            >
-              <Image
-                className="rounded-lg"
-                width={isZoomed ? 900 : 260}
-                height={isZoomed ? 700 : 200}
-                src="/images/josie/JackLinksProject.png"
-                alt="Systems A&D Poster"
-              />
-              <p className="mt-2 text-sm text-gray-400">
-                {isZoomed ? "Click to shrink" : "Click to enlarge"}
+          {expanded.jackLinks && (
+            <div className="pt-2">
+              <p className="text-md py-4 text-left text-white">
+                A partner and I designed and created a script to automate the
+                multi-step offboarding process. We designed it to work with the
+                pre-existing Microsoft Entra system. This project was completed
+                for UNW&apos;s Systems Analysis & Design class. The poster we
+                made for this project is shown below.
               </p>
+
+              <div className="flex flex-col items-center justify-center">
+                <div
+                  onClick={() => toggleZoom("jackLinks")}
+                  className="cursor-pointer transition-all duration-300 ease-in-out"
+                >
+                  <Image
+                    className="rounded-lg"
+                    width={zoomed.jackLinks ? 900 : 260}
+                    height={zoomed.jackLinks ? 700 : 200}
+                    src="/images/josie/JackLinksProject.png"
+                    alt="Systems A&D Poster"
+                  />
+                  <p className="mt-2 text-sm text-gray-400">
+                    {zoomed.jackLinks ? "Click to shrink" : "Click to enlarge"}
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
+        </div>
+
+        {/* Unreal Engine Project */}
+        <div className="mx-auto max-w-3xl rounded-lg bg-gray-900 p-4 shadow mb-6">
+          <h2
+            onClick={() => toggleProject("unreal")}
+            className="py-4 text-left text-2xl text-white cursor-pointer hover:text-blue-400 transition-colors duration-200"
+          >
+            ▸ Cowboy Game Demo (In-Progress)
+          </h2>
+
+          {expanded.unreal && (
+            <div className="pt-2">
+              <p className="text-md py-4 text-left text-white">
+                I am currently in the process of learning how to use Unreal
+                Engine. This is a very basic project I made to test out Unreal's
+                physics and shooting mechanics. I also experimented with
+                importing assets including meshes, sounds, and textures. This
+                was created for a programming competition where the prompt was
+                to make a cowboy-themed game within an hour and a half time
+                limit. A demo for this project can be found below.
+              </p>
+              <div className="flex flex-col items-center justify-center">
+                <video
+                controls
+                className="rounded-lg shadow my-4"
+                width={800}>
+                <source src="/images/josie/Cowboy Game 2.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Footer note */}
