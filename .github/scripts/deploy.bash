@@ -22,14 +22,7 @@ else
 	echo "Private key is in-place."
 fi
 
-cp -r \
-	.next \
-	next.config.ts \
-	package-lock.json \
-	package.json \
-	public \
-	server.js \
-	$app_dir
+cp -r .next/standalone $app_dir
 
 function remote_cmd {
 	ssh -T -p $WEBSERVER_SSH_PORT -i "$identity_file" -o IdentitiesOnly=yes -o BatchMode=yes $WEBSERVER_SSH_USER@$WEBSERVER_SSH_HOST $@ | \
@@ -42,14 +35,7 @@ remote_cmd << EOF
 	echo "Getting ready to receive..."
 	mkdir ~/app-staging
 	cd ~/app
-	cp -r \
-		.next \
-		next.config.ts \
-		package-lock.json \
-		package.json \
-		public \
-		server.js \
-		~/app-staging
+	cp -r .next/standalone ~/app-staging
 EOF
 
 echo "Copying app to remote..."
@@ -65,8 +51,6 @@ remote_cmd << EOF
 	echo "Moving app into place..."
 	rm -rf ~/app
 	mv ~/app-staging ~/app
-  echo "Installing Node.js modules..."
-  cloudlinux-selector install-modules --json --interpreter nodejs --app-root ~/app
 	echo "Starting app..."
 	cloudlinux-selector start --json --interpreter nodejs --app-root ~/app || \
 		(mv ~/app.bck ~/app && \
