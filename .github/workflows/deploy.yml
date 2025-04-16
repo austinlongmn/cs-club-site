@@ -70,4 +70,4 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: "https://unwcsclub.dev"
-          cmd_params: "muffet https://unwcsclub.dev/ -b 8000 -v --include \"https://cdn.unwcsclub.dev/.*\" --one-page-only --color always"
+          cmd_params: '-b 8000 -v --include "https://cdn.unwcsclub.dev/.*" --one-page-only --color always'
