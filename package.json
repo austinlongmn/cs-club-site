@@ -6,7 +6,6 @@
     "dev": "next dev --turbopack",
     "build": "cross-env PROJECT_PHASE=development_build next build && node scripts/copy-attribution.js && node scripts/development-build-copy-static-assets.js",
     "build:production": "cross-env PROJECT_PHASE=production_build next build && node scripts/copy-attribution.js && node scripts/production-build-copy-public.js",
-    "build:cdn": "cross-env PROJECT_PHASE=production_build next build && node scripts/copy-attribution.js && node scripts/build-cdn.js",
     "start": "cross-env NODE_ENV=production node .next/standalone/server.js",
     "fix": "next lint --fix && prettier . --write",
     "lint": "next lint --max-warnings=0",
@@ -15,8 +14,6 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "cs-club-site": "file:",
-    "fastify": "^5.2.1",
     "highlight.js": "^11.11.1",
     "isomorphic-dompurify": "^2.22.0",
     "motion": "^12.0.0",
@@ -25,7 +22,6 @@
     "prismjs": "^1.30.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-icons": "^5.4.0",
     "react-syntax-highlighter": "^15.6.1",
     "sharp": "^0.34.1"
   },
