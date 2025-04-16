@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import Image from "next/image";
 
-export default function FlipTile({
+export function FlipTile({
   frontText,
   backText,
   frontStyle,
@@ -27,6 +28,39 @@ export default function FlipTile({
       >
         <h3>{flipped ? backText : frontText}</h3>
       </div>
+    </div>
+  );
+}
+
+export function HoverImage({
+  text,
+  imagePath,
+}: {
+  text: string;
+  imagePath: string;
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+  // fix inconsistency with where hover image shows up on different screen sizes
+  return (
+    <div className="realtive inline-block">
+      <div
+        className="cursor-pointer text-white underline"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {text}
+      </div>
+      {isHovered && (
+        <div className="absolute bottom-7 z-50 translate-x-10">
+          <Image
+            className="rounded-lg shadow-lg"
+            src={imagePath}
+            alt="Revealed Image"
+            width={250}
+            height={200}
+          />
+        </div>
+      )}
     </div>
   );
 }
