@@ -11,16 +11,16 @@ export default function Page() {
     jackLinks: false,
     unreal: false,
   });
-  
+
   const [zoomed, setZoomed] = useState<Record<ProjectKey, boolean>>({
     jackLinks: false,
     unreal: false,
   });
-  
+
   const toggleProject = (key: ProjectKey) => {
     setExpanded((prev) => ({ ...prev, [key]: !prev[key] }));
   };
-  
+
   const toggleZoom = (key: ProjectKey) => {
     setZoomed((prev) => ({ ...prev, [key]: !prev[key] }));
   };
@@ -87,10 +87,10 @@ export default function Page() {
         <h1 className="py-6 text-center text-5xl text-white">Projects</h1>
 
         {/* Jack Links Project */}
-        <div className="mx-auto max-w-3xl rounded-lg bg-gray-900 p-4 shadow mb-6">
+        <div className="mx-auto mb-6 max-w-3xl rounded-lg bg-gray-900 p-4 shadow">
           <h2
             onClick={() => toggleProject("jackLinks")}
-            className="py-4 text-left text-2xl text-white cursor-pointer hover:text-blue-400 transition-colors duration-200"
+            className="cursor-pointer py-4 text-left text-2xl text-white transition-colors duration-200 hover:text-blue-400"
           >
             ▸ Offloading Automation for Jack Links
           </h2>
@@ -127,10 +127,10 @@ export default function Page() {
         </div>
 
         {/* Unreal Engine Project */}
-        <div className="mx-auto max-w-3xl rounded-lg bg-gray-900 p-4 shadow mb-6">
+        <div className="mx-auto mb-6 max-w-3xl rounded-lg bg-gray-900 p-4 shadow">
           <h2
             onClick={() => toggleProject("unreal")}
-            className="py-4 text-left text-2xl text-white cursor-pointer hover:text-blue-400 transition-colors duration-200"
+            className="cursor-pointer py-4 text-left text-2xl text-white transition-colors duration-200 hover:text-blue-400"
           >
             ▸ Cowboy Game Demo (In-Progress)
           </h2>
@@ -139,19 +139,19 @@ export default function Page() {
             <div className="pt-2">
               <p className="text-md py-4 text-left text-white">
                 I am currently in the process of learning how to use Unreal
-                Engine. This is a very basic project I made to test out Unreal's
-                physics and shooting mechanics. I also experimented with
-                importing assets including meshes, sounds, and textures. This
-                was created for a programming competition where the prompt was
-                to make a cowboy-themed game within an hour and a half time
-                limit. A demo for this project can be found below.
+                Engine. This is a very basic project I made to test out
+                Unreal&apos;s physics and shooting mechanics. I also
+                experimented with importing assets including meshes, sounds, and
+                textures. This was created for a programming competition where
+                the prompt was to make a cowboy-themed game within an hour and a
+                half time limit. A demo for this project can be found below.
               </p>
               <div className="flex flex-col items-center justify-center">
-                <video
-                controls
-                className="rounded-lg shadow my-4"
-                width={800}>
-                <source src="/images/josie/Cowboy Game 2.mp4" type="video/mp4" />
+                <video controls className="my-4 rounded-lg shadow" width={800}>
+                  <source
+                    src="/images/josie/Cowboy Game 2.mp4"
+                    type="video/mp4"
+                  />
                 </video>
               </div>
             </div>
