@@ -22,7 +22,8 @@ else
 	echo "Private key is in-place."
 fi
 
-cp -r .next/standalone $app_dir
+mkdir -p $app_dir/.next
+cp -r .next/standalone $app_dir/.next
 
 function remote_cmd {
 	ssh -T -p $WEBSERVER_SSH_PORT -i "$identity_file" -o IdentitiesOnly=yes -o BatchMode=yes $WEBSERVER_SSH_USER@$WEBSERVER_SSH_HOST $@ | \
@@ -35,7 +36,8 @@ remote_cmd << EOF
 	echo "Getting ready to receive..."
 	mkdir ~/app-staging
 	cd ~/app
-	cp -r .next/standalone ~/app-staging
+  mkdir -p ~/app-staging/.next
+	cp -r .next/standalone ~/app-staging/.next
 EOF
 
 echo "Copying app to remote..."
