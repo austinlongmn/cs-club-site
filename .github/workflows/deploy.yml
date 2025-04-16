@@ -59,7 +59,6 @@ jobs:
         run: netlify deploy --dir=cdn-build --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ variables.NETLIFY_SITE_ID }}
 
       - name: Check website
         uses: ruzickap/action-my-broken-link-checker@v2
