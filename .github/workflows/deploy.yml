@@ -37,7 +37,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: "npm run build:production"
 
       - name: Install Host Key
         run: |
@@ -52,5 +52,21 @@ jobs:
           WEBSERVER_SSH_PORT: ${{ secrets.WEBSERVER_SSH_PORT }}
           WEBSERVER_SSH_USER: ${{ secrets.WEBSERVER_SSH_USER }}
 
+      - name: Install Render CLI
+        run: |
+          curl -L https://github.com/render-oss/cli/releases/download/v1.1.0/cli_1.1.0_linux_amd64.zip -o render.zip
+          unzip render.zip
+          sudo mv cli_v1.1.0 /usr/local/bin/render
+
+      - name: Deploy CDN Assets
+        env:
+          # The CLI can authenticate via a Render API key without logging in.
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          CI: true
+        run: |
+          render deploys create ${{ secrets.RENDER_SERVICE_ID }} --output text --confirm --wait
+
       - name: Check website
-        run: "curl -fsSL https://unwcsclub.dev/ >/dev/null"
+        run: |
+          muffet https://unwcsclub.dev/ -b 8000 -v --include \
+            "https://cdn.unwcsclub.dev/.*" --one-page-only --color always
