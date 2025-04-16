@@ -67,6 +67,7 @@ jobs:
           render deploys create ${{ secrets.RENDER_SERVICE_ID }} --output text --confirm --wait
 
       - name: Check website
-        run: |
-          muffet https://unwcsclub.dev/ -b 8000 -v --include \
-            "https://cdn.unwcsclub.dev/.*" --one-page-only --color always
+        uses: ruzickap/action-my-broken-link-checker@v2
+        with:
+          url: "https://unwcsclub.dev"
+          cmd_params: "muffet https://unwcsclub.dev/ -b 8000 -v --include \"https://cdn.unwcsclub.dev/.*\" --one-page-only --color always"
