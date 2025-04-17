@@ -9,7 +9,7 @@ export default function imgixLoader({
   quality?: number;
 }) {
   if (src.startsWith("http")) {
-    return src
+    return src;
   }
   const url = new URL(`https://csc-site.imgix.net${src}`);
   const params = url.searchParams;
