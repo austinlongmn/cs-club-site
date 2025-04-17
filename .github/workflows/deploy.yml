@@ -61,14 +61,6 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
 
-      - name: Upload debug information
-        uses: actions/upload-artifact@v4
-        with:
-          name: state-after-build
-          path: .
-          retention-days: 1
-          include-hidden-files: true
-
       - name: Check website
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
