@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/image";
 import { FlipTile, HoverImage } from "./client-components";
 import {
   LittleHeader,

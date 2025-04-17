@@ -87,7 +87,7 @@ be fine.
 
 You cannot use the plain `<img>` tag because it does not have important
 optimizations that Next.js provides. Instead, we use the `<Image>` tag,
-imported from `next/image`. One major difference with this tag is that you will
+imported from `@/components/image`. One major difference with this tag is that you will
 get errors if you don't include the `alt`, `width`, and `height` props (React's
 equivalent to HTML attributes). Note that the `width` and `height` props are
 the exact width and height of the image in pixels, and not the width and height
@@ -98,7 +98,7 @@ that the image is displayed. Use CSS for that. You can learn more about
 Here's an example:
 
 ```tsx
-import Image from "next/image";
+import Image from "@/components/image";
 
 export default function Home() {
   return (

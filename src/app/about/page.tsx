@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/components/image";
 import CSCLogo from "@/svg/csc-logo.svg";
-import ClubFall2024 from "@/../public/images/general/club-fall24.png";
 
 function BibleVerse({
   reference,
@@ -48,9 +47,11 @@ export default function About() {
       <div className="flex flex-col items-center justify-between md:flex-row">
         <div className="flex items-center justify-center pt-10">
           <Image
-            src={ClubFall2024}
+            src="/images/general/club-fall24.png"
             alt="CSC Members in Fall 2024"
             className="w-300 rounded-md"
+            width={5101}
+            height={2884}
           />
         </div>
         <div className="flex flex-col items-center justify-center">
