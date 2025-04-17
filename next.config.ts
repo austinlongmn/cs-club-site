@@ -8,6 +8,10 @@ export default function config(phase: string) {
     images: {
       remotePatterns: [
         {
+          protocol: "https",
+          hostname: "csc-site.imgix.net",
+        },
+        {
           // Necessary for Austin's projects page
           protocol: "https",
           hostname: "projects-md.cdn.austinlong.dev",
@@ -17,12 +21,9 @@ export default function config(phase: string) {
     },
   };
 
-  if (process.env.PROJECT_PHASE == "production_build") {
-    nextConfig.assetPrefix = "https://cdn.unwcsclub.dev";
-  }
-
   // Generate OSS attributions only when using Webpack (doesn't work with Turbopack)
   if (phase === PHASE_PRODUCTION_BUILD) {
+    nextConfig.assetPrefix = "https://cdn.unwcsclub.dev";
     const LicensePlugin = require("webpack-license-plugin");
     nextConfig.webpack = (config, _options) => {
       if (!config.plugins) {

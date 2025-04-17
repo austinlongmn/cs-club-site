@@ -1,5 +1,4 @@
-import Image from "next/image";
-import profilePic from "@/../public/images/austin/headshot.jpeg";
+import Image from "@/components/image";
 
 import {
   getAllProjects,
@@ -84,7 +83,9 @@ export default async function Page() {
           </p>
         </div>
         <Image
-          src={profilePic}
+          src="/images/austin/headshot.jpeg"
+          width={668}
+          height={668}
           alt="A headshot of Austin"
           className="mx-auto h-52 w-auto rounded-md md:h-72"
         />
