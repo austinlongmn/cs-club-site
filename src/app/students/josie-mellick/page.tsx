@@ -139,12 +139,12 @@ export default function Page() {
             <div className="pt-2">
               <p className="text-md py-4 text-left text-white">
                 I am currently in the process of learning how to use Unreal
-                Engine. This is a very basic project I made to test out Unreal's
-                physics and shooting mechanics. I also experimented with
-                importing assets including meshes, sounds, and textures. This
-                was created for a programming competition where the prompt was
-                to make a cowboy-themed game within an hour and a half time
-                limit. A demo for this project can be found below.
+                Engine. This is a very basic project I made to test out
+                Unreal&apos;s physics and shooting mechanics. I also
+                experimented with importing assets including meshes, sounds, and
+                textures. This was created for a programming competition where
+                the prompt was to make a cowboy-themed game within an hour and a
+                half time limit. A demo for this project can be found below.
               </p>
               <div className="flex flex-col items-center justify-center">
                 <video controls className="my-4 rounded-lg shadow" width={800}>
