@@ -61,8 +61,13 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
 
+      - name: Debug assets
+        run: |
+          ls -Rlah .next/standalone
+          ls -Rlah cdn-build
+
       - name: Check website
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: "https://unwcsclub.dev"
-          cmd_params: '-b 8000 -v --include "https://cdn.unwcsclub.dev/.*" --one-page-only --color always'
+          cmd_params: '-b 8000 --include "https://unwcsclub.dev/.*" --include "https://cdn.unwcsclub.dev/.*"'
