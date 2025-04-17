@@ -52,7 +52,7 @@ export default function Page() {
             >
               LinkedIn
             </Link>
-            {" ------ "}
+            {" --- "}
             <Link
               href="https://github.com/JosieMellick"
               className="text-blue-400 hover:underline"
@@ -79,7 +79,8 @@ export default function Page() {
           </p>
           <p className="text-md py-4 text-left text-white">
             Outside of computer science, I enjoy playing the guitar and I&apos;m
-            on Northwestern&apos;s flag football team.
+            a reciever on Northwestern&apos;s flag football team. I also enjoy
+            playing video games which inspired my area of study.
           </p>
         </div>
 
@@ -87,12 +88,12 @@ export default function Page() {
         <h1 className="py-6 text-center text-5xl text-white">Projects</h1>
 
         {/* Jack Links Project */}
-        <div className="mx-auto mb-6 max-w-3xl rounded-lg bg-gray-900 p-4 shadow">
+        <div className="mx-auto mb-6 w-3xl rounded-lg bg-gray-900 p-4 shadow">
           <h2
             onClick={() => toggleProject("jackLinks")}
-            className="cursor-pointer py-4 text-left text-2xl text-white transition-colors duration-200 hover:text-blue-400"
+            className="cursor-pointer py-4 text-left text-2xl text-white transition-colors duration-200 hover:text-red-400"
           >
-            ▸ Offloading Automation for Jack Links
+            ▸ Offboarding Automation for Jack Links
           </h2>
 
           {expanded.jackLinks && (
@@ -127,10 +128,10 @@ export default function Page() {
         </div>
 
         {/* Unreal Engine Project */}
-        <div className="mx-auto mb-6 max-w-3xl rounded-lg bg-gray-900 p-4 shadow">
+        <div className="mx-auto mb-6 w-3xl rounded-lg bg-gray-900 p-4 shadow">
           <h2
             onClick={() => toggleProject("unreal")}
-            className="cursor-pointer py-4 text-left text-2xl text-white transition-colors duration-200 hover:text-blue-400"
+            className="cursor-pointer py-4 text-left text-2xl text-white transition-colors duration-200 hover:text-red-400"
           >
             ▸ Cowboy Game Demo (In-Progress)
           </h2>
