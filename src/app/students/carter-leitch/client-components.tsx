@@ -9,7 +9,7 @@ export function FlipTile({
   backStyle,
 }: {
   frontText: React.ReactNode;
-  backText: string;
+  backText: React.ReactNode;
   frontStyle: string;
   backStyle: string;
 }) {
