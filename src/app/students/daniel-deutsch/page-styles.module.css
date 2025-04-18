@@ -1,44 +1,21 @@
+/* Styles were created by Daniel. Translated to module.css by Austin. */
 /* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #e0e0e0;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
-.main-title {
+.mainTitle {
   text-align: center;
   font-size: 2.5rem;
   margin: 20px 0;
   color: #bb86fc;
 }
 
-.section-title {
+.sectionTitle {
   font-size: 2rem;
   margin: 20px 0;
   color: #bb86fc;
   text-align: center;
 }
 
-/* Paragraph Styling */
-p {
-  font-size: 1rem;
-  margin: 10px 0;
-  text-indent: 20px;
-  letter-spacing: 0.5px;
-}
-
-mark {
-  background-color: #cf6679;
-  color: #fff;
-  padding: 2px 5px;
-  border-radius: 4px;
-}
-
 /* Image Grid */
-.image-grid {
+.imageGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -46,17 +23,8 @@ mark {
   justify-items: center;
 }
 
-figure {
-  text-align: center;
-}
-
-figcaption {
-  font-size: 0.9rem;
-  margin-top: 5px;
-}
-
 /* About Me Section Styling */
-.about-me {
+.aboutMe {
   text-align: left; /* Ensures all text within this section is left-aligned */
   margin: 20px;
   padding: 15px;
@@ -65,20 +33,20 @@ figcaption {
   margin-bottom: 40px;
 }
 
-.about-me p,
-.about-me ul,
-.about-me details,
-.about-me aside {
+.aboutMe p,
+.aboutMe ul,
+.aboutMe details,
+.aboutMe aside {
   text-align: left; /* Explicitly aligns paragraphs, lists, and other elements */
   margin: 10px 0;
 }
 
-.about-me ul {
+.aboutMe ul {
   list-style-position: inside; /* Ensures bullet points align with the text */
   padding-left: 0; /* Removes extra padding for cleaner alignment */
 }
 
-.about-me aside {
+.aboutMe aside {
   font-style: italic; /* Adds emphasis to the quote */
   margin-top: 15px;
   border: 2px dashed #bb86fc; /* Dashed border */
@@ -89,38 +57,38 @@ figcaption {
   border-radius: 10px; /* Rounded corners */
 }
 
-.about-me p.left-border {
+.aboutMe p.leftBorder {
   border-left: 5px solid #bb86fc; /* Visible left border */
   padding: 15px; /* Extra padding */
   margin: 20px 0; /* Extra spacing */
 }
 
 /* Table Styling */
-.project-table {
+.projectTable {
   width: 90%;
   margin: 20px auto;
   border-collapse: collapse;
   margin-bottom: 40px;
 }
 
-.project-table th,
-.project-table td {
+.projectTable th,
+.projectTable td {
   border: 1px solid #333;
   padding: 10px;
   text-align: left;
 }
 
-.project-table th {
+.projectTable th {
   background-color: #1e1e1e;
   color: #bb86fc;
 }
 
-.project-table tr:nth-child(even) {
+.projectTable tr:nth-child(even) {
   background-color: #2c2c2c;
 }
 
 /* Contact Form */
-.contact-form {
+.contactForm {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
@@ -128,14 +96,14 @@ figcaption {
   border-radius: 8px;
 }
 
-.contact-form label {
+.contactForm label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contactForm input,
+.contactForm textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -145,7 +113,7 @@ figcaption {
   color: #e0e0e0;
 }
 
-.contact-form button {
+.contactForm button {
   display: block;
   width: 100%;
   padding: 10px;
@@ -156,18 +124,18 @@ figcaption {
   cursor: pointer;
 }
 
-.contact-form button:hover {
+.contactForm button:hover {
   background-color: #cf6679;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .main-title,
-  .section-title {
+  .mainTitle,
+  .sectionTitle {
     font-size: 1.8rem;
   }
 
-  .image-grid {
+  .imageGrid {
     grid-template-columns: 1fr;
   }
 }

@@ -1,26 +1,28 @@
 import Image from "@/components/image";
-import "./page-styles.css";
+import styles from "./page-styles.module.css";
+import GlobalStyles from "./styles";
 
 export default function Page() {
   return (
     <>
+      <GlobalStyles />
       <header>
-        <h1 className="main-title">
+        <h1 className={styles.mainTitle}>
           <u>Welcome to Daniel&apos;s World!</u>
         </h1>
       </header>
 
       <section aria-labelledby="gallery-title">
-        <h2 id="gallery-title" className="section-title">
+        <h2 id="gallery-title" className={styles.sectionTitle}>
           A Glimpse Into My Life
         </h2>
-        <div className="image-grid">
+        <div className={styles.imageGrid}>
           <figure>
             <Image
               src="/images/daniel/cs-club-website-activities-basketball.png"
               alt="Daniel playing basketball"
               width="300"
-              height="200"
+              height="300"
             />
             <figcaption>
               <strong>Basketball Enthusiast:</strong> Shooting hoops keeps me
@@ -32,7 +34,7 @@ export default function Page() {
               src="/images/daniel/cs-club-website-activities-coding.png"
               alt="Daniel coding on his laptop"
               width="300"
-              height="200"
+              height="300"
             />
             <figcaption>
               <strong>Coding Dilente:</strong> Developing apps is my passion.
@@ -43,7 +45,7 @@ export default function Page() {
               src="/images/daniel/cs-club-website-activities-chess.png"
               alt="Daniel playing chess"
               width="300"
-              height="200"
+              height="300"
             />
             <figcaption>
               <strong>Chess Aficionado:</strong> Strategy games sharpen my mind.
@@ -53,10 +55,10 @@ export default function Page() {
       </section>
 
       <section aria-labelledby="about-title">
-        <h2 id="about-title" className="section-title">
+        <h2 id="about-title" className={styles.sectionTitle}>
           About Me
         </h2>
-        <article className="about-me">
+        <article className={styles.aboutMe}>
           <p>
             I&apos;m <mark>Daniel</mark>, a college student with a zest for
             life.
@@ -77,7 +79,7 @@ export default function Page() {
               Using photography to capture the beauty of nature and the stars.
             </li>
           </ul>
-          <p className="left-border">
+          <p className={styles.leftBorder}>
             As a member of UNW&apos;s Computer Science Club, I am proud to
             actively contribute to designing our club&apos;s website.
           </p>
@@ -108,10 +110,10 @@ export default function Page() {
       </section>
 
       <section aria-labelledby="projects-title">
-        <h2 id="projects-title" className="section-title">
+        <h2 id="projects-title" className={styles.sectionTitle}>
           My Computer Science Projects
         </h2>
-        <table className="project-table">
+        <table className={styles.projectTable}>
           <thead>
             <tr>
               <th>Project Name</th>
@@ -144,10 +146,10 @@ export default function Page() {
       </section>
 
       <section aria-labelledby="contact-title">
-        <h2 id="contact-title" className="section-title">
+        <h2 id="contact-title" className={styles.sectionTitle}>
           Get In Touch
         </h2>
-        <form action="/submit" method="post" className="contact-form">
+        <form action="/submit" method="post" className={styles.contactForm}>
           <label htmlFor="name">Your Name:</label>
           <input
             type="text"
