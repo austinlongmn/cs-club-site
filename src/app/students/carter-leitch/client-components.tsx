@@ -8,7 +8,7 @@ export function FlipTile({
   frontStyle,
   backStyle,
 }: {
-  frontText: string;
+  frontText: React.ReactNode;
   backText: string;
   frontStyle: string;
   backStyle: string;
@@ -20,7 +20,7 @@ export function FlipTile({
 
   return (
     <div
-      className={`relative m-2 flex h-40 w-40 cursor-pointer items-center justify-center rounded-lg bg-blue-800 text-white shadow-lg transition-transform duration-300 hover:scale-105 ${flipped ? "rotate-y-180" : ""}`}
+      className={`m-2 flex h-40 w-40 cursor-pointer items-center justify-center rounded-lg bg-blue-800 text-white shadow-lg transition-transform duration-300 hover:scale-105 ${flipped ? "rotate-y-180" : ""}`}
       onClick={handleClick}
     >
       <div
@@ -72,7 +72,7 @@ export function HoverImage({
         {text}
       </div>
       {isHovered && (
-        <div className="absolute bottom-5 left-full z-5 h-54 w-54 rounded-lg shadow-lg">
+        <div className="absolute bottom-5 left-full z-49 h-54 w-54 rounded-lg shadow-lg">
           <Image
             className="absolute bottom-0 left-0 rounded-lg object-contain shadow-lg"
             src={imagePath}

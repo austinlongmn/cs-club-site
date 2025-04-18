@@ -75,7 +75,7 @@ export default function Page() {
               style={{ gridTemplateColumns: "repeat(auto-fit, 200px)" }}
             >
               {majorProjects.map((project) => (
-                <li key={project.name} className="flex w-45 justify-center">
+                <li key={project.projNum} className="flex w-45 justify-center">
                   <FlipTile
                     frontText={project.name}
                     backText={project.description}
