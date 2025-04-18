@@ -1,5 +1,12 @@
 import DOMPurify from "isomorphic-dompurify";
 
+const fetchCacheOptions: RequestInit = {
+  cache: "force-cache",
+  next: {
+    revalidate: 60 * 60 * 24,
+  },
+};
+
 export interface ProjectMetadata {
   title?: string;
   thumbnailURL?: string;
@@ -10,7 +17,10 @@ export interface ProjectMetadata {
 export const cdnBasename = "https://projects-md.cdn.austinlong.dev";
 
 export async function getAllProjects(): Promise<ProjectMetadata[]> {
-  const projectsRepsonse = await fetch(`${cdnBasename}/manifest.json`);
+  const projectsRepsonse = await fetch(
+    `${cdnBasename}/manifest.json`,
+    fetchCacheOptions
+  );
   const contents = await projectsRepsonse.json();
 
   return contents;
@@ -22,7 +32,10 @@ export async function getSanitizedProjectContent(
   if (!project.match(/^[A-Za-z-]+$/)) {
     return null;
   }
-  const htmlResponse = await fetch(`${cdnBasename}/${project}/`);
+  const htmlResponse = await fetch(
+    `${cdnBasename}/${project}/`,
+    fetchCacheOptions
+  );
 
   if (htmlResponse.status == 404) {
     return null;

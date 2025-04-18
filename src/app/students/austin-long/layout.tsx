@@ -1,6 +1,7 @@
 import { Exo_2 } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
 import "prismjs/themes/prism-tomorrow.min.css";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <div className={`${exo2.className} ${jetbrainsMono.variable}`}>
-      {children}
+      <SkeletonTheme baseColor="#202020" highlightColor="#444">
+        {children}
+      </SkeletonTheme>
     </div>
   );
 }
