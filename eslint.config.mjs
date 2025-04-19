@@ -10,9 +10,6 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   {
-    ignores: ["src/components/ui"],
-  },
-  {
     plugins: {
       "only-warn": onlyWarn,
     },
@@ -72,7 +69,7 @@ const eslintConfig = [
             {
               element: "a",
               message:
-                "use <Link> instead. You can import it from 'next/link'. See more here: https://nextjs.org/docs/app/api-reference/components/link",
+                "use <Link> instead. You can import it from '@/components/link'. See more here: https://nextjs.org/docs/app/api-reference/components/link",
             },
           ],
         },
