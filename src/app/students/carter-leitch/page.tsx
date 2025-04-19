@@ -1,5 +1,5 @@
 import Image from "@/components/image";
-import { FlipTile, HoverImage, SkillsChart } from "./client-components";
+import { FlipTile, HoverImage, SkillsChart, Resume } from "./client-components";
 import {
   LittleHeader,
   GitHubButton,
@@ -115,6 +115,12 @@ export default function Page() {
             skillsData={skillsChartData.sort((a, b) => b.value - a.value)}
           />
         </div>
+
+        <div className="m-5">
+          <LittleHeader text="Resume" />
+          <Resume />
+        </div>
+
       </div>
     </>
   );
