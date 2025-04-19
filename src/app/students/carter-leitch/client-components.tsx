@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "@/components/image";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 export function FlipTile({
   frontText,
@@ -19,16 +20,16 @@ export function FlipTile({
   };
 
   return (
-      <div
+    <div
       className={`m-2 flex h-40 w-40 cursor-pointer items-center justify-center rounded-lg bg-blue-800 text-white shadow-lg transition-transform duration-300 hover:scale-105 ${flipped ? "rotate-y-180" : ""}`}
-        onClick={handleClick}
+      onClick={handleClick}
+    >
+      <div
+        className={`m-2 text-center ${flipped ? `${backStyle} rotate-y-180` : `${frontStyle}`}`}
       >
-        <div
-          className={`m-2 text-center ${flipped ? `${backStyle} rotate-y-180` : `${frontStyle}`}`}
-        >
-          <h3>{flipped ? backText : frontText}</h3>
-        </div>
+        <h3>{flipped ? backText : frontText}</h3>
       </div>
+    </div>
   );
 }
 
@@ -86,4 +87,20 @@ export function HoverImage({
       )}
     </div>
   );
+}
+
+export function SkillsChart({skillsData} : {skillsData: {name: string, value: number}[]}) {
+  return (
+    <div className="flex justify-center m-5">
+      <ResponsiveContainer width="100%" height={400}>
+        <BarChart data={skillsData} layout="vertical" barSize={20} barGap={5}>
+          <XAxis type="number" />
+          <YAxis type="category" dataKey="name" width={100}/>
+          <Tooltip />
+          <Bar dataKey="value" fill="#193cb8" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+
 }

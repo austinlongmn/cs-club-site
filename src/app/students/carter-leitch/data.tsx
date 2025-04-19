@@ -66,3 +66,50 @@ export const majorProjects = [
     tech: "Tech 4",
   },
 ];
+
+export const skillsChartData = [
+  {
+    name: "Python",
+    value: 7,
+  },
+  {
+    name: "C#",
+    value: 5,
+  },
+  {
+    name: "JavaScript",
+    value: 4,
+  },
+  {
+    name: "C++",
+    value: 5,
+  },
+  {
+    name: "Java",
+    value: 4,
+  },
+  {
+    name: "HTML/CSS",
+    value: 6,
+  },
+  {
+    name: "SQL",
+    value: 7,
+  },
+  {
+    name: "C",
+    value: 4,
+  },
+  {
+    name: "React",
+    value: 3,
+  },
+  {
+    name: "Databases",
+    value: 7,
+  },
+  {
+    name: ".NET Framework",
+    value: 4,
+  }
+]

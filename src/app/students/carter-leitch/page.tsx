@@ -1,12 +1,12 @@
 import Image from "@/components/image";
-import { FlipTile, HoverImage } from "./client-components";
+import { FlipTile, HoverImage, SkillsChart } from "./client-components";
 import {
   LittleHeader,
   GitHubButton,
   LinkedInButton,
   BigRainbowText,
 } from "./components";
-import { me, majorProjects, minorProjects } from "./data";
+import { me, majorProjects, minorProjects, skillsChartData } from "./data";
 
 export default function Page() {
   return (
@@ -107,6 +107,11 @@ export default function Page() {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div>
+            <LittleHeader text={"Skills"} />
+            <SkillsChart skillsData={skillsChartData.sort((a, b) => b.value - a.value)} />
         </div>
       </div>
     </>
