@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
-import { getProject } from "../../lib/projects-md";
+import { getProject, Project } from "../../lib/projects-md";
+import Skeleton from "react-loading-skeleton";
+import { Suspense } from "react";
 
 const typographyStyles = `
   prose
@@ -7,35 +9,84 @@ const typographyStyles = `
   prose-invert
   prose-a:text-blue-500
   prose-a:hover:text-blue-400
-  prose-code:font-(family-name:--font-jetbrains-mono)
+  prose-code:!font-(family-name:--font-jetbrains-mono)
+  prose-code:before:content-['']
+  prose-code:after:content-['']
+  prose-code:bg-zinc-900
+  prose-code:px-1
+  prose-code:py-px
+  prose-code:rounded-sm
   max-w-none
 `;
 
-export default async function Page({
+export default function Page({
   params,
 }: {
   params: Promise<{ project: string }>;
 }) {
-  const { project } = await params;
+  return (
+    <Suspense fallback={<ProjectDisplaySkeleton />}>
+      <ProjectDisplayPage pageData={params} />
+    </Suspense>
+  );
+}
 
-  const projectData = await getProject(project);
+async function ProjectDisplayPage({
+  pageData,
+}: {
+  pageData: Promise<{ project: string }>;
+}) {
+  const projectData = await getProject((await pageData).project);
 
   if (projectData == null) {
     notFound();
   }
 
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  return <ProjectDisplay project={projectData} />;
+}
+
+function ProjectDisplaySkeleton() {
+  return <ProjectDisplay project={null} />;
+}
+
+function ProjectDisplay({ project }: { project: Project | null }) {
   return (
     <div className="p-5">
       <h1 className="pb-5 font-(family-name:--font-jetbrains-mono) text-3xl sm:text-5xl">
-        {projectData.metadata.title ?? "[No Title]"}
+        {project == null ? (
+          <Skeleton />
+        ) : (
+          (project.metadata.title ?? "[No Title]")
+        )}
       </h1>
-      {projectData.metadata.description && (
-        <p className="pb-4 text-zinc-400">{projectData.metadata.description}</p>
-      )}
+      <p className="pb-4 text-zinc-400">
+        {project == null ? (
+          <Skeleton />
+        ) : (
+          project.metadata.description && project.metadata.description
+        )}
+      </p>
       <div
-        dangerouslySetInnerHTML={{ __html: projectData.sanitizedContent }}
+        dangerouslySetInnerHTML={
+          project != null ? { __html: project.sanitizedContent } : undefined
+        }
         className={typographyStyles}
-      ></div>
+      >
+        {project == null ? (
+          <>
+            <p>
+              <Skeleton count={5} />
+            </p>
+            <p>
+              <Skeleton count={5} />
+            </p>
+            <p>
+              <Skeleton count={5} />
+            </p>
+          </>
+        ) : undefined}
+      </div>
     </div>
   );
 }
