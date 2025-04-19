@@ -42,7 +42,6 @@ async function ProjectDisplayPage({
     notFound();
   }
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
   return <ProjectDisplay project={projectData} />;
 }
 
