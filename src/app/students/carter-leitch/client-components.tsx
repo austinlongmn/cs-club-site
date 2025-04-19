@@ -19,16 +19,16 @@ export function FlipTile({
   };
 
   return (
-    <div
-      className={`m-2 flex h-40 w-40 cursor-pointer items-center justify-center rounded-lg bg-blue-800 text-white shadow-lg transition-transform duration-300 hover:scale-105 ${flipped ? "rotate-y-180" : ""}`}
-      onClick={handleClick}
-    >
       <div
-        className={`m-2 text-center ${flipped ? `${backStyle} rotate-y-180` : `${frontStyle}`}`}
+      className={`m-2 flex h-40 w-40 cursor-pointer items-center justify-center rounded-lg bg-blue-800 text-white shadow-lg transition-transform duration-300 hover:scale-105 ${flipped ? "rotate-y-180" : ""}`}
+        onClick={handleClick}
       >
-        <h3>{flipped ? backText : frontText}</h3>
+        <div
+          className={`m-2 text-center ${flipped ? `${backStyle} rotate-y-180` : `${frontStyle}`}`}
+        >
+          <h3>{flipped ? backText : frontText}</h3>
+        </div>
       </div>
-    </div>
   );
 }
 
@@ -72,7 +72,7 @@ export function HoverImage({
         {text}
       </div>
       {isHovered && (
-        <div className="absolute bottom-5 left-full z-49 h-54 w-54 rounded-lg shadow-lg">
+        <div className="absolute bottom-5 left-full h-54 w-54 rounded-lg shadow-lg">
           <Image
             className="absolute bottom-0 left-0 rounded-lg object-contain shadow-lg"
             src={imagePath}
