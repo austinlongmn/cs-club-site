@@ -1,7 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import Image from "@/components/image";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
 export function FlipTile({
   frontText,
@@ -89,18 +96,21 @@ export function HoverImage({
   );
 }
 
-export function SkillsChart({skillsData} : {skillsData: {name: string, value: number}[]}) {
+export function SkillsChart({
+  skillsData,
+}: {
+  skillsData: { name: string; value: number }[];
+}) {
   return (
-    <div className="flex justify-center m-5">
+    <div className="m-5 flex justify-center">
       <ResponsiveContainer width="100%" height={400}>
         <BarChart data={skillsData} layout="vertical" barSize={20} barGap={5}>
           <XAxis type="number" />
-          <YAxis type="category" dataKey="name" width={100}/>
+          <YAxis type="category" dataKey="name" width={100} />
           <Tooltip />
           <Bar dataKey="value" fill="#193cb8" />
         </BarChart>
       </ResponsiveContainer>
     </div>
   );
-
 }

@@ -110,8 +110,10 @@ export default function Page() {
         </div>
 
         <div>
-            <LittleHeader text={"Skills"} />
-            <SkillsChart skillsData={skillsChartData.sort((a, b) => b.value - a.value)} />
+          <LittleHeader text={"Skills"} />
+          <SkillsChart
+            skillsData={skillsChartData.sort((a, b) => b.value - a.value)}
+          />
         </div>
       </div>
     </>

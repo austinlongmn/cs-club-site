@@ -111,5 +111,5 @@ export const skillsChartData = [
   {
     name: ".NET Framework",
     value: 4,
-  }
-]
+  },
+];
