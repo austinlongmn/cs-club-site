@@ -5,6 +5,7 @@ import {
   GitHubButton,
   LinkedInButton,
   BigRainbowText,
+  CBVButton,
 } from "./components";
 import { me, majorProjects, minorProjects, skillsChartData } from "./data";
 
@@ -26,6 +27,7 @@ export default function Page() {
           <div className="flex justify-center">
             <GitHubButton />
             <LinkedInButton />
+            <CBVButton />
           </div>
         </div>
         <div>
@@ -120,7 +122,6 @@ export default function Page() {
           <LittleHeader text="Resume" />
           <Resume />
         </div>
-
       </div>
     </>
   );

@@ -21,7 +21,21 @@ export function GitHubButton() {
   return (
     <Link href="https://github.com/cartrleitch" target="_blank">
       <Image
-        className="mt-3 mr-4 hover:cursor-pointer hover:opacity-50"
+        className="mt-3 mr-2 ml-2 hover:cursor-pointer hover:opacity-50"
+        src="/images/carter/GitHubLogo.png"
+        alt="Profile photo of Carter Leitch"
+        width={50}
+        height={50}
+      />
+    </Link>
+  );
+}
+
+export function CBVButton() {
+  return (
+    <Link href="https://coolbibleverses.cool" target="_blank">
+      <Image
+        className="mt-3 mr-2 ml-2 hover:cursor-pointer hover:opacity-50"
         src="/images/carter/GitHubLogo.png"
         alt="Profile photo of Carter Leitch"
         width={50}
@@ -35,7 +49,7 @@ export function LinkedInButton() {
   return (
     <Link href="https://www.linkedin.com/in/carter-leitch/" target="_blank">
       <Image
-        className="mt-3 hover:cursor-pointer hover:opacity-50"
+        className="mt-3 mr-2 ml-2 hover:cursor-pointer hover:opacity-50"
         src="/images/carter/LinkedIn_icon.svg"
         alt="Profile photo of Carter Leitch"
         width={50}

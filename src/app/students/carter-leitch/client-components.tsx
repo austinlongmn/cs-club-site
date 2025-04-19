@@ -11,7 +11,6 @@ import {
 } from "recharts";
 import Link from "next/link";
 
-
 export function FlipTile({
   frontText,
   backText,
@@ -106,8 +105,8 @@ export function SkillsChart({
   return (
     <div className="m-5 flex justify-center">
       <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={skillsData} layout="vertical" barSize={20} barGap={5} >
-          <XAxis type="number" tickCount={6}/>
+        <BarChart data={skillsData} layout="vertical" barSize={20} barGap={5}>
+          <XAxis type="number" tickCount={6} />
           <YAxis type="category" dataKey="name" width={100} />
           <Tooltip />
           <Bar dataKey="value" fill="#193cb8" />
@@ -125,14 +124,29 @@ export function Resume() {
   };
 
   return (
-    <div className="flex m-10 justify-center flex-col items-center">
-      <button onClick={handleClick} className="cursor-pointer text-white underline">Click to Show Resume!</button>
+    <div className="m-10 flex flex-col items-center justify-center">
+      <button
+        onClick={handleClick}
+        className="cursor-pointer text-white underline"
+      >
+        Click to Show Resume!
+      </button>
       <div className="m-5">
-      {droppedDown && (
-        <Link download={true} href="/images/carter/LeitchCarter_Resume.pdf" target="_blank">
-        <Image className="rounded-lg transform-transition duration-300 hover:scale-105" src="/images/carter/LeitchCarter_Resume.jpg" alt="Resume" width={500} height={500} />
-        </Link>
-      )}
+        {droppedDown && (
+          <Link
+            download={true}
+            href="/images/carter/LeitchCarter_Resume.pdf"
+            target="_blank"
+          >
+            <Image
+              className="transform-transition rounded-lg duration-300 hover:scale-105"
+              src="/images/carter/LeitchCarter_Resume.jpg"
+              alt="Resume"
+              width={500}
+              height={500}
+            />
+          </Link>
+        )}
       </div>
     </div>
   );
