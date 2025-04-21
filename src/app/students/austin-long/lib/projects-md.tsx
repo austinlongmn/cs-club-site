@@ -7,16 +7,24 @@ const fetchCacheOptions: RequestInit = {
   },
 };
 
-export interface ProjectMetadata {
+export interface ProjectPreviewMetadata {
   title?: string;
   thumbnailURL?: string;
   route?: string;
   description?: string;
 }
 
+interface ProjectDetails {
+  tags?: string[];
+}
+
+export type ProjectMetadata = ProjectPreviewMetadata & {
+  projectDetails?: ProjectDetails;
+};
+
 export const cdnBasename = "https://projects-md.cdn.austinlong.dev";
 
-export async function getAllProjects(): Promise<ProjectMetadata[]> {
+export async function getAllProjects(): Promise<ProjectPreviewMetadata[]> {
   const projectsRepsonse = await fetch(
     `${cdnBasename}/manifest.json`,
     fetchCacheOptions
@@ -49,13 +57,19 @@ export async function getSanitizedProjectContent(
 export async function getMetadata(
   project: string
 ): Promise<ProjectMetadata | null> {
-  const allProjects = await getAllProjects();
-
-  return (
-    allProjects.find((projectMetadata) => {
-      return projectMetadata.route == `/${project}/`;
-    }) ?? null
+  if (!project.match(/^[A-Za-z-]+$/)) {
+    return null;
+  }
+  const jsonResponse = await fetch(
+    `${cdnBasename}/${project}/metadata.json`,
+    fetchCacheOptions
   );
+
+  if (jsonResponse.status == 404) {
+    return null;
+  }
+
+  return await jsonResponse.json();
 }
 
 export interface Project {

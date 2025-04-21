@@ -2,13 +2,13 @@ import Link from "next/link";
 import {
   cdnBasename,
   getAllProjects,
-  ProjectMetadata,
+  ProjectPreviewMetadata,
 } from "../lib/projects-md";
 import Image from "@/components/image";
 import Skeleton from "react-loading-skeleton";
 
 interface ProjectPreviewProps {
-  project: ProjectMetadata | null;
+  project: ProjectPreviewMetadata | null;
   reverse?: boolean;
 }
 
@@ -63,7 +63,7 @@ export function ProjectsListSkeleton() {
 function ProjectPreviewList({
   projects,
 }: {
-  projects: (ProjectMetadata | null)[];
+  projects: (ProjectPreviewMetadata | null)[];
 }) {
   return (
     <>
