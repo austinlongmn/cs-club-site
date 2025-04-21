@@ -1,0 +1,66 @@
+name: Autofix
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  check_skip_flags:
+    name: Check skip flags
+    runs-on: ubuntu-latest
+    outputs:
+      head-commit-message: ${{ steps.get_head_commit_message.outputs.headCommitMsg }}
+    steps:
+      - name: Get repo
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Print head git commit message
+        id: get_head_commit_message
+        run: |
+          echo "::set-output name=headCommitMsg::$(git show -s --format=%s)"
+          echo "$(git show -s --format=%s)"
+
+  fix-warnings:
+    needs: check_skip_flags
+    if: ${{ !contains(needs.check_skip_flags.outputs.head-commit-message, '[skip autofix]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug info
+        run: |
+          echo "${{ needs.check_skip_flags.outputs.head-commit-message }}"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.WRITABLE_ACTIONS_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Get Next.js cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - run: npm run fix
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Apply formatting changes [skip autofix]"
+          branch: ${{ github.head_ref }}
