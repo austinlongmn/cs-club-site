@@ -19,4 +19,9 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: "https://unwcsclub.dev"
-          cmd_params: "--exclude 'https://coolbibleverses\\.cool.*' --exclude 'https://www\\.linkedin\\.com.*' --buffer-size 8000 --timeout 20 --color=always"
+          cmd_params: >-
+            --exclude 'https://coolbibleverses\\.cool.*'
+            --exclude 'https://www\\.linkedin\\.com.*'
+            --buffer-size 8000
+            --timeout 20
+            --color=always
