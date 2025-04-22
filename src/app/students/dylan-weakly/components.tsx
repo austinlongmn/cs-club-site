@@ -41,7 +41,7 @@ export function FavoriteProjects() {
             Systems Analysis and Design Project
           </h3>
           <Link
-            href="/dylan-weakly/systems-a-and-d"
+            href="/students/dylan-weakly/systems-a-and-d"
             className="rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
           >
             View Project
