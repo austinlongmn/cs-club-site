@@ -20,8 +20,8 @@ jobs:
         with:
           url: "https://unwcsclub.dev"
           cmd_params: >-
-            --exclude 'https://coolbibleverses\\.cool.*'
-            --exclude 'https://www\\.linkedin\\.com.*'
+            --exclude 'https://coolbibleverses\.cool.*'
+            --exclude 'https://www\.linkedin\.com.*'
             --buffer-size 8000
             --timeout 20
             --color=always
