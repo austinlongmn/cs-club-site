@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "@/components/image";
 import Link from "next/link";
 import CSCLogo from "@/svg/csc-logo.svg";
 import MenuButtonIcon from "@/svg/navbar-menu-icon.svg";
@@ -36,6 +36,10 @@ const pages: Page[] = [
   {
     description: "Competition Scores",
     route: "/competition-scores",
+  },
+  {
+    description: "About",
+    route: "/about",
   },
 ];
 

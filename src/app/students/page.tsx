@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const students = [
-  // { id: "daniel-deutsch", name: "Daniel Deutsch" },
+  { id: "daniel-deutsch", name: "Daniel Deutsch" },
   { id: "ethan-reed", name: "Ethan Reed" },
   { id: "breyon-gunn", name: "Breyon Gunn" },
   // { id: "violet-haveman", name: "Violet Haveman" },
@@ -20,6 +20,7 @@ const students = [
   { id: "josie-mellick", name: "Josie Mellick" },
   { id: "josiah-paul", name: "Josiah Paul" },
   { id: "dylan-weakly", name: "Dylan Weakly" },
+  { id: "mason-colacicco", name: "Mason Colacicco" },
   // Add more students as needed
 ];
 

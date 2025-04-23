@@ -1,12 +1,13 @@
-import Image from "next/image";
-import { FlipTile, HoverImage } from "./client-components";
+import Image from "@/components/image";
+import { FlipTile, HoverImage, SkillsChart, Resume } from "./client-components";
 import {
   LittleHeader,
   GitHubButton,
   LinkedInButton,
   BigRainbowText,
+  CBVButton,
 } from "./components";
-import { me, majorProjects, minorProjects } from "./data";
+import { me, majorProjects, minorProjects, skillsChartData } from "./data";
 
 export default function Page() {
   return (
@@ -26,6 +27,7 @@ export default function Page() {
           <div className="flex justify-center">
             <GitHubButton />
             <LinkedInButton />
+            <CBVButton />
           </div>
         </div>
         <div>
@@ -75,7 +77,7 @@ export default function Page() {
               style={{ gridTemplateColumns: "repeat(auto-fit, 200px)" }}
             >
               {majorProjects.map((project) => (
-                <li key={project.name} className="flex w-45 justify-center">
+                <li key={project.projNum} className="flex w-45 justify-center">
                   <FlipTile
                     frontText={project.name}
                     backText={project.description}
@@ -107,6 +109,18 @@ export default function Page() {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div>
+          <LittleHeader text={"Skills"} />
+          <SkillsChart
+            skillsData={skillsChartData.sort((a, b) => b.value - a.value)}
+          />
+        </div>
+
+        <div className="m-5">
+          <LittleHeader text="Resume" />
+          <Resume />
         </div>
       </div>
     </>

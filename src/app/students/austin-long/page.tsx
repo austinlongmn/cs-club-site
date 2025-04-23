@@ -1,50 +1,11 @@
-import Image from "next/image";
-import profilePic from "@/../public/images/austin/headshot.jpeg";
+import Image from "@/components/image";
 
-import { getAllProjects, ProjectMetadata } from "./lib/projects-md";
-import { JSX } from "react";
+import { JSX, Suspense } from "react";
 import Link from "next/link";
-
-interface ProjectPreviewProps {
-  project: ProjectMetadata;
-  reverse?: boolean;
-}
-
-function ProjectPreview({ project, reverse }: ProjectPreviewProps) {
-  return (
-    <div
-      className={`flex flex-col ${reverse ? "sm:flex-row-reverse" : "sm:flex-row"} mb-10 rounded-sm bg-zinc-950 p-4 sm:min-h-64 sm:rounded-xl sm:p-10`}
-    >
-      <div className="flex grow flex-col sm:min-h-64">
-        <h3
-          className="text-xl sm:text-2xl"
-          style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-        >
-          {project.title}
-        </h3>
-        <p className="grow">{project.description}</p>
-        {project.route && (
-          <Link href={`/students/austin-long/projects${project.route}`}>
-            Learn More
-          </Link>
-        )}
-      </div>
-      {project.thumbnailURL && (
-        <div className={`pt-10 sm:pt-0 ${reverse ? "sm:pr-6" : "sm:pl-6"}`}>
-          <div className="relative mx-auto h-64 w-64">
-            <Image
-              fill
-              sizes=""
-              src={project.thumbnailURL}
-              alt={`Thumbnail for ${project.title}`}
-              className="rounded-md bg-black object-contain"
-            />
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
+import {
+  ProjectsList,
+  ProjectsListSkeleton,
+} from "./components/project-preview";
 
 function Heading2({ children }: { children: JSX.Element | string }) {
   return (
@@ -55,7 +16,6 @@ function Heading2({ children }: { children: JSX.Element | string }) {
 }
 
 export default async function Page() {
-  const projects = await getAllProjects();
   return (
     <div className="p-6">
       <div className="flex flex-col-reverse gap-3 pb-6 sm:flex-row">
@@ -80,21 +40,17 @@ export default async function Page() {
           </p>
         </div>
         <Image
-          src={profilePic}
+          src="/images/austin/headshot.jpeg"
+          width={668}
+          height={668}
           alt="A headshot of Austin"
           className="mx-auto h-52 w-auto rounded-md md:h-72"
         />
       </div>
       <Heading2>Projects</Heading2>
-      {projects.map((project, index) => {
-        return (
-          <ProjectPreview
-            project={project}
-            key={index}
-            reverse={index % 2 == 0}
-          />
-        );
-      })}
+      <Suspense fallback={<ProjectsListSkeleton />}>
+        <ProjectsList />
+      </Suspense>
     </div>
   );
 }

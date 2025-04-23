@@ -1,0 +1,141 @@
+/* Styles were created by Daniel. Translated to module.css by Austin. */
+/* General Styles */
+.mainTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #bb86fc;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #bb86fc;
+  text-align: center;
+}
+
+/* Image Grid */
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+/* About Me Section Styling */
+.aboutMe {
+  text-align: left; /* Ensures all text within this section is left-aligned */
+  margin: 20px;
+  padding: 15px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.aboutMe p,
+.aboutMe ul,
+.aboutMe details,
+.aboutMe aside {
+  text-align: left; /* Explicitly aligns paragraphs, lists, and other elements */
+  margin: 10px 0;
+}
+
+.aboutMe ul {
+  list-style-position: inside; /* Ensures bullet points align with the text */
+  padding-left: 0; /* Removes extra padding for cleaner alignment */
+}
+
+.aboutMe aside {
+  font-style: italic; /* Adds emphasis to the quote */
+  margin-top: 15px;
+  border: 2px dashed #bb86fc; /* Dashed border */
+  padding: 15px; /* Padding inside the paragraph */
+  margin: 20px 0; /* Spacing around the paragraph */
+  text-align: justify;
+  line-height: 1.6;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.aboutMe p.leftBorder {
+  border-left: 5px solid #bb86fc; /* Visible left border */
+  padding: 15px; /* Extra padding */
+  margin: 20px 0; /* Extra spacing */
+}
+
+/* Table Styling */
+.projectTable {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+.projectTable th,
+.projectTable td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: left;
+}
+
+.projectTable th {
+  background-color: #1e1e1e;
+  color: #bb86fc;
+}
+
+.projectTable tr:nth-child(even) {
+  background-color: #2c2c2c;
+}
+
+/* Contact Form */
+.contactForm {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+}
+
+.contactForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+}
+
+.contactForm button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #bb86fc;
+  color: #121212;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contactForm button:hover {
+  background-color: #cf6679;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mainTitle,
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+}

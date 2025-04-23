@@ -1,5 +1,12 @@
 import DOMPurify from "isomorphic-dompurify";
 
+const fetchCacheOptions: RequestInit = {
+  cache: "force-cache",
+  next: {
+    revalidate: 60 * 60 * 24,
+  },
+};
+
 export interface ProjectMetadata {
   title?: string;
   thumbnailURL?: string;
@@ -7,28 +14,16 @@ export interface ProjectMetadata {
   description?: string;
 }
 
-const cdnBasename = "https://projects-md.cdn.austinlong.dev";
+export const cdnBasename = "https://projects-md.cdn.austinlong.dev";
 
 export async function getAllProjects(): Promise<ProjectMetadata[]> {
-  const projectsRepsonse = await fetch(`${cdnBasename}/manifest.json`);
+  const projectsRepsonse = await fetch(
+    `${cdnBasename}/manifest.json`,
+    fetchCacheOptions
+  );
   const contents = await projectsRepsonse.json();
 
   return contents;
-}
-
-export async function getMetadata(
-  project: string
-): Promise<ProjectMetadata | null> {
-  if (!project.match(/^[A-Za-z-]+$/)) {
-    return null;
-  }
-  const metadataResponse = await fetch(
-    `${cdnBasename}/${project}.metadata.json`
-  );
-  if (metadataResponse.status == 404) {
-    return null;
-  }
-  return await metadataResponse.json();
 }
 
 export async function getSanitizedProjectContent(
@@ -37,7 +32,10 @@ export async function getSanitizedProjectContent(
   if (!project.match(/^[A-Za-z-]+$/)) {
     return null;
   }
-  const htmlResponse = await fetch(`${cdnBasename}/${project}.html`);
+  const htmlResponse = await fetch(
+    `${cdnBasename}/${project}/`,
+    fetchCacheOptions
+  );
 
   if (htmlResponse.status == 404) {
     return null;
@@ -46,6 +44,18 @@ export async function getSanitizedProjectContent(
   const unsafeContent = await htmlResponse.text();
 
   return DOMPurify.sanitize(unsafeContent);
+}
+
+export async function getMetadata(
+  project: string
+): Promise<ProjectMetadata | null> {
+  const allProjects = await getAllProjects();
+
+  return (
+    allProjects.find((projectMetadata) => {
+      return projectMetadata.route == `/${project}/`;
+    }) ?? null
+  );
 }
 
 export interface Project {

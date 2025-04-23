@@ -19,6 +19,9 @@ export default function Footer() {
         <Link href="/competition-scores" className={linkStyles}>
           Competition Scores
         </Link>
+        <Link href="/about" className={linkStyles}>
+          About
+        </Link>
       </div>
       <div className="flex w-full justify-center pb-2 text-gray-400">
         <Link href="/oss-attributions" className={linkStyles}>

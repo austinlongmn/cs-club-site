@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/components/image";
 import CSCLogo from "@/svg/csc-logo.svg";
+
+function BibleVerse({
+  reference,
+  children,
+}: {
+  reference: string;
+  children: string;
+}) {
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="text-2xl font-bold text-gray-200">{children}</h1>
+      <h2 className="text-xl font-semibold text-gray-400">{reference}</h2>
+    </div>
+  );
+}
 
 export const metadata: Metadata = {
   title: "About - UNW CS Club",
@@ -11,35 +26,35 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="pb-20">
-      <div className="flex flex-row justify-between">
-        <div className="flex max-w-100 items-center justify-center text-center">
+    <div className="px- pb-20">
+      <div className="flex flex-col justify-between md:flex-row">
+        <div className="flex items-center justify-center text-center">
           <h1 className="text-3xl">
             We are the Computer Science Club from the University of
             Northwestern-St. Paul in Roseville, Minnesota.
           </h1>
         </div>
         <div>
-          <Image
-            src={CSCLogo}
-            alt="CSC Logo"
-            width={700}
-            height={500}
-            className="pt-10"
-          />
+          <Image src={CSCLogo} alt="CSC Logo" className="mx-auto pt-10" />
         </div>
       </div>
-      <div className="flex flex-row items-center justify-evenly">
-        <div className="flex items-center justify-center">
+      <div className="py-10">
+        <BibleVerse reference="Hebrews 10:23">
+          Let us hold fast the confession of our hope without wavering, for he
+          who promised is faithful.
+        </BibleVerse>
+      </div>
+      <div className="flex flex-col items-center justify-between md:flex-row">
+        <div className="flex items-center justify-center pt-10">
           <Image
             src="/images/general/club-fall24.png"
             alt="CSC Members in Fall 2024"
-            width={600}
-            height={600}
-            className="pt-10"
+            className="w-300 rounded-md"
+            width={5101}
+            height={2884}
           />
         </div>
-        <div className="flex max-w-100 flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
           <h1 className="text-center text-2xl">Current CSC Members:</h1>
           <h1 className="pt-5 text-center text-2xl">
             From left to right: Josie Mellick, Dylan Weakly, Andrew Hayes,
