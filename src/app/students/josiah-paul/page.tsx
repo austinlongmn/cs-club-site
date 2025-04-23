@@ -78,7 +78,7 @@ export default function Josiah() {
       <div className="mt-10 text-center text-[25px]">
         <b>- - - - - Personal Projects - - - - - </b>
       </div>
-      <div className="flex justify-center pt-18">
+      <div className="m-4 flex justify-center rounded-md border-4 border-blue-600 p-4">
         <div className="w-250 overflow-auto bg-gray-800 px-6 py-3.5 whitespace-nowrap">
           {
             <>
@@ -146,7 +146,7 @@ export default function Josiah() {
                     src="/images/josiah/github-mark-white.png"
                     width={200}
                     height={100}
-                    alt="Bruh"
+                    alt="Vending Machine"
                     className="h-[100px] w-[100px] object-contain"
                   />
                   <span className="mt-3 text-sm">
@@ -164,7 +164,7 @@ export default function Josiah() {
                     src="/images/josiah/github-mark-white.png"
                     width={200}
                     height={100}
-                    alt="Bruh"
+                    alt="In Distress"
                     className="h-[100px] w-[100px] object-contain"
                   />
                   <span className="mt-3 text-sm">
@@ -176,9 +176,6 @@ export default function Josiah() {
           }
         </div>
       </div>
-      {/* Java Script in React????*/}
-      <script></script>
     </div>
   );
 }
-// explain a bit about urself, projects u worked on with club, projects u worked on in general
