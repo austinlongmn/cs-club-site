@@ -55,42 +55,45 @@ export default function Page() {
         <p className="mt-4 text-center">
           Here are some projects I&apos;m working on:
         </p>
-        <div className="flex flex-col md:flex-row justify-around gap-8 text-left">
-        <ul className="list-inside list-disc pl-6 text-cyan-500">
-          <li>The Last Crewman</li>
-          <li>Image sorter for personal use</li>
-        </ul>
+        <div className="flex flex-col justify-around gap-8 text-left md:flex-row">
+          <ul className="list-inside list-disc pl-6 text-cyan-500">
+            <li>The Last Crewman</li>
+            <li>Image sorter for personal use</li>
+          </ul>
         </div>
       </section>
 
-      <section className="rounded-lg border-4 border-orange-500 p-4">
-          <p className="mb-4 text-center text-lg font-bold">
-            Im not just a software engineer, I also have a life outside of coding!
-            I enjoy a varity of things that I feel like sharing with you!
-          </p>
-        <div className="flex flex-col md:flex-row justify-around gap-8 text-left">
-         
+      <section className="bg-gray-800 rounded-lg border-4 border-tan p-4">
+        <p className="mb-4 text-center text-lg font-bold">
+          Im not just a software engineer, I also have a life outside of coding!
+          I enjoy a varity of things that I feel like sharing with you!
+        </p>
+        <div className="flex flex-col justify-around gap-8 text-left md:flex-row">
           {/* Games Section */}
           <div>
-          <p className="text-red-500 text-center md:text-left">I am a fan of the following games:</p>
-          <ul className="list-inside list-disc pl-6">
-            <li>Fallout 4</li>
-            <li>Minecraft</li>
-            <li>Slay the Princess</li>
-            <li>Hollow Knight</li>
-          </ul>
+            <p className="text-center text-red-500 md:text-left">
+              I am a fan of the following games:
+            </p>
+            <ul className="list-inside list-disc pl-6">
+              <li>Fallout 4</li>
+              <li>Minecraft</li>
+              <li>Slay the Princess</li>
+              <li>Hollow Knight</li>
+            </ul>
           </div>
           {/* Shows Section */}
           <div>
-          <p className="text-red-500 text-center md:text-left">I am also a fan of the following shows:</p>
-          <ul className="list-disc pl-6">
-            <li>Star Trek</li>
-            <li>Star Wars</li>
-            <li>Doctor Who</li>
-            <li>Goblin Slayer</li>
-            <li>Frieren: Beyond Journey&apos;s End</li>
-          </ul>
-        </div>
+            <p className="text-center text-red-500 md:text-left">
+              I am also a fan of the following shows:
+            </p>
+            <ul className="list-disc pl-6">
+              <li>Star Trek</li>
+              <li>Star Wars</li>
+              <li>Doctor Who</li>
+              <li>Goblin Slayer</li>
+              <li>Frieren: Beyond Journey&apos;s End</li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>
