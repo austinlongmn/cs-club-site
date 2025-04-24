@@ -59,56 +59,123 @@ export default function Josiah() {
           </p>
         </div>
       </div>
-      <div className="flex space-x-10">
+      <div className="flex space-x-1 pl-18">
         <Image
-          className="pt-6"
+          className="pt-6 pl-3"
           src="/images/josiah/indistress.png"
           width={500}
           height={100}
           alt="systems analysis and design poster"
         />
         <Image
-          className="pt-6"
+          className="pt-6 pl-3"
           src="/images/josiah/indistress2.png"
           width={500}
           height={100}
           alt="systems analysis and design poster"
         />
       </div>
-
-      <div className="flex justify-center">
-        <div className="w-150 overflow-auto bg-gray-800 whitespace-nowrap">
+      <div className="mt-10 text-center text-[25px]">
+        <b>- - - - - Personal Projects - - - - - </b>
+      </div>
+      <div className="m-4 flex justify-center rounded-md border-4 border-blue-600 p-4">
+        <div className="w-250 overflow-auto bg-gray-800 px-6 py-3.5 whitespace-nowrap">
           {
-            //  <a
-            //     href="#home"
-            //     className="inline-block px-4 py-3 text-center text-white hover:bg-gray-500"
-            //   >
-            //     Home
-            //   </a>
-            //   <a
-            //     href="#news"
-            //     className="inline-block px-4 py-3 text-center text-white hover:bg-gray-500"
-            //   >
-            //     News
-            //   </a>
-            //   <a
-            //     href="#contact"
-            //     className="inline-block px-4 py-3 text-center text-white hover:bg-gray-500"
-            //   >
-            //     Contact
-            //   </a>
-            //   <a
-            //     href="#about"
-            //     className="inline-block px-4 py-3 text-center text-white hover:bg-gray-500"
-            //   >
-            //     About
-            //   </a>
+            <>
+              <Link
+                href="https://scratch.mit.edu/projects/960861818"
+                target="_blank"
+                className="mr-3 inline-block h-[180px] w-[180px] rounded-2xl p-2 text-center text-white hover:bg-gray-500"
+              >
+                <div className="flex h-full flex-col items-center justify-center">
+                  <Image
+                    src="/images/josiah/rock.png"
+                    width={200}
+                    height={100}
+                    alt="Raise a Rock"
+                    className="h-[100px] w-[100px] object-contain"
+                  />
+                  <span className="mt-3 text-sm">
+                    <b>My Awful Scratch Game</b>
+                  </span>
+                </div>
+              </Link>
+              <Link
+                href="https://github.com/JP-STHS/Sleeves"
+                target="_blank"
+                className="mr-3 inline-block h-[180px] w-[180px] rounded-2xl p-2 text-center text-white hover:bg-gray-500"
+              >
+                <div className="flex h-full flex-col items-center justify-center">
+                  <Image
+                    src="/images/josiah/github-mark-white.png"
+                    width={200}
+                    height={100}
+                    alt="Sleeves"
+                    className="h-[100px] w-[100px] object-contain"
+                  />
+                  <span className="mt-3 text-sm">
+                    <b>GoDot Game Attempt</b>
+                  </span>
+                </div>
+              </Link>
+              <Link
+                href="https://www.roblox.com/games/17335018195"
+                target="_blank"
+                className="mr-3 inline-block h-[180px] w-[180px] rounded-2xl p-2 text-center text-white hover:bg-gray-500"
+              >
+                <div className="flex h-full flex-col items-center justify-center">
+                  <Image
+                    src="/images/josiah/roblox.png"
+                    width={200}
+                    height={100}
+                    alt="Bruh"
+                    className="h-[100px] w-[80px] object-contain"
+                  />
+                  <span className="mt-3 text-sm">
+                    <b>My Awful Roblox Game</b>
+                  </span>
+                </div>
+              </Link>
+              <Link
+                href="https://github.com/JP-STHS/C-Programming-Projects/blob/main/C_Projects/vending_machine.cpp"
+                target="_blank"
+                className="mr-3 inline-block h-[180px] w-[180px] rounded-2xl p-2 text-center text-white hover:bg-gray-500"
+              >
+                <div className="flex h-full flex-col items-center justify-center">
+                  <Image
+                    src="/images/josiah/github-mark-white.png"
+                    width={200}
+                    height={100}
+                    alt="Vending Machine"
+                    className="h-[100px] w-[100px] object-contain"
+                  />
+                  <span className="mt-3 text-sm">
+                    <b>C++ Vending Machine</b>
+                  </span>
+                </div>
+              </Link>
+              <Link
+                href="https://github.com/Trenton-Gibson/In-Distress"
+                target="_blank"
+                className="mr-3 inline-block h-[180px] w-[180px] rounded-2xl p-2 text-center text-white hover:bg-gray-500"
+              >
+                <div className="flex h-full flex-col items-center justify-center">
+                  <Image
+                    src="/images/josiah/github-mark-white.png"
+                    width={200}
+                    height={100}
+                    alt="In Distress"
+                    className="h-[100px] w-[100px] object-contain"
+                  />
+                  <span className="mt-3 text-sm">
+                    <b>The Last Crewman</b>
+                  </span>
+                </div>
+              </Link>
+            </>
           }
         </div>
       </div>
-      {/* Java Script in React????*/}
-      <script></script>
     </div>
   );
 }
-// explain a bit about urself, projects u worked on with club, projects u worked on in general
