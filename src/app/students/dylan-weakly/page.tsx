@@ -1,66 +1,63 @@
-import { RiMailLine } from "react-icons/ri";
-import Image from "next/image";
+import Image from "@/components/image";
+import Link from "next/link";
 import type { Metadata } from "next";
+import { CourseList, FavoriteProjects } from "./components";
 
 export const metadata: Metadata = {
   title: "Dylan Weakly - UNW CS Club",
   description:
-    "This is the official site of University of Northwestern " +
-    "- St.Paul's very own Computer Science Club.",
+    "This is the official site of University of Northwestern - St. Paul's very own Computer Science Club.",
 };
 
 export default function Dylan() {
   return (
-    <div className="flex flex-col items-center justify-center transition-all duration-500">
-      <div className="flex justify-between p-5">
-        <h1 className="text-center text-5xl text-white">Dylan Weakly</h1>
-      </div>
-
-      <div className="mx-auto max-w-4xl rounded-3xl border-5 border-[#428ad1] p-10 text-white shadow-xl backdrop-blur-lg">
-        <div className="flex flex-col items-center">
-          <button className="flex items-center gap-2 rounded-lg bg-[#428ad1] px-6 py-3 text-2xl text-white hover:bg-blue-700 hover:font-bold">
-            <RiMailLine />
-            Email Dylan
-          </button>
-          <p className="mt-5 text-center text-sm">
-            Developer Website Coming Soon
-          </p>
-
-          <p className="text-md py-4 text-left">
-            I am currently a sophomore Computer Science major with a
-            Cybersecurity minor. I am currently learning web development with
-            basic HTML, CSS, and JavaScript as well as learning the React
-            framework.
-          </p>
-
-          <p className="text-md py-3 text-right">
-            Some of my interests outside of Computer Science include going on
-            hikes with my family (yeah, shocking!), checking out cool cars, and
-            serving on the production team at church.
-          </p>
-
-          <p className="text-md py-3 text-left">
-            For Systems Analysis and Design class here at Northwestern, I worked
-            together with Isaac Grosser who has since graduated to provide
-            Atkinson Refinishing Services with some great invoicing options to
-            improve efficiency of the company.
-          </p>
-
-          <h2 className="py-4 text-center text-lg">My Favorite Projects</h2>
-          <ul className="list-inside list-disc">
-            <li>Systems Analysis and Design Project (featured Below)</li>
-            <li>More to come...</li>
-          </ul>
-
-          <Image
-            className="mt-10 rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-            width={1300}
-            height={1000}
-            src="/images/dylan/atkinson-poster.png"
-            alt="Systems A&amp;D Poster"
-          />
+    <div className="container mx-auto my-10 flex flex-col items-center space-y-10 rounded-3xl border-8 border-[#428ad1] bg-neutral-800 p-6 text-white shadow-xl backdrop-blur-lg">
+      <div className="flex flex-col items-center space-y-6 text-center md:flex-row md:space-y-0 md:space-x-30 md:text-left">
+        <Image
+          className="transform rounded-full shadow-lg transition-transform group-hover:scale-105"
+          src="/images/dylan/dylan.jpg"
+          width={200}
+          height={200}
+          alt="Dylan Weakly"
+        />
+        <div>
+          <h1 className="text-4xl font-bold">Dylan Weakly</h1>
+          <h2 className="mt-2 text-2xl">Sophomore at UNW</h2>
+          <Link
+            href="https://linkedin.com/in/dylan-weakly/"
+            className="mt-1 inline-block text-lg hover:underline"
+          >
+            Connect on LinkedIn
+          </Link>
         </div>
       </div>
+
+      <div className="max-w-4xl space-y-6 text-center text-lg">
+        <p>
+          I am a sophomore at the University of Northwestern - St. Paul,
+          majoring in Computer Science with a minor in Cybersecurity. I am
+          passionate about leveraging the skills God has given me to create
+          thoughtful, efficient software solutions. My programming experience
+          spans multiple languages and frameworks, including Python, TypeScript,
+          C++, Java, and React—the latter of which I used to help develop this
+          website.
+        </p>
+        <p>
+          Since April 2025, I have also served as a Technical Support Specialist
+          in the university&apos;s Information Technology department. This role
+          has allowed me to further strengthen my problem-solving and critical
+          thinking abilities by assisting users with a wide range of technical
+          issues.
+        </p>
+        <p>
+          Some of my interests outside of Computer Science include going hiking
+          with my family at state parks, attending car shows, and serving on the
+          production team at church.
+        </p>
+      </div>
+
+      <CourseList />
+      <FavoriteProjects />
     </div>
   );
 }

@@ -7,7 +7,7 @@ const destPath = path.join("public", "oss-licenses.json");
 
 if (fs.existsSync(sourcePath)) {
   fs.copyFileSync(sourcePath, destPath);
-  console.log("✅ OSS Licenses copied to public directory.");
+  console.log("☑︎ OSS Licenses copied to public directory.");
 } else {
-  console.error("⚠️ OSS Licenses file not found.");
+  console.error("⚠︎ OSS Licenses file not found.");
 }

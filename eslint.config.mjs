@@ -10,9 +10,6 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   {
-    ignores: ["src/components/ui"],
-  },
-  {
     plugins: {
       "only-warn": onlyWarn,
     },
@@ -49,12 +46,14 @@ const eslintConfig = [
           "**/*.{tsx}": "PASCAL_CASE",
           "**/*.{ts}": "CAMEL_CASE",
           "src/app/**/*.*": "KEBAB_CASE",
+          "public/**/*": "KEBAB_CASE",
         },
       ],
       "check-file/folder-naming-convention": [
         "warn",
         {
-          "**/*": "KEBAB_CASE",
+          "public/**/*": "KEBAB_CASE",
+          "src/!(app)/**/*": "KEBAB_CASE",
           "src/app/**/*": "NEXT_JS_APP_ROUTER_CASE",
         },
       ],
@@ -70,7 +69,7 @@ const eslintConfig = [
             {
               element: "a",
               message:
-                "use <Link> instead. You can import it from 'next/link'. See more here: https://nextjs.org/docs/app/api-reference/components/link",
+                "use <Link> instead. You can import it from '@/components/link'. See more here: https://nextjs.org/docs/app/api-reference/components/link",
             },
           ],
         },
