@@ -154,11 +154,7 @@ export default function Josiah() {
                   </span>
                 </div>
               </Link>
-              <Link
-                href="https://github.com/Trenton-Gibson/In-Distress"
-                target="_blank"
-                className="mr-3 inline-block h-[180px] w-[180px] rounded-2xl p-2 text-center text-white hover:bg-gray-500"
-              >
+              <div className="mr-3 inline-block h-[180px] w-[180px] rounded-2xl p-2 text-center text-white">
                 <div className="flex h-full flex-col items-center justify-center">
                   <Image
                     src="/images/josiah/github-mark-white.png"
@@ -171,7 +167,7 @@ export default function Josiah() {
                     <b>The Last Crewman</b>
                   </span>
                 </div>
-              </Link>
+              </div>
             </>
           }
         </div>
