@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Dylan() {
   return (
-    <div className="container mx-auto my-10 flex flex-col items-center space-y-10 rounded-3xl border-8 border-[#428ad1] bg-neutral-800 p-6 text-white shadow-xl backdrop-blur-lg">
+    <div className="container mx-auto my-10 flex flex-col items-center space-y-10 rounded-3xl bg-neutral-800 p-6 text-white backdrop-blur-lg">
       <div className="flex flex-col items-center space-y-6 text-center md:flex-row md:space-y-0 md:space-x-30 md:text-left">
         <Image
           className="transform rounded-full shadow-lg transition-transform group-hover:scale-105"
@@ -25,7 +25,7 @@ export default function Dylan() {
           <h2 className="mt-2 text-2xl">Sophomore at UNW</h2>
           <Link
             href="https://linkedin.com/in/dylan-weakly/"
-            className="mt-1 inline-block text-lg hover:underline"
+            className="mt-1 inline-block text-lg hover:text-[#428ad1] hover:underline"
           >
             Connect on LinkedIn
           </Link>

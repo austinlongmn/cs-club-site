@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function SystemsProject() {
   return (
-    <div className="max-w-8xl mx-auto mt-10 mb-10 flex flex-col items-center justify-center rounded-3xl border-8 border-[#b15900] bg-neutral-800 p-10 text-white shadow-xl backdrop-blur-lg transition-all duration-500">
+    <div className="max-w-8xl mx-auto mt-10 mb-10 flex flex-col items-center justify-center bg-neutral-800 p-10 text-white">
       <div className="pt-5 text-center sm:mr-20 sm:ml-20">
-        <h1 className="border-b border-[#b15900] pb-5 text-4xl font-bold">
+        <h1 className="border-b-4 border-[#b15900] pb-5 text-4xl font-bold">
           Dylan&apos;s Systems Analysis and Design Project
         </h1>
         <p className="mt-10 text-xl">
