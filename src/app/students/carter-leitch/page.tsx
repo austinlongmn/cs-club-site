@@ -32,7 +32,7 @@ export default function Page() {
         </div>
         <div>
           <LittleHeader text={"About Me"} />
-          <p className="text-center text-white">
+          <div className="text-center text-white">
             Hello, I am Carter Leitch. I am a Computer Science major with an
             Applied Mathematics minor. I am passionate about software
             development, and most of my projects involve web development. In
@@ -66,7 +66,7 @@ export default function Page() {
               text={"all around the U.S."}
               imagePath={"/images/carter/america2.jpg"}
             />
-          </p>
+          </div>
         </div>
 
         <div className="text-center">
