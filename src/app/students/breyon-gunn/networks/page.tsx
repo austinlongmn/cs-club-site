@@ -131,14 +131,14 @@ export default function SportsGames() {
           </p>
 
           <p className="mb-6">
-            First, the spectator's phone must be able to accurately display the
-            tickets without any issues. Both TicketMaster and AXS use methods to
-            prevent the tickets from being cloned and illegally resold.
-            TicketMaster uses NFC and a rotating barcode. With NFC tickets, the
-            spectator taps their phone on a reader, instantly validating the
-            ticket. AXS only uses a rotating barcode. Similar to NFC, the
-            rotating barcode can be used offline, which reduces the load of the
-            venue's Wi-Fi network.
+            First, the spectator&apos;s phone must be able to accurately display
+            the tickets without any issues. Both TicketMaster and AXS use
+            methods to prevent the tickets from being cloned and illegally
+            resold. TicketMaster uses NFC and a rotating barcode. With NFC
+            tickets, the spectator taps their phone on a reader, instantly
+            validating the ticket. AXS only uses a rotating barcode. Similar to
+            NFC, the rotating barcode can be used offline, which reduces the
+            load of the venue&apos;s Wi-Fi network.
           </p>
 
           <p className="mb-6">
@@ -157,7 +157,7 @@ export default function SportsGames() {
             continue to use cellular. If the spectator has an unlimited data
             plan, they will typically will not connect to Wi-Fi. However, due to
             the high costs of unlimited data plans, some individuals may elect
-            to use the stadium's network over cellular.
+            to use the stadium&apos;s network over cellular.
           </p>
 
           <p className="mb-6">
@@ -260,7 +260,7 @@ export default function SportsGames() {
 
           <p className="mb-6">
             During pre-game, the Timberwovles utilized software that allows fans
-            to stream a live video from the fans' phones to the screen. To
+            to stream a live video from the fans&apos; phones to the screen. To
             achieve this, they used software called FanSee!, which was designed
             by CUE Audio. Their software even allow the staff to select videos
             that have the best video feed. For best results at Timberwolves
