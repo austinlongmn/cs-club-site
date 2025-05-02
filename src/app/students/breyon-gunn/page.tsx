@@ -89,7 +89,7 @@ export default function Home() {
       image: "/images/breyon/networking.svg",
       link: "/students/breyon-gunn/networks",
       external: false,
-    }
+    },
   ];
 
   return (
