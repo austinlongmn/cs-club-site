@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@/components/image";
 
 export default function Page() {
   return (
@@ -16,8 +16,33 @@ export default function Page() {
           alt="Andrew leaning against a wall"
           width={300}
           height={450}
-          className="rounded shadow-lg"
+          className="rounded shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
         />
+      </div>
+      <div className="flex justify-center">
+        {/* GitHub logo button */}
+        <Link
+          href="https://github.com/andytheroo13"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4"
+        >
+          <Image
+            src="/images/andrew/GitHubLogo.png"
+            alt="GitHub Logo"
+            width={40}
+            height={40}
+            className="transition-transform duration-300 ease-in-out hover:scale-110"
+          />
+        </Link>
+      </div>
+
+      {/*  quote box  */}
+      <div className="mb-6 rounded-lg bg-gray-800 p-4 text-center shadow-md">
+        <p className="text-lg text-green-300 italic">
+          “Bugs are like diamonds — the impurities make your program shine.”
+        </p>
+        <p className="mt-2 text-sm text-gray-400">– Andrew, probably</p>
       </div>
 
       <section className="mb-6">

@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "@/components/image";
 import Link from "next/link";
 import CSCLogo from "@/svg/csc-logo.svg";
 import MenuButtonIcon from "@/svg/navbar-menu-icon.svg";
@@ -37,6 +37,10 @@ const pages: Page[] = [
     description: "Competition Scores",
     route: "/competition-scores",
   },
+  {
+    description: "About",
+    route: "/about",
+  },
 ];
 
 const lg_num_items = 7;
@@ -70,7 +74,7 @@ export default function Navbar() {
                 <Link
                   href={page.route}
                   key={index}
-                  className={`hidden ${
+                  className={`hidden transition-all duration-100 ${
                     index >= lg_num_items
                       ? ""
                       : index >= md_num_items
@@ -78,7 +82,7 @@ export default function Navbar() {
                         : index >= sm_num_items
                           ? "md:inline"
                           : "sm:inline"
-                  } ${pathname == page.route ? "font-bold" : ""}`}
+                  } ${pathname == page.route ? "font-bold" : "hover:font-bold"}`}
                 >
                   {page.description}
                 </Link>
@@ -94,7 +98,7 @@ export default function Navbar() {
               <Image
                 src={MenuButtonIcon}
                 alt="Menu bar icon"
-                className="h-auto w-5"
+                className="h-auto w-5 hover:scale-115"
               />
             </motion.div>
           </button>
@@ -113,11 +117,11 @@ export default function Navbar() {
             className="bg-background fixed top-0 left-0 z-49 h-screen w-screen"
           >
             <div className="pb-[var(--navbar-height)]" />
-            <div className="mx-auto max-w-6xl p-6">
+            <div className="mx-auto max-w-6xl p-6 text-2xl">
               {pages.map((page, index) => {
                 return (
                   <Link
-                    className={`block ${pathname == page.route ? "font-bold" : ""}`}
+                    className={`block ${pathname == page.route ? "font-bold" : "transition-all duration-100 hover:font-bold"}`}
                     onClick={() => {
                       setMenuOpen(false);
                     }}
