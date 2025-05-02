@@ -83,6 +83,13 @@ export default function Home() {
       link: "/students/breyon-gunn/pulse-view-capture",
       external: false,
     },
+    {
+      name: "Stadium Networking",
+      description: "An analysis of the networking infrastructure of a stadium.",
+      image: "/images/breyon/networking.svg",
+      link: "/students/breyon-gunn/networks",
+      external: false,
+    }
   ];
 
   return (

@@ -36,7 +36,7 @@ export default function SportsGames() {
         <div className="min-h-screen bg-gray-900 p-10 text-white">
             <div className="mx-auto max-w-4xl">
                 <h1 className="text-center text-5xl font-bold text-white">
-                    Sports Games
+                    Stadium Networking
                 </h1>
                 <p className="mt-4 text-center text-gray-400">
                     By Breyon Gunn | May 2, 2025
