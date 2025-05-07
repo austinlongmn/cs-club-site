@@ -10,9 +10,7 @@ export const metadata: Metadata = {
     "- St.Paul's very own Computer Science Club.",
 };
 
-const students = [
-  { id: "breyon-gunn", name: "Breyon Gunn" },
-];
+const students = [{ id: "breyon-gunn", name: "Breyon Gunn" }];
 
 export default function Alumni() {
   return (
@@ -43,7 +41,6 @@ export default function Alumni() {
           className=""
         />
       </div>
-
     </div>
   );
 }
