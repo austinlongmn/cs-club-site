@@ -17,14 +17,16 @@ const students = [
 
 export default function Alumni() {
   return (
-    <div className="flex flex-col gap-5 pt-15">
-      <div className="flex flex-row justify-between">
+    <div className="flex flex-col gap-5 px-5 pt-15">
+      <div className="flex flex-col justify-between md:flex-row">
         <div>
-          <h1 className="text-5xl font-bold">Our Alumni</h1>
-          <ul className="pt-20 text-2xl text-gray-300">
+          <h1 className="text-center text-5xl font-bold md:text-left">
+            Our Alumni
+          </h1>
+          <ul className="pt-5 text-xl text-gray-300 md:pt-20 md:text-2xl">
             {students.map((student) => (
               <li
-                className="mt-3 transition-colors duration-500 ease-in-out hover:font-bold hover:text-white"
+                className="mt-3 text-center transition-colors duration-500 ease-in-out hover:font-bold hover:text-white md:text-left"
                 key={student.id}
               >
                 <Link href={`/alumni/${student.id}`}>{student.name}</Link>
@@ -32,8 +34,8 @@ export default function Alumni() {
             ))}
           </ul>
         </div>
-        <div className="max-w-125 text-xl text-gray-300">
-          <p className="text-right leading-8 font-semibold">
+        <div className="max-w-125 text-lg text-gray-300 md:text-xl">
+          <p className="pt-10 text-center leading-8 font-semibold md:pt-0 md:text-right">
             We value our Northwestern alumni and appreciate their effort in the
             Computer Science Club. We want to continue to recognize them for
             their effort in the workforce after graduating.
@@ -41,7 +43,7 @@ export default function Alumni() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center pt-30">
+      <div className="flex flex-col items-center justify-center pt-5 md:pt-30">
         <div className="max-w-250 text-center text-lg">
           <p className="font-semibold">
             Go therefore and make disciples of all nations, baptizing them in
@@ -54,7 +56,7 @@ export default function Alumni() {
         <div className="flex flex-col items-center justify-center pt-15">
           <Link
             href="/students"
-            className="rounded-2xl bg-[#d0623b] px-5 py-3 text-xl font-semibold shadow-xl shadow-[#42261b] transition hover:scale-105"
+            className="text-md rounded-2xl bg-[#d0623b] px-5 py-3 font-semibold shadow-xl shadow-[#42261b] transition hover:scale-105 md:text-xl"
           >
             Check out our current students
           </Link>
@@ -63,7 +65,7 @@ export default function Alumni() {
             alt="CSC Logo"
             width={600}
             height={600}
-            className="pb-10"
+            className="pt-5 pb-10"
           />
         </div>
       </div>
