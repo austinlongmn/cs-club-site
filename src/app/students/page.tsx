@@ -13,7 +13,6 @@ const students = [
   { id: "daniel-deutsch", name: "Daniel Deutsch" },
   { id: "ethan-reed", name: "Ethan Reed" },
   { id: "andrew-hayes", name: "Andrew Hayes" },
-  { id: "carter-leitch", name: "Carter Leitch" },
   { id: "austin-long", name: "Austin Long" },
   { id: "josie-mellick", name: "Josie Mellick" },
   { id: "josiah-paul", name: "Josiah Paul" },
