@@ -13,14 +13,12 @@ export const metadata: Metadata = {
 
 const students = [
   { id: "daniel-deutsch", name: "Daniel Deutsch" },
-  { id: "ethan-reed", name: "Ethan Reed" },
   { id: "andrew-hayes", name: "Andrew Hayes" },
   { id: "austin-long", name: "Austin Long" },
   { id: "josie-mellick", name: "Josie Mellick" },
   { id: "josiah-paul", name: "Josiah Paul" },
   { id: "dylan-weakly", name: "Dylan Weakly" },
   { id: "mason-colacicco", name: "Mason Colacicco" },
-  // Add more students as needed
 ];
 
 const StudentsPage: React.FC = () => {
