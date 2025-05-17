@@ -51,19 +51,21 @@ export default function Alumni() {
           </p>
           <p className="pt-3 text-gray-300">Matthew 28:19-20</p>
         </div>
-        <Link
-          href="/students"
-          className="pt-15 text-2xl underline decoration-[#d0623b]"
-        >
-          Check out our current students!
-        </Link>
-        <Image
-          src={CSCLogo}
-          alt="CSC Logo"
-          width={600}
-          height={600}
-          className="pb-10"
-        />
+        <div className="flex flex-col items-center justify-center pt-15">
+          <Link
+            href="/students"
+            className="rounded-2xl bg-[#d0623b] px-5 py-3 text-xl font-semibold shadow-xl shadow-[#42261b] transition hover:scale-105"
+          >
+            Check out our current students
+          </Link>
+          <Image
+            src={CSCLogo}
+            alt="CSC Logo"
+            width={600}
+            height={600}
+            className="pb-10"
+          />
+        </div>
       </div>
     </div>
   );
