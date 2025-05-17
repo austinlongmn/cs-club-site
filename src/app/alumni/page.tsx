@@ -27,7 +27,7 @@ export default function Alumni() {
                 className="mt-3 transition-colors duration-500 ease-in-out hover:font-bold hover:text-white"
                 key={student.id}
               >
-                <Link href={`/students/${student.id}`}>{student.name}</Link>
+                <Link href={`/alumni/${student.id}`}>{student.name}</Link>
               </li>
             ))}
           </ul>
