@@ -25,10 +25,10 @@ const students = [
 
 const StudentsPage: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-between md:flex-row md:items-start">
+    <div className="mt-10 flex flex-col items-center justify-between md:flex-row md:items-start">
       <div>
-        <h1 className="pt-10 text-5xl font-bold">Our Students</h1>
-        <ul className="pt-5 text-xl text-gray-300">
+        <h1 className="text-5xl font-bold">Our Students</h1>
+        <ul className="pt-5 text-center text-2xl text-gray-300 md:text-left">
           {students.map((student) => (
             <li
               className="mt-3 transition-colors duration-500 ease-in-out hover:font-bold hover:text-white"
@@ -43,7 +43,7 @@ const StudentsPage: React.FC = () => {
         <Image
           src={CSCLogo}
           alt="Computer Science Club Logo"
-          className="w-100 pt-20"
+          className="mt-5 w-100 md:mt-20"
           width={300}
           height={100}
         />
