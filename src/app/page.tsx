@@ -1,11 +1,12 @@
 import Image from "@/components/image";
 import type { Metadata } from "next";
+import { NavGrid } from "./components/nav-grid";
 
 export const metadata: Metadata = {
   title: "Home - UNW CS Club",
   description:
     "This is the official site of University of Northwestern " +
-    "- St.Paul's very own Computer Science Club.",
+    "- St. Paul's Computer Science Club.",
 };
 
 export default function Home() {
@@ -14,37 +15,61 @@ export default function Home() {
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <div className="flex items-center justify-center">
         <Image
-          className="items-center rounded-lg shadow-md transition-transform duration-300"
-          width={300}
+          className="w-50 items-center rounded-lg shadow-md transition-transform duration-300 md:w-80"
+          width={5000}
           height={300}
           src="/images/general/csc-logo.png"
           alt="CS Club Logo"
         />
       </div>
-      <h1 className="pt-10 pb-5 text-center text-6xl">
-        Welcome to the CS Club Site!
+      <h1 className="mt-10 text-center text-3xl md:text-5xl">
+        We are the Computer Science Club of the University of Northwestern - St.
+        Paul
       </h1>
-      <p className="pt-5 text-center text-2xl">
-        We are the Computer Science Club at the University of Northwestern-St.
-        Paul in Roseville, Minnesota.
-      </p>
-      <p className="pb-5 text-center text-2xl">
-        We are dedicated to fostering a community of innovation and
-        collaboration in computer science. We aim to empower students of all
-        skill levels through collaborative projects and mentorship while
-        promoting the development of technical skills and critical thinking. Our
-        goal is to inspire and prepare members for future leadership in
-        technology.
-      </p>
-      <h2 className="pt-10 text-center text-4xl">Our Club Members</h2>
-      <div className="flex items-center justify-center pt-5">
-        <Image
-          className="rounded-lg shadow-md transition-transform duration-300 hover:scale-102"
-          width={700}
-          height={300}
-          src="/images/general/club-fall24.png"
-          alt="Our Club Members"
-        />
+      <div>
+        <NavGrid />
+      </div>
+      <div>
+        <div className="mt-10 flex flex-row items-center justify-center">
+          <div className="flex items-center justify-center">
+            <Image
+              src="/images/general/club-fall24.png"
+              alt="Our Club Members"
+              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+              width={700}
+              height={300}
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/general/activate.jpg"
+              alt="Our Club Members"
+              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+              width={530}
+              height={300}
+            />
+          </div>
+        </div>
+        <div className="flex flex-row items-center justify-center">
+          <div className="flex items-center justify-center">
+            <Image
+              src="/images/general/timberwolves.jpg"
+              alt="CS Club Event at Target Center"
+              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+              width={540}
+              height={300}
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/general/bonfire.JPG"
+              alt="Spring 2025 CS Club Bonfire"
+              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+              width={540}
+              height={300}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
