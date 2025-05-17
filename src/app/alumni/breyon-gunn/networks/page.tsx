@@ -282,7 +282,7 @@ export default function SportsGames() {
         </div>
 
         <div className="mt-10 text-center">
-          <Link href="/students/breyon-gunn">
+          <Link href="/alumni/breyon-gunn">
             <span className="inline-block cursor-pointer rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700">
               Back to Profile
             </span>
