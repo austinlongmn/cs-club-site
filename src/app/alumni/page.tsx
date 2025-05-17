@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 const students = [
   { id: "breyon-gunn", name: "Breyon Gunn, Spring 2025 Graduate" },
   { id: "carter-leitch", name: "Carter Leitch, Spring 2025 Graduate" },
+  { id: "ethan-reed", name: "Ethan Reed, Spring 2025 PSEO Graduate" },
 ];
 
 export default function Alumni() {
