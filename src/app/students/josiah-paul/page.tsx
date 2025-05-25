@@ -53,7 +53,7 @@ export default function Josiah() {
           <p>
             The largest school project I worked on was the Systems Analysis &
             Design final project with{" "}
-            <Link href="carter-leitch" target="_blank">
+            <Link href="/alumni/carter-leitch" target="_blank">
               <u>Carter Leitch.</u>
             </Link>
           </p>

@@ -16,7 +16,7 @@ export default function Home() {
       <div className="flex items-center justify-center">
         <Image
           className="w-50 items-center rounded-lg shadow-md transition-transform duration-300 md:w-80"
-          width={5000}
+          width={300}
           height={300}
           src="/images/general/csc-logo.png"
           alt="CS Club Logo"
