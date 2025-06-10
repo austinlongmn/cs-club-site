@@ -49,7 +49,7 @@ export default function Alumni() {
           <p className="font-semibold">
             Go therefore and make disciples of all nations, baptizing them in
             the name of the Father and of the Son and of the Holy Spirit,
-            teaching them to observe all that I have commanded you. And behild,
+            teaching them to observe all that I have commanded you. And behold,
             I am with you always, to the end of the age.
           </p>
           <p className="pt-3 text-gray-300">Matthew 28:19-20</p>
