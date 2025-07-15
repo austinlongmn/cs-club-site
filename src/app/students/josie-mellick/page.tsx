@@ -42,7 +42,7 @@ export default function Page() {
             alt="Mellick Headshot"
           />
 
-          {/* Name and contact info */}
+          {/* Name and links */}
           <div className="text-center">
             <h1 className="text-7xl text-white">Josie Mellick</h1>
             <p className="text-white">University of Northwestern - St. Paul</p>
@@ -69,7 +69,7 @@ export default function Page() {
           <h2 className="py-4 text-left text-2xl text-white">About Me</h2>
           <p className="text-md py-4 text-left text-white">
             My name is Josie Mellick and I have a passion for programming.
-            I&apos;m currently a sophomore computer science student at UNW. My
+            I&apos;m currently a junior computer science student at UNW. My
             experience is primarily with Python, Java, and C++.
           </p>
           <p className="text-md py-4 text-left text-white">
@@ -91,7 +91,7 @@ export default function Page() {
         <div className="mx-auto mb-6 w-3xl rounded-lg bg-gray-900 p-4 shadow">
           <h2
             onClick={() => toggleProject("jackLinks")}
-            className="cursor-pointer py-4 text-left text-2xl text-white transition-colors duration-200 hover:text-red-400"
+            className="cursor-pointer py-4 text-left text-2xl text-white transition-colors duration-200 hover:text-blue-400"
           >
             ▸ Offboarding Automation for Jack Links
           </h2>
@@ -131,7 +131,7 @@ export default function Page() {
         <div className="mx-auto mb-6 w-3xl rounded-lg bg-gray-900 p-4 shadow">
           <h2
             onClick={() => toggleProject("unreal")}
-            className="cursor-pointer py-4 text-left text-2xl text-white transition-colors duration-200 hover:text-red-400"
+            className="cursor-pointer py-4 text-left text-2xl text-white transition-colors duration-200 hover:text-blue-400"
           >
             ▸ Cowboy Game Demo (In-Progress)
           </h2>
@@ -163,6 +163,17 @@ export default function Page() {
         <h2 className="py-6 text-center text-2xl text-white">
           More to come...
         </h2>
+
+        {/* Current work */}
+        <div className="mx-auto max-w-xl rounded-lg bg-gray-900 p-4 shadow">
+          <h2 className="py-4 text-left text-2xl text-white">What I'm working on now</h2>
+          <p className="text-md py-4 text-left text-white">
+           I'm currently in the process of learning how to use Unreal Engine. 
+           I've recently worked on importing meshes and my current project is 
+           figuring out how to create a third person character.
+          </p>
+        </div>
+
       </div>
     </div>
   );
