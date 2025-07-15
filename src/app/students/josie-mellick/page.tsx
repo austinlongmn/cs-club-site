@@ -166,14 +166,15 @@ export default function Page() {
 
         {/* Current work */}
         <div className="mx-auto max-w-xl rounded-lg bg-gray-900 p-4 shadow">
-          <h2 className="py-4 text-left text-2xl text-white">What I'm working on now</h2>
+          <h2 className="py-4 text-left text-2xl text-white">
+            What I'm working on now
+          </h2>
           <p className="text-md py-4 text-left text-white">
-           I'm currently in the process of learning how to use Unreal Engine. 
-           I've recently worked on importing meshes and my current project is 
-           figuring out how to create a third person character.
+            I'm currently in the process of learning how to use Unreal Engine.
+            I've recently worked on importing meshes and my current project is
+            figuring out how to create a third person character.
           </p>
         </div>
-
       </div>
     </div>
   );
