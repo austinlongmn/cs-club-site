@@ -5,14 +5,12 @@ import {
   useRef,
   useEffect,
   ReactElement,
-  useLayoutEffect,
 } from "react";
 
 export interface SlideshowContextType {
   animationDistance: number;
   animationTime: number;
-  width: number;
-  height: number;
+  animationScale: number;
 }
 
 export const FrameIndexContext = createContext(false);
@@ -20,8 +18,7 @@ export const FrameIndexContext = createContext(false);
 export const SlideshowContext = createContext({
   animationDistance: 20,
   animationTime: 20,
-  width: 0,
-  height: 0,
+  animationScale: 2,
 } as SlideshowContextType);
 
 export interface SlideshowProps {
@@ -29,6 +26,7 @@ export interface SlideshowProps {
   inBetweenTime?: number;
   animationDistance?: number;
   animationTime?: number;
+  animationScale?: number;
   previewFrame?: number | null;
   frames: ReactElement[];
 }
@@ -38,6 +36,7 @@ export function Slideshow({
   animationDistance = 20,
   inBetweenTime = 0.2,
   animationTime = 1,
+  animationScale = 2,
   previewFrame = null,
   frames,
 }: SlideshowProps) {
@@ -45,26 +44,6 @@ export function Slideshow({
   const [animateIn, setAnimateIn] = useState(true);
   const timeouts = useRef<NodeJS.Timeout[]>([]); // Track timeouts
   const containerRef = useRef<HTMLDivElement>(null);
-  const [size, setSize] = useState<{ width: number; height: number }>({
-    width: -1,
-    height: -1,
-  });
-
-  useLayoutEffect(() => {
-    const updateSize = () => {
-      if (containerRef.current) {
-        const { width, height } = containerRef.current.getBoundingClientRect();
-        setSize({ width: width, height: height });
-      }
-    };
-
-    const resizeObserver = new ResizeObserver(updateSize);
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
-    }
-
-    return () => resizeObserver.disconnect();
-  }, []);
 
   // Schedule slide advances
   useEffect(() => {
@@ -113,8 +92,7 @@ export function Slideshow({
       value={{
         animationDistance,
         animationTime,
-        width: size.width,
-        height: size.height,
+        animationScale,
       }}
     >
       <div ref={containerRef} className="relative h-full w-full">

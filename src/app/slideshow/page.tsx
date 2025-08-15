@@ -1,55 +1,43 @@
 "use client";
 import { Element, Frame, Slideshow } from "@/components/slideshow";
 import { useEffect, useState } from "react";
-import AustinFrame from "@/app/students/austin-long/frame";
 
 function DemoFrame() {
   return (
-    <Frame key={1} paddingSize={5}>
-      <Element
-        x={25}
-        y={25}
-        width={50}
-        height={50}
-        animationDirection="left"
-        paddingPosition="topLeft"
-        animationDelay={0}
-      >
-        <div className="h-full w-full rounded-md bg-blue-300" />
-      </Element>
-      <Element
-        x={75}
-        y={25}
-        width={50}
-        height={50}
-        animationDirection="up"
-        paddingPosition="topRight"
-        animationDelay={10}
-      >
-        <div className="h-full w-full rounded-md bg-green-300" />
-      </Element>
-      <Element
-        x={25}
-        y={75}
-        width={50}
-        height={50}
-        animationDirection="down"
-        paddingPosition="bottomLeft"
-        animationDelay={20}
-      >
-        <div className="h-full w-full rounded-md bg-green-300" />
-      </Element>
-      <Element
-        x={75}
-        y={75}
-        width={50}
-        height={50}
-        animationDirection="right"
-        paddingPosition="bottomRight"
-        animationDelay={30}
-      >
-        <div className="h-full w-full rounded-md bg-blue-300" />
-      </Element>
+    <Frame key={1}>
+      <div className="grid h-full w-full grid-cols-2 grid-rows-2 gap-4">
+        <Element
+          animationDirection="left"
+          animationDelay={0}
+          animationLength={70}
+        >
+          <div className="h-full w-full rounded-md bg-blue-300 text-center text-9xl">
+            <div className="h-50" />
+            <div>Hello, there!</div>
+          </div>
+        </Element>
+        <Element
+          animationDirection="up"
+          animationDelay={10}
+          animationLength={70}
+        >
+          <div className="h-full w-full rounded-md bg-green-300" />
+        </Element>
+        <Element
+          animationDirection="down"
+          animationDelay={20}
+          animationLength={70}
+        >
+          <div className="h-full w-full rounded-md bg-green-300" />
+        </Element>
+        <Element
+          animationDirection="right"
+          animationDelay={30}
+          animationLength={70}
+        >
+          <div className="h-full w-full rounded-md bg-blue-300" />
+        </Element>
+      </div>
     </Frame>
   );
 }
@@ -80,11 +68,12 @@ export default function Page() {
       className={`bg-background aspect-video ${isFullscreen ? "fixed top-0 left-0 z-51 h-screen w-screen" : ""}`}
     >
       <Slideshow
-        advanceTime={20}
-        animationDistance={10}
+        advanceTime={5}
+        animationDistance={50}
+        animationScale={2}
         inBetweenTime={1}
         animationTime={1.5}
-        frames={[<AustinFrame key={0} />, <DemoFrame key={1} />]}
+        frames={[<DemoFrame key={1} />]}
       />
     </div>
   );

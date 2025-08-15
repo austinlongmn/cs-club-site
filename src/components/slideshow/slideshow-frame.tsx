@@ -1,23 +1,31 @@
 "use client";
-import { createContext, ReactElement } from "react";
-
-export interface FrameContextType {
-  paddingSize?: number;
-}
-
-export const FrameContext = createContext({
-  paddingSize: 0,
-} as FrameContextType);
+import { motion } from "motion/react";
+import { useContext } from "react";
+import { FrameIndexContext, SlideshowContext } from "./slideshow";
 
 export interface FrameProps {
-  children: ReactElement[];
-  paddingSize?: number;
+  children: React.ReactNode;
 }
 
-export function Frame({ children, paddingSize = 0 }: FrameProps) {
+export function Frame({ children }: FrameProps) {
+  const slideshowContext = useContext(SlideshowContext);
+  const animIn = useContext(FrameIndexContext);
+  const transition = {
+    ease: "easeInOut",
+    duration: slideshowContext.animationTime,
+  };
+
+  const initialScale = slideshowContext.animationScale;
+  const targetScale = animIn ? 1 : initialScale;
+
   return (
-    <FrameContext value={{ paddingSize }}>
-      <div className="absolute h-full w-full">{children}</div>
-    </FrameContext>
+    <motion.div
+      initial={{ scale: initialScale }}
+      animate={{ scale: targetScale }}
+      transition={{ scale: transition }}
+      className="absolute h-full w-full"
+    >
+      {children}
+    </motion.div>
   );
 }

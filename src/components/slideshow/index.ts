@@ -4,7 +4,6 @@ export {
   Element,
   type ElementProps,
   type StringAnimationDirection,
-  type PaddingSpecifier,
   type AnimationDirection,
   customAnimationDirection,
 } from "./slideshow-element";
