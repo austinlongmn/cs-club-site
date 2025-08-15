@@ -1,6 +1,6 @@
 "use client";
 import { useContext, useRef, ReactNode } from "react";
-import { motion } from "motion/react";
+import { motion, ValueTransition } from "motion/react";
 import { FrameIndexContext, SlideshowContext } from "./slideshow";
 import { FrameContext } from "./slideshow-frame";
 
@@ -216,7 +216,7 @@ export function Element({
     y: iniPosY,
   };
   const currentState = { opacity: 1, x: posX, y: posY };
-  const transition = {
+  const transition: ValueTransition = {
     ease: "easeInOut",
     delay: calculateRelativeTime(
       animationDelay / 100,
