@@ -16,6 +16,7 @@ export interface ElementProps {
   animationDirection: StringAnimationDirection;
   animationDelay?: number;
   animationLength?: number;
+  className?: string;
 }
 
 export interface AnimationDirection {
@@ -63,6 +64,7 @@ export function Element({
   animationDirection,
   animationDelay = 0,
   animationLength = 100,
+  className = "",
 }: ElementProps) {
   const invalidAnimationLengthMessage = "Animation length cannot exceed 100%";
   if (animationDelay + animationLength > 100) {
@@ -111,7 +113,7 @@ export function Element({
         x: transition,
         y: transition,
       }}
-      className="relative h-full w-full"
+      className={className}
       ref={elementRef}
     >
       {children}

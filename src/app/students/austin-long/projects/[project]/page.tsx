@@ -9,7 +9,7 @@ const typographyStyles = `
   prose-invert
   prose-a:text-blue-500
   prose-a:hover:text-blue-400
-  prose-code:!font-(family-name:--font-jetbrains-mono)
+  prose-code:!font-jetbrains-mono
   prose-code:before:content-['']
   prose-code:after:content-['']
   prose-code:bg-zinc-900
@@ -52,7 +52,7 @@ function ProjectDisplaySkeleton() {
 function ProjectDisplay({ project }: { project: Project | null }) {
   return (
     <div className="p-5">
-      <h1 className="pb-5 font-(family-name:--font-jetbrains-mono) text-3xl sm:text-5xl">
+      <h1 className="font-jetbrains-mono pb-5 text-3xl sm:text-5xl">
         {project == null ? (
           <Skeleton />
         ) : (

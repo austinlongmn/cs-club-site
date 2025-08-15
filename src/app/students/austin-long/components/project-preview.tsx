@@ -18,10 +18,7 @@ function ProjectPreview({ project, reverse }: ProjectPreviewProps) {
       className={`flex flex-col ${reverse ? "sm:flex-row-reverse" : "sm:flex-row"} mb-10 rounded-sm bg-zinc-950 p-4 sm:min-h-64 sm:rounded-xl sm:p-10`}
     >
       <div className="flex grow flex-col sm:min-h-64">
-        <h3
-          className="text-xl sm:text-2xl"
-          style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-        >
+        <h3 className="font-jetbrains-mono text-xl sm:text-2xl">
           {project?.title ?? <Skeleton />}
         </h3>
         <p className="grow">{project?.description ?? <Skeleton count={5} />}</p>

@@ -1,6 +1,7 @@
 "use client";
 import { Element, Frame, Slideshow } from "@/components/slideshow";
 import { useEffect, useState } from "react";
+import AustinFrame from "@/app/students/austin-long/frame";
 
 function DemoFrame() {
   return (
@@ -68,12 +69,12 @@ export default function Page() {
       className={`bg-background aspect-video ${isFullscreen ? "fixed top-0 left-0 z-51 h-screen w-screen" : ""}`}
     >
       <Slideshow
-        advanceTime={5}
+        advanceTime={20}
         animationDistance={50}
         animationScale={2}
         inBetweenTime={1}
         animationTime={1.5}
-        frames={[<DemoFrame key={1} />]}
+        frames={[<AustinFrame key={1} />]}
       />
     </div>
   );
