@@ -1,18 +1,36 @@
 "use client";
 import { motion } from "motion/react";
-import { useContext } from "react";
-import { FrameIndexContext, SlideshowContext } from "./slideshow";
+import { createContext, useContext } from "react";
+import {
+  animationEase,
+  animationEaseReverse,
+  FrameIndexContext,
+  SlideshowContext,
+} from "./slideshow";
 
 export interface FrameProps {
   children: React.ReactNode;
   backgroundColor?: string;
+  defaultAnimationDuration?: number;
 }
 
-export function Frame({ children, backgroundColor }: FrameProps) {
+export interface FrameContext {
+  defaultAnimationDuration: number;
+}
+
+export const FrameContext = createContext<FrameContext>({
+  defaultAnimationDuration: 100,
+});
+
+export function Frame({
+  children,
+  backgroundColor,
+  defaultAnimationDuration = 100,
+}: FrameProps) {
   const slideshowContext = useContext(SlideshowContext);
   const animIn = useContext(FrameIndexContext);
   const transition = {
-    ease: "easeInOut",
+    ease: animIn ? animationEase : animationEaseReverse,
     duration: slideshowContext.animationTime,
   };
 
@@ -24,7 +42,6 @@ export function Frame({ children, backgroundColor }: FrameProps) {
     ? (backgroundColor ?? initialBackgroundColor)
     : initialBackgroundColor;
 
-  console.log(targetBackgroundColor);
   return (
     <motion.div
       initial={{ scale: initialScale, backgroundColor: initialBackgroundColor }}
@@ -32,7 +49,9 @@ export function Frame({ children, backgroundColor }: FrameProps) {
       transition={{ scale: transition, backgroundColor: transition }}
       className="absolute h-full w-full"
     >
-      {children}
+      <FrameContext.Provider value={{ defaultAnimationDuration }}>
+        {children}
+      </FrameContext.Provider>
     </motion.div>
   );
 }

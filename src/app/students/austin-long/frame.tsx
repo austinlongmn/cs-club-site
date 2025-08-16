@@ -12,21 +12,23 @@ import { Bio } from "./page";
 
 export default function SlideshowFrame() {
   return (
-    <Frame backgroundColor="#050809">
+    <Frame backgroundColor="#050809" defaultAnimationDuration={50}>
       <div className="grid h-full grid-cols-2 grid-rows-[auto_1fr] gap-5 p-5">
-        <Element animationDirection="up">
-          <div className="flex flex-row gap-5">
-            <div className="font-jetbrains-mono flex flex-1 grow items-center justify-center rounded-lg bg-zinc-800 p-10 text-7xl">
+        <div className="flex flex-row gap-5">
+          <Element animationDirection="up">
+            <div className="font-jetbrains-mono flex h-full items-center justify-center rounded-lg bg-zinc-800 p-10 text-7xl">
               <div className="text-center">Austin Long</div>
             </div>
+          </Element>
+          <Element animationDirection="up" animationDelay={12.5}>
             <Image
               src={ProfileImage}
               className="w-100 flex-1 rounded-lg"
               alt="Austin Long"
             />
-          </div>
-        </Element>
-        <Element animationDirection="right">
+          </Element>
+        </div>
+        <Element animationDirection="right" animationDelay={25}>
           <div className="flex h-full flex-col rounded-lg bg-zinc-800 p-5">
             <h2 className="font-jetbrains-mono text-center text-4xl">
               Favorite Programming Languages
@@ -55,12 +57,12 @@ export default function SlideshowFrame() {
             </ul>
           </div>
         </Element>
-        <Element animationDirection="left">
+        <Element animationDirection="left" animationDelay={37.5}>
           <div className="prose prose-p:text-3xl prose-a:no-underline prose-a:text-foreground prose-p:text-foreground h-full w-full max-w-none rounded-lg bg-zinc-800 p-5">
             <Bio />
           </div>
         </Element>
-        <Element animationDirection="down">
+        <Element animationDirection="down" animationDelay={50}>
           <div className="flex h-full flex-col items-center justify-center gap-5 rounded-lg p-5">
             <h2 className="font-jetbrains-mono text-center text-5xl">
               Website

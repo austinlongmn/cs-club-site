@@ -1,7 +1,13 @@
 "use client";
 import { useContext, useRef, ReactNode } from "react";
 import { motion } from "motion/react";
-import { FrameIndexContext, SlideshowContext } from "./slideshow";
+import {
+  animationEase,
+  animationEaseReverse,
+  FrameIndexContext,
+  SlideshowContext,
+} from "./slideshow";
+import { FrameContext } from "./slideshow-frame";
 
 export type StringAnimationDirection =
   | "up"
@@ -15,7 +21,7 @@ export interface ElementProps {
   children: ReactNode;
   animationDirection: StringAnimationDirection;
   animationDelay?: number;
-  animationLength?: number;
+  animationDuration?: number;
   className?: string;
 }
 
@@ -63,11 +69,16 @@ export function Element({
   children,
   animationDirection,
   animationDelay = 0,
-  animationLength = 100,
+  animationDuration,
   className = "",
 }: ElementProps) {
+  const frameContext = useContext(FrameContext);
+  if (animationDuration == null) {
+    animationDuration = frameContext.defaultAnimationDuration;
+  }
+
   const invalidAnimationLengthMessage = "Animation length cannot exceed 100%";
-  if (animationDelay + animationLength > 100) {
+  if (animationDelay + animationDuration > 100) {
     if (process.env.NODE_ENV === "development") {
       throw new Error(invalidAnimationLengthMessage);
     } else {
@@ -90,7 +101,7 @@ export function Element({
   };
   const currentState = { opacity: 1, x: 0, y: 0 };
 
-  const durationPercent = animationLength / 100;
+  const durationPercent = animationDuration / 100;
   const duration = durationPercent * slideshowContext.animationTime;
   const delay = calculateRelativeDelay(
     animationDelay / 100,
@@ -100,7 +111,7 @@ export function Element({
   );
 
   const transition = {
-    ease: "easeInOut",
+    ease: animIn ? animationEase : animationEaseReverse,
     delay: delay,
     duration: duration,
   };

@@ -13,6 +13,9 @@ export interface SlideshowContextType {
   animationScale: number;
 }
 
+export const animationEase = [0.5, 1, 0.5, 1];
+export const animationEaseReverse = [0.5, 0, 0.5, 0];
+
 export const FrameIndexContext = createContext(false);
 
 export const SlideshowContext = createContext({

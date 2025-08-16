@@ -1,47 +1,7 @@
 "use client";
-import { Element, Frame, Slideshow } from "@/components/slideshow";
-import { useEffect, useState } from "react";
 import AustinFrame from "@/app/students/austin-long/frame";
-
-function DemoFrame() {
-  return (
-    <Frame key={1}>
-      <div className="grid h-full w-full grid-cols-2 grid-rows-2 gap-4">
-        <Element
-          animationDirection="left"
-          animationDelay={0}
-          animationLength={70}
-        >
-          <div className="h-full w-full rounded-md bg-blue-300 text-center text-9xl">
-            <div className="h-50" />
-            <div>Hello, there!</div>
-          </div>
-        </Element>
-        <Element
-          animationDirection="up"
-          animationDelay={10}
-          animationLength={70}
-        >
-          <div className="h-full w-full rounded-md bg-green-300" />
-        </Element>
-        <Element
-          animationDirection="down"
-          animationDelay={20}
-          animationLength={70}
-        >
-          <div className="h-full w-full rounded-md bg-green-300" />
-        </Element>
-        <Element
-          animationDirection="right"
-          animationDelay={30}
-          animationLength={70}
-        >
-          <div className="h-full w-full rounded-md bg-blue-300" />
-        </Element>
-      </div>
-    </Frame>
-  );
-}
+import { Slideshow } from "@/components/slideshow";
+import { useEffect, useState } from "react";
 
 export default function Page() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -72,9 +32,9 @@ export default function Page() {
         advanceTime={20}
         animationDistance={50}
         animationScale={2}
-        inBetweenTime={1}
-        animationTime={1.5}
-        frames={[<AustinFrame key={1} />]}
+        inBetweenTime={1.5}
+        animationTime={2.5}
+        frames={[<AustinFrame key={"Austin Long"} />]}
       />
     </div>
   );
