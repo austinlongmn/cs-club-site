@@ -8,7 +8,7 @@ import RustLogo from "@public/images/general/rust-logo-128x128.png";
 import TypeScriptLogo from "@/svg/ts-logo-128.svg";
 import PythonLogo from "@/svg/python-logo.svg";
 import QRCode from "@public/images/austin/website-qr-code.svg";
-import { Bio } from "./page";
+import Bio from "./components/bio";
 
 export default function SlideshowFrame() {
   return (
