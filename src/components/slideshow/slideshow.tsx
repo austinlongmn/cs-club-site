@@ -1,4 +1,5 @@
 "use client";
+import { Easing } from "motion";
 import {
   createContext,
   useState,
@@ -13,8 +14,8 @@ export interface SlideshowContextType {
   animationScale: number;
 }
 
-export const animationEase = [0.5, 1, 0.5, 1];
-export const animationEaseReverse = [0.5, 0, 0.5, 0];
+export const animationEase: Easing = [0.5, 1, 0.5, 1];
+export const animationEaseReverse: Easing = [0.5, 0, 0.5, 0];
 
 export const FrameIndexContext = createContext(false);
 

@@ -1,6 +1,6 @@
 "use client";
 import { useContext, useRef, ReactNode } from "react";
-import { motion } from "motion/react";
+import { motion, ValueTransition } from "motion/react";
 import {
   animationEase,
   animationEaseReverse,
@@ -110,7 +110,8 @@ export function Element({
     durationPercent
   );
 
-  const transition = {
+  const transition: ValueTransition = {
+    type: "tween",
     ease: animIn ? animationEase : animationEaseReverse,
     delay: delay,
     duration: duration,
@@ -120,9 +121,7 @@ export function Element({
       initial={notCurrentState}
       animate={animIn ? currentState : notCurrentState}
       transition={{
-        opacity: transition,
-        x: transition,
-        y: transition,
+        default: transition,
       }}
       className={className}
       ref={elementRef}
