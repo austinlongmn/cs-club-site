@@ -107,12 +107,12 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            exit={{ opacity: 0, scale: 1.1, transition: { type: "easeInOut" } }}
+            exit={{ opacity: 0, scale: 1.1, transition: { ease: "easeInOut" } }}
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{
               opacity: 1,
               scale: 1,
-              transition: { type: "easeInOut" },
+              transition: { ease: "easeInOut" },
             }}
             className="bg-background fixed top-0 left-0 z-49 h-screen w-screen"
           >
