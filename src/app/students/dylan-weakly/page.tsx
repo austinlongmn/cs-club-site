@@ -22,7 +22,7 @@ export default function Dylan() {
         />
         <div>
           <h1 className="text-4xl font-bold">Dylan Weakly</h1>
-          <h2 className="mt-2 text-2xl">Sophomore at UNW</h2>
+          <h2 className="mt-2 text-2xl">Junior at UNW</h2>
           <Link
             href="https://linkedin.com/in/dylan-weakly/"
             className="mt-1 inline-block text-lg hover:text-[#428ad1] hover:underline"
