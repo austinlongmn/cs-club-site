@@ -9,6 +9,8 @@ const courses = [
   { title: "C Programming Language" },
   { title: "Discrete Mathematics" },
   { title: "Database Management I" },
+  { title: "Server Administration" },
+  { title: "Operating Systems Concepts" },
 ];
 
 export function CourseList() {
