@@ -34,7 +34,7 @@ export default function Dylan() {
 
       <div className="max-w-4xl space-y-6 text-center text-lg">
         <p>
-          I am a sophomore at the University of Northwestern - St. Paul,
+          I am a junior at the University of Northwestern - St. Paul,
           majoring in Computer Science with a minor in Cybersecurity. I am
           passionate about leveraging the skills God has given me to create
           thoughtful, efficient software solutions. My programming experience
@@ -43,7 +43,7 @@ export default function Dylan() {
           website.
         </p>
         <p>
-          Since April 2025, I have also served as a Technical Support Specialist
+          Since April 2025, I have served as a Technical Support Specialist
           in the university&apos;s Information Technology department. This role
           has allowed me to further strengthen my problem-solving and critical
           thinking abilities by assisting users with a wide range of technical
