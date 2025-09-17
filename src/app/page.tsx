@@ -29,7 +29,7 @@ export default function Home() {
       <div>
         <NavGrid />
       </div>
-      <div className="flex justify-center items-center mt-20">
+      <div className="mt-20 flex items-center justify-center">
         <Image
           className="w-100 items-center rounded-lg shadow-md transition-transform duration-300 md:w-200"
           width={9000}
@@ -38,7 +38,9 @@ export default function Home() {
           alt="CS Club Members in Fall 2025"
         />
       </div>
-      <h1 className="mt-5 text-center text-lg md:text-xl text-neutral-300">Fall 2025 Club Members</h1>
+      <h1 className="mt-5 text-center text-lg text-neutral-300 md:text-xl">
+        Fall 2025 Club Members
+      </h1>
     </div>
   );
 }

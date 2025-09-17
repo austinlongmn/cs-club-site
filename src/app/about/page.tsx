@@ -61,45 +61,45 @@ export default function About() {
         </p>
       </div>
       <div className="mt-10 flex flex-row items-center justify-center">
-          <div className="flex items-center justify-center">
-            <Image
-              src="/images/general/club-fall24.png"
-              alt="Our Club Members"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-              width={700}
-              height={300}
-            />
-          </div>
-          <div>
-            <Image
-              src="/images/general/activate.jpg"
-              alt="Our Club Members"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-              width={530}
-              height={300}
-            />
-          </div>
+        <div className="flex items-center justify-center">
+          <Image
+            src="/images/general/club-fall24.png"
+            alt="Our Club Members"
+            className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+            width={700}
+            height={300}
+          />
         </div>
-        <div className="flex flex-row items-center justify-center">
-          <div className="flex items-center justify-center">
-            <Image
-              src="/images/general/timberwolves.jpg"
-              alt="CS Club Event at Target Center"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-              width={540}
-              height={300}
-            />
-          </div>
-          <div>
-            <Image
-              src="/images/general/bonfire.JPG"
-              alt="Spring 2025 CS Club Bonfire"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-              width={540}
-              height={300}
-            />
-          </div>
+        <div>
+          <Image
+            src="/images/general/activate.jpg"
+            alt="Our Club Members"
+            className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+            width={530}
+            height={300}
+          />
         </div>
+      </div>
+      <div className="flex flex-row items-center justify-center">
+        <div className="flex items-center justify-center">
+          <Image
+            src="/images/general/timberwolves.jpg"
+            alt="CS Club Event at Target Center"
+            className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+            width={540}
+            height={300}
+          />
+        </div>
+        <div>
+          <Image
+            src="/images/general/bonfire.JPG"
+            alt="Spring 2025 CS Club Bonfire"
+            className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+            width={540}
+            height={300}
+          />
+        </div>
+      </div>
     </div>
   );
 }
