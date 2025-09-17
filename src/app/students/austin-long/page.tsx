@@ -1,11 +1,8 @@
 import Image from "@/components/image";
 
-import { JSX, Suspense } from "react";
-import {
-  ProjectsList,
-  ProjectsListSkeleton,
-} from "./components/project-preview";
+import { JSX } from "react";
 import Bio from "./components/bio";
+import Link from "next/link";
 
 function Heading2({ children }: { children: JSX.Element | string }) {
   return (
@@ -33,10 +30,9 @@ export default async function Page() {
           className="mx-auto h-52 w-auto rounded-md md:h-72"
         />
       </div>
-      <Heading2>Projects</Heading2>
-      <Suspense fallback={<ProjectsListSkeleton />}>
-        <ProjectsList />
-      </Suspense>
+      <Heading2>
+        <Link href="https://austinlong.dev/">View my website</Link>
+      </Heading2>
     </div>
   );
 }
