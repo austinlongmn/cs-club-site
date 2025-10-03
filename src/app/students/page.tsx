@@ -20,6 +20,7 @@ const students = [
   { id: "josiah-paul", name: "Josiah Paul" },
   { id: "dylan-weakly", name: "Dylan Weakly" },
   { id: "mason-colacicco", name: "Mason Colacicco" },
+  { id: "joshua-sherrard", name: "Joshua Sherrard" },
 ];
 
 const StudentsPage: React.FC = () => {
