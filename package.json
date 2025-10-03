@@ -7,11 +7,11 @@
     "build": "cross-env PROJECT_PHASE=development_build next build && node scripts/copy-attribution.js && node scripts/development-build-copy-static-assets.js",
     "build:production": "cross-env PROJECT_PHASE=production_build next build && node scripts/copy-attribution.js && node scripts/production-build-copy-public.js",
     "start": "cross-env NODE_ENV=production node .next/standalone/server.js",
-    "fix": "next lint --fix && prettier . --write",
-    "lint": "next lint --max-warnings=0",
+    "fix": "eslint --fix . && prettier . --write",
+    "lint": "eslint --max-warnings=0 .",
     "prettier:check": "prettier . --check",
     "prettier:fix": "prettier . --write",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "eslint --fix ."
   },
   "dependencies": {
     "cs-club-site": "file:",

@@ -8,7 +8,27 @@ const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
 });
 
+// Define common ignores
+const ignorePatterns = [
+  "**/deploy/**",
+  "**/netlify/**",
+  "**/cdn-build/**",
+  "**/node_modules/**",
+  "**/.next/**",
+  "**/out/**",
+  "**/build/**",
+  "**/next-env.d.ts",
+  ".next",
+  "out",
+  "build",
+  "node_modules",
+];
+
 const eslintConfig = [
+  // Global ignores - must be first
+  {
+    ignores: ignorePatterns,
+  },
   {
     plugins: {
       "only-warn": onlyWarn,
@@ -21,6 +41,7 @@ const eslintConfig = [
     rules: {
       "unused-imports/no-unused-imports": "warn",
     },
+    ignores: ignorePatterns,
   },
   {
     rules: {
@@ -34,6 +55,7 @@ const eslintConfig = [
         },
       ],
     },
+    ignores: ignorePatterns,
   },
   {
     plugins: {
@@ -58,24 +80,31 @@ const eslintConfig = [
         },
       ],
     },
+    ignores: ignorePatterns,
   },
-  ...compat.config({
-    extends: ["next/core-web-vitals", "next/typescript"],
-    rules: {
-      "react/forbid-elements": [
-        "warn",
-        {
-          forbid: [
-            {
-              element: "a",
-              message:
-                "use <Link> instead. You can import it from '@/components/link'. See more here: https://nextjs.org/docs/app/api-reference/components/link",
-            },
-          ],
-        },
-      ],
-    },
-  }),
+  // Next.js configs with ignores applied
+  ...compat
+    .config({
+      extends: ["next/core-web-vitals", "next/typescript"],
+      rules: {
+        "react/forbid-elements": [
+          "warn",
+          {
+            forbid: [
+              {
+                element: "a",
+                message:
+                  "use <Link> instead. You can import it from '@/components/link'. See more here: https://nextjs.org/docs/app/api-reference/components/link",
+              },
+            ],
+          },
+        ],
+      },
+    })
+    .map((config) => ({
+      ...config,
+      ignores: ignorePatterns,
+    })),
 ];
 
 export default eslintConfig;
