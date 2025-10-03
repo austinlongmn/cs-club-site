@@ -29,48 +29,18 @@ export default function Home() {
       <div>
         <NavGrid />
       </div>
-      <div>
-        <div className="mt-10 flex flex-row items-center justify-center">
-          <div className="flex items-center justify-center">
-            <Image
-              src="/images/general/club-fall24.png"
-              alt="Our Club Members"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-              width={700}
-              height={300}
-            />
-          </div>
-          <div>
-            <Image
-              src="/images/general/activate.jpg"
-              alt="Our Club Members"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-              width={530}
-              height={300}
-            />
-          </div>
-        </div>
-        <div className="flex flex-row items-center justify-center">
-          <div className="flex items-center justify-center">
-            <Image
-              src="/images/general/timberwolves.jpg"
-              alt="CS Club Event at Target Center"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-              width={540}
-              height={300}
-            />
-          </div>
-          <div>
-            <Image
-              src="/images/general/bonfire.JPG"
-              alt="Spring 2025 CS Club Bonfire"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-              width={540}
-              height={300}
-            />
-          </div>
-        </div>
+      <div className="mt-20 flex items-center justify-center">
+        <Image
+          className="w-100 items-center rounded-lg shadow-md transition-transform duration-300 md:w-200"
+          width={9000}
+          height={300}
+          src="/images/general/club-fall25.jpeg"
+          alt="CS Club Members in Fall 2025"
+        />
       </div>
+      <h1 className="mt-5 text-center text-lg text-neutral-300 md:text-xl">
+        Fall 2025 Club Members
+      </h1>
     </div>
   );
 }

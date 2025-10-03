@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 const students = [
   { id: "daniel-deutsch", name: "Daniel Deutsch" },
   { id: "andrew-hayes", name: "Andrew Hayes" },
+  { id: "mcalvin-juasemai", name: "McAlvin Juasemai" },
   { id: "austin-long", name: "Austin Long" },
   { id: "josie-mellick", name: "Josie Mellick" },
   { id: "josiah-paul", name: "Josiah Paul" },

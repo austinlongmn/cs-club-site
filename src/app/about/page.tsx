@@ -60,25 +60,44 @@ export default function About() {
           events.
         </p>
       </div>
-      <div className="flex flex-col items-center justify-between pt-5 md:flex-row">
-        <div className="flex items-center justify-center px-10 pt-10 md:px-0">
+      <div className="mt-10 flex flex-row items-center justify-center">
+        <div className="flex items-center justify-center">
           <Image
             src="/images/general/club-fall24.png"
-            alt="CSC Members in Fall 2024"
-            className="w-150 transform rounded-md transition duration-1000 hover:scale-110"
-            width={5000}
-            height={3000}
+            alt="Our Club Members"
+            className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+            width={700}
+            height={300}
           />
         </div>
-        <div className="flex flex-col items-center justify-between">
-          <h1 className="pt-10 text-center text-2xl font-semibold md:pt-0">
-            Pictured Club Members
-          </h1>
-          <h1 className="max-w-125 pt-5 text-center text-2xl text-gray-300">
-            From left to right: Josie Mellick, Dylan Weakly, Andrew Hayes,
-            Austin Long, Trenton Gibson (Alumni), Breyon Gunn (Alumni), Josiah
-            Paul.
-          </h1>
+        <div>
+          <Image
+            src="/images/general/activate.jpg"
+            alt="Our Club Members"
+            className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+            width={530}
+            height={300}
+          />
+        </div>
+      </div>
+      <div className="flex flex-row items-center justify-center">
+        <div className="flex items-center justify-center">
+          <Image
+            src="/images/general/timberwolves.jpg"
+            alt="CS Club Event at Target Center"
+            className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+            width={540}
+            height={300}
+          />
+        </div>
+        <div>
+          <Image
+            src="/images/general/bonfire.JPG"
+            alt="Spring 2025 CS Club Bonfire"
+            className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+            width={540}
+            height={300}
+          />
         </div>
       </div>
     </div>
