@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default async function Projects() {
-  redirect(".");
+  permanentRedirect("https://austinlong.dev/projects");
 }

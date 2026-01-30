@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
+import CSCLogo from "@/svg/csc-logo.svg";
+import Image from "@/components/image";
 
 export const metadata: Metadata = {
   title: "Students - UNW CS Club",
@@ -11,33 +13,41 @@ export const metadata: Metadata = {
 
 const students = [
   { id: "daniel-deutsch", name: "Daniel Deutsch" },
-  { id: "ethan-reed", name: "Ethan Reed" },
-  { id: "breyon-gunn", name: "Breyon Gunn" },
-  // { id: "violet-haveman", name: "Violet Haveman" },
   { id: "andrew-hayes", name: "Andrew Hayes" },
-  { id: "carter-leitch", name: "Carter Leitch" },
+  { id: "mcalvin-juasemai", name: "McAlvin Juasemai" },
   { id: "austin-long", name: "Austin Long" },
   { id: "josie-mellick", name: "Josie Mellick" },
   { id: "josiah-paul", name: "Josiah Paul" },
   { id: "dylan-weakly", name: "Dylan Weakly" },
   { id: "mason-colacicco", name: "Mason Colacicco" },
-  // Add more students as needed
+  { id: "joshua-sherrard", name: "Joshua Sherrard" },
 ];
 
 const StudentsPage: React.FC = () => {
   return (
-    <div className="ml-5 md:ml-0">
-      <h1 className="pt-10 text-5xl font-extrabold">Students List</h1>
-      <ul className="pt-5 text-xl text-gray-300">
-        {students.map((student) => (
-          <li
-            className="mt-3 transition-colors duration-500 ease-in-out hover:font-bold hover:text-white"
-            key={student.id}
-          >
-            <Link href={`/students/${student.id}`}>{student.name}</Link>
-          </li>
-        ))}
-      </ul>
+    <div className="mt-10 flex flex-col items-center justify-between md:flex-row md:items-start">
+      <div>
+        <h1 className="text-5xl font-bold">Our Students</h1>
+        <ul className="pt-5 text-center text-2xl text-gray-300 md:text-left">
+          {students.map((student) => (
+            <li
+              className="mt-3 transition-colors duration-500 ease-in-out hover:font-bold hover:text-white"
+              key={student.id}
+            >
+              <Link href={`/students/${student.id}`}>{student.name}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <Image
+          src={CSCLogo}
+          alt="Computer Science Club Logo"
+          className="mt-5 w-100 md:mt-20"
+          width={300}
+          height={100}
+        />
+      </div>
     </div>
   );
 };
