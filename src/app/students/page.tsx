@@ -12,15 +12,47 @@ export const metadata: Metadata = {
 };
 
 const students = [
-  { id: "daniel-deutsch", name: "Daniel Deutsch", img: "/images/general/defaultUser.png"},
-  { id: "andrew-hayes", name: "Andrew Hayes", img: "/images/andrew/ahayeswatermark.jpg"},
-  { id: "mcalvin-juasemai", name: "McAlvin Juasemai", img: "/images/general/defaultUser.png"},
-  { id: "austin-long", name: "Austin Long", img: "/images/austin/headshot.jpeg" },
-  { id: "josie-mellick", name: "Josie Mellick", img: "/images/josie/Headshot.png" },
-  { id: "josiah-paul", name: "Josiah Paul", img: "/images/general/defaultUser.png"},
+  {
+    id: "daniel-deutsch",
+    name: "Daniel Deutsch",
+    img: "/images/general/defaultUser.png",
+  },
+  {
+    id: "andrew-hayes",
+    name: "Andrew Hayes",
+    img: "/images/andrew/ahayeswatermark.jpg",
+  },
+  {
+    id: "mcalvin-juasemai",
+    name: "McAlvin Juasemai",
+    img: "/images/general/defaultUser.png",
+  },
+  {
+    id: "austin-long",
+    name: "Austin Long",
+    img: "/images/austin/headshot.jpeg",
+  },
+  {
+    id: "josie-mellick",
+    name: "Josie Mellick",
+    img: "/images/josie/Headshot.png",
+  },
+  {
+    id: "josiah-paul",
+    name: "Josiah Paul",
+    img: "/images/general/defaultUser.png",
+  },
   { id: "dylan-weakly", name: "Dylan Weakly", img: "/images/dylan/logo.jpg" },
-  { id: "mason-colacicco", name: "Mason Colacicco", img: "/images/general/defaultUser.png"},
-  { id: "joshua-sherrard", name: "Joshua Sherrard", img: "/images/joshua/headshot.png" },
+  {
+    id: "mason-colacicco",
+    name: "Mason Colacicco",
+    img: "/images/general/defaultUser.png",
+  },
+  {
+    id: "joshua-sherrard",
+    name: "Joshua Sherrard",
+    img: "/images/joshua/headshot.png",
+  },
 ];
 
 const StudentsPage: React.FC = () => {
@@ -55,7 +87,6 @@ const StudentsPage: React.FC = () => {
                 className="mb-4 h-40 w-40 rounded-full object-cover shadow-inner"
                 width={160}
                 height={160}
-                
               />
             ) : (
               <div className="mb-4 flex h-40 w-40 items-center justify-center rounded-full bg-gray-700 text-gray-400 shadow-inner">
