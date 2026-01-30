@@ -63,7 +63,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="bg-gray-800 rounded-lg border-4 border-tan p-4">
+      <section className="border-tan rounded-lg border-4 bg-gray-800 p-4">
         <p className="mb-4 text-center text-lg font-bold">
           Im not just a software engineer, I also have a life outside of coding!
           I enjoy a varity of things that I feel like sharing with you!
