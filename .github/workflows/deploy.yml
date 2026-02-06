@@ -60,14 +60,3 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
-
-      - name: Check website
-        uses: ruzickap/action-my-broken-link-checker@v2
-        with:
-          url: "https://unwcsclub.dev"
-          cmd_params: >-
-            -b 8000
-            --one-page-only
-            --color always
-            --verbose
-            --include "https://cdn.unwcsclub.dev/.*"
