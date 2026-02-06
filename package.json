@@ -4,16 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "cross-env PROJECT_PHASE=development_build next build && node scripts/copy-attribution.js && node scripts/development-build-copy-static-assets.js",
-    "build:production": "cross-env PROJECT_PHASE=production_build next build && node scripts/copy-attribution.js && node scripts/production-build-copy-public.js",
+    "build": "cross-env PROJECT_PHASE=development_build next build && node scripts/attribution.mjs",
+    "build:production": "cross-env PROJECT_PHASE=production_build next build && node scripts/attribution.mjs",
+    "preview": "opennextjs-clouflare build && opennextjs-cloudflare preview",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "start": "cross-env NODE_ENV=production node .next/standalone/server.js",
     "fix": "eslint --fix . && prettier . --write",
     "lint": "eslint --max-warnings=0 .",
     "prettier:check": "prettier . --check",
     "prettier:fix": "prettier . --write",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "postinstall": "npm run cf-typegen"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.16.3",
     "cs-club-site": "file:",
     "highlight.js": "^11.11.1",
     "isomorphic-dompurify": "^2.22.0",
@@ -42,6 +46,7 @@
     "eslint-plugin-check-file": "^3.1.0",
     "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "license-checker-rseidelsohn": "^4.4.2",
     "node-addon-api": "^8.5.0",
     "node-gyp": "^12.1.0",
     "postcss": "^8",
@@ -49,7 +54,8 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.0.14",
     "typescript": "5.8.3",
-    "webpack-license-plugin": "^4.5.1"
+    "webpack-license-plugin": "^4.5.1",
+    "wrangler": "^4.63.0"
   },
   "overrides": {
     "@types/react": "^19.1.2",

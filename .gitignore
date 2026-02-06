@@ -52,3 +52,7 @@ cdn-build
 
 # Local Netlify folder
 .netlify
+
+.dev.vars
+
+cloudflare-env.d.ts

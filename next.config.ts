@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 import type { NextConfig } from "next";
 import { PHASE_PRODUCTION_BUILD } from "next/constants";
 
@@ -36,3 +37,5 @@ export default function config(phase: string) {
 
   return nextConfig;
 }
+
+initOpenNextCloudflareForDev();

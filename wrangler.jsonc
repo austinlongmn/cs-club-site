@@ -1,0 +1,85 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "cs-club-site",
+  "compatibility_date": "2024-12-30",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
+  },
+  "kv_namespaces": [
+    {
+      "binding": "NEXT_INC_CACHE_KV",
+      "id": "b7ae2b205fb44c7baff954c781c14fa7",
+    },
+  ],
+  "d1_databases": [
+    {
+      "binding": "NEXT_TAG_CACHE_D1",
+      "database_name": "cs-club-site-cache",
+      "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+    },
+    {
+      "binding": "NEXT_INC_CACHE_D1",
+      "database_name": "cs-club-site-cache",
+      "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+    },
+    {
+      "binding": "DB",
+      "migrations_dir": "./src/drizzle/migrations",
+    },
+  ],
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "cs-club-site",
+    },
+  ],
+  "env": {
+    "production": {
+      "name": "cs-club-site",
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "cs-club-site-prod",
+          "database_id": "f5eadcf1-e4a8-475f-93c4-8ccb91ce884e",
+          "migrations_table": "d1_migrations",
+          "migrations_dir": "./src/drizzle/migrations",
+        },
+        {
+          "binding": "NEXT_TAG_CACHE_D1",
+          "database_name": "cs-club-site-cache",
+          "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+        },
+        {
+          "binding": "NEXT_INC_CACHE_D1",
+          "database_name": "cs-club-site-cache",
+          "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+        },
+      ],
+    },
+    "preview": {
+      "name": "cs-club-site",
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "cs-club-site-preview",
+          "database_id": "fd4a3b18-33b3-4cc7-82ed-22d9e4097efc",
+          "migrations_table": "d1_migrations",
+          "migrations_dir": "./src/drizzle/migrations",
+        },
+        {
+          "binding": "NEXT_TAG_CACHE_D1",
+          "database_name": "cs-club-site-cache",
+          "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+        },
+        {
+          "binding": "NEXT_INC_CACHE_D1",
+          "database_name": "cs-club-site-cache",
+          "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+        },
+      ],
+    },
+  },
+}
