@@ -11,23 +11,22 @@
   "kv_namespaces": [
     {
       "binding": "NEXT_INC_CACHE_KV",
-      "id": "b7ae2b205fb44c7baff954c781c14fa7",
+      "id": "80385cad895446bdb9c35a0e5435e778",
     },
   ],
   "d1_databases": [
     {
       "binding": "NEXT_TAG_CACHE_D1",
       "database_name": "cs-club-site-cache",
-      "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+      "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
     },
     {
       "binding": "NEXT_INC_CACHE_D1",
       "database_name": "cs-club-site-cache",
-      "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+      "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
     },
     {
       "binding": "DB",
-      "migrations_dir": "./src/drizzle/migrations",
     },
   ],
   "services": [
@@ -42,20 +41,18 @@
       "d1_databases": [
         {
           "binding": "DB",
-          "database_name": "cs-club-site-prod",
-          "database_id": "f5eadcf1-e4a8-475f-93c4-8ccb91ce884e",
-          "migrations_table": "d1_migrations",
-          "migrations_dir": "./src/drizzle/migrations",
+          "database_name": "cs-club-site-db",
+          "database_id": "3bbbb244-2854-410a-8021-995bc6d9296a",
         },
         {
           "binding": "NEXT_TAG_CACHE_D1",
           "database_name": "cs-club-site-cache",
-          "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+          "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
         },
         {
           "binding": "NEXT_INC_CACHE_D1",
           "database_name": "cs-club-site-cache",
-          "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+          "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
         },
       ],
     },
@@ -64,20 +61,18 @@
       "d1_databases": [
         {
           "binding": "DB",
-          "database_name": "cs-club-site-preview",
-          "database_id": "fd4a3b18-33b3-4cc7-82ed-22d9e4097efc",
-          "migrations_table": "d1_migrations",
-          "migrations_dir": "./src/drizzle/migrations",
+          "database_name": "cs-club-site-db-preview",
+          "database_id": "ba6b9f60-4d5b-4152-98dc-8eea432ea4f2",
         },
         {
           "binding": "NEXT_TAG_CACHE_D1",
           "database_name": "cs-club-site-cache",
-          "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+          "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
         },
         {
           "binding": "NEXT_INC_CACHE_D1",
           "database_name": "cs-club-site-cache",
-          "database_id": "231d6209-fda6-4d04-9053-644833ff89a3",
+          "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
         },
       ],
     },
