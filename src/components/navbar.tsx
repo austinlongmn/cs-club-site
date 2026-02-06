@@ -45,7 +45,7 @@ export default function Navbar() {
             />
           </Link>
           <div className="grow" />
-          
+
           {/* DESKTOP MENU ITEMS */}
           <div className="flex items-center gap-4">
             {pages.map((page, index) => {
@@ -55,7 +55,7 @@ export default function Navbar() {
                 <Link
                   href={page.route}
                   key={index}
-                  className={`relative group hidden justify-items-center ${
+                  className={`group relative hidden justify-items-center ${
                     index >= lg_num_items
                       ? ""
                       : index >= md_num_items
@@ -67,7 +67,7 @@ export default function Navbar() {
                 >
                   {/* Desktop Ghost Text */}
                   <span
-                    className="col-start-1 row-start-1 font-bold invisible"
+                    className="invisible col-start-1 row-start-1 font-bold"
                     aria-hidden="true"
                     style={{ transform: "scale(1.1)" }}
                   >
@@ -79,23 +79,20 @@ export default function Navbar() {
                     initial={false}
                     animate={{
                       scale: isActive ? 1.1 : 1,
-                      WebkitTextStrokeWidth: isActive ? "1px" : "0px",
                     }}
                     whileHover={{
                       scale: 1.1,
-                      WebkitTextStrokeWidth: "1px",
                     }}
                     transition={{
                       type: "spring",
                       stiffness: 400,
                       damping: 30,
-                      mass: 1
+                      mass: 1,
                     }}
                     style={{
-                        WebkitTextStrokeColor: "currentColor",
-                        paintOrder: "stroke fill",
+                      paintOrder: "stroke fill",
                     }}
-                    className={`col-start-1 row-start-1 font-normal origin-center`}
+                    className={`col-start-1 row-start-1 origin-center font-normal`}
                   >
                     {page.description}
                   </motion.span>
@@ -129,52 +126,49 @@ export default function Navbar() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: -10 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full right-0 mt-2 w-56 rounded-xl border bg-background p-4 shadow-xl origin-top-right overflow-hidden"
+                  className="bg-background absolute top-full right-0 mt-2 w-56 origin-top-right overflow-hidden rounded-xl border p-4 shadow-xl"
                 >
                   <div className="flex flex-col items-start gap-4">
                     {pages.map((page, index) => {
                       const isActive = pathname === page.route;
-                      
+
                       return (
                         <Link
                           key={index}
                           href={page.route}
                           onClick={() => setMenuOpen(false)}
-                          className="group inline-grid w-full" 
+                          className="group inline-grid w-full"
                         >
-                           {/* Mobile Ghost Text */}
+                          {/* Mobile Ghost Text */}
                           <span
-                              className="col-start-1 row-start-1 font-bold invisible origin-left"
-                              aria-hidden="true"
-                              style={{ transform: "scale(1.1)" }}
+                            className="invisible col-start-1 row-start-1 origin-left font-bold"
+                            aria-hidden="true"
+                            style={{ transform: "scale(1.1)" }}
                           >
-                              {page.description}
+                            {page.description}
                           </span>
 
                           {/* Mobile Animated Text */}
                           <motion.span
-                              initial={false}
-                              animate={{
-                                  scale: isActive ? 1.1 : 1,
-                                  WebkitTextStrokeWidth: isActive ? "1px" : "0px",
-                              }}
-                              whileHover={{
-                                  scale: 1.1,
-                                  WebkitTextStrokeWidth: "1px",
-                              }}
-                              transition={{
-                                  type: "spring",
-                                  stiffness: 400,
-                                  damping: 30,
-                                  mass: 1
-                              }}
-                              style={{
-                                  WebkitTextStrokeColor: "currentColor",
-                                  paintOrder: "stroke fill",
-                              }}
-                              className="col-start-1 row-start-1 font-normal origin-left"
+                            initial={false}
+                            animate={{
+                              scale: isActive ? 1.1 : 1,
+                            }}
+                            whileHover={{
+                              scale: 1.1,
+                            }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 400,
+                              damping: 30,
+                              mass: 1,
+                            }}
+                            style={{
+                              paintOrder: "stroke fill",
+                            }}
+                            className="col-start-1 row-start-1 origin-left font-normal"
                           >
-                              {page.description}
+                            {page.description}
                           </motion.span>
                         </Link>
                       );
