@@ -56,3 +56,5 @@ cdn-build
 .dev.vars
 
 cloudflare-env.d.ts
+
+.open-next
