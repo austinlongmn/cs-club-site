@@ -5,9 +5,9 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-black p-6 text-white">
       <h1 className="mb-4 text-center text-3xl font-bold">
-        This is Andrew&apos;s Route!
+        This is Andrew&apos;s Page!
       </h1>
-      <p className="mb-6 text-center">Welcome to this empty page.</p>
+      {/*<p className="mb-6 text-center">Welcome to this empty page.</p>*/}
 
       {/* Add the image here */}
       <div className="mb-6 flex justify-center">
@@ -55,34 +55,45 @@ export default function Page() {
         <p className="mt-4 text-center">
           Here are some projects I&apos;m working on:
         </p>
-        <ul className="list-inside list-disc text-center">
-          <li>The Last Crewman</li>
-          <li>Image sorter for personal use</li>
-        </ul>
+        <div className="flex flex-col justify-around gap-8 text-left md:flex-row">
+          <ul className="list-inside list-disc pl-6 text-cyan-500">
+            <li>The Last Crewman</li>
+            <li>Image sorter for personal use</li>
+          </ul>
+        </div>
       </section>
 
-      <section className="rounded-lg border-4 border-orange-500 p-4">
-        <div className="text-center">
-          <p>I am a software developer. I also enjoy certain video games.</p>
-          <p className="mt-2 text-red-500">
-            I am a fan of the following games:
-          </p>
-          <ul className="list-inside list-disc">
-            <li>Fallout 4</li>
-            <li>Minecraft</li>
-            <li>Slay the Princess</li>
-            <li>Hollow Knight</li>
-          </ul>
-          <p className="mt-4 text-red-500">
-            I am also a fan of the following shows:
-          </p>
-          <ul className="list-inside list-disc">
-            <li>Star Trek</li>
-            <li>Star Wars</li>
-            <li>Doctor Who</li>
-            <li>Goblin Slayer</li>
-            <li>Frieren: Beyond Journey&apos;s End</li>
-          </ul>
+      <section className="border-tan rounded-lg border-4 bg-gray-800 p-4">
+        <p className="mb-4 text-center text-lg font-bold">
+          Im not just a software engineer, I also have a life outside of coding!
+          I enjoy a varity of things that I feel like sharing with you!
+        </p>
+        <div className="flex flex-col justify-around gap-8 text-left md:flex-row">
+          {/* Games Section */}
+          <div>
+            <p className="text-center text-red-500 md:text-left">
+              I am a fan of the following games:
+            </p>
+            <ul className="list-inside list-disc pl-6">
+              <li>Fallout 4</li>
+              <li>Minecraft</li>
+              <li>Slay the Princess</li>
+              <li>Hollow Knight</li>
+            </ul>
+          </div>
+          {/* Shows Section */}
+          <div>
+            <p className="text-center text-red-500 md:text-left">
+              I am also a fan of the following shows:
+            </p>
+            <ul className="list-disc pl-6">
+              <li>Star Trek</li>
+              <li>Star Wars</li>
+              <li>Doctor Who</li>
+              <li>Goblin Slayer</li>
+              <li>Frieren: Beyond Journey&apos;s End</li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>
