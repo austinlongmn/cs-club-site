@@ -1,5 +1,6 @@
 import { init } from "license-checker-rseidelsohn";
 import { readFileSync, writeFileSync } from "node:fs";
+import path from "node:path";
 
 function _defaultHandler(name, info, licenseText) {
   return `## ${name} - ${info.licenses}\n\nIf this package is included in the browser bundle, it has been modified. It has been bundled for the browser.\n\n${info.repository}\n\n${info.publisher}\n\n${licenseText}`;
@@ -26,6 +27,8 @@ function getUrlHandler(url) {
 
 const licenseHandlers = {
   "@img/sharp-libvips-darwin-arm64": noAttributionHandler,
+  "@img/sharp-libvips-linux-x64": noAttributionHandler,
+  "@img/sharp-libvips-linuxmusl-x64": noAttributionHandler,
   "@isaacs/cliui": noAttributionHandler,
   "cs-club-site": noAttributionHandler,
   "client-only": getUrlHandler(
@@ -81,10 +84,14 @@ init(
         }
       });
 
-      writeFileSync(
-        ".open-next/assets/oss-attributions.md",
-        resultBuilder.join("\n\n")
-      );
+      const outputPath = ".open-next/assets/oss-attributions.md";
+      const outputDir = path.dirname(outputPath);
+
+      if (!existsSync(outputDir)) {
+        mkdirSync(outputDir, { recursive: true });
+      }
+
+      writeFileSync(outputPath, resultBuilder.join("\n\n"));
     }
   }
 );

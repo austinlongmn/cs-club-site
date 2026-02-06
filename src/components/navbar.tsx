@@ -7,40 +7,17 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { usePathname } from "next/navigation";
 
-// Pages:
-// - Home
-// - Students
-// - Alumni
-// - Competition Scores
-// - Featured Projects
-// - About
-
 interface Page {
   description: string;
   route: string;
 }
 
 const pages: Page[] = [
-  {
-    description: "Home",
-    route: "/",
-  },
-  {
-    description: "Students",
-    route: "/students",
-  },
-  {
-    description: "Alumni",
-    route: "/alumni",
-  },
-  {
-    description: "Competition Scores",
-    route: "/competition-scores",
-  },
-  {
-    description: "About",
-    route: "/about",
-  },
+  { description: "Home", route: "/" },
+  { description: "Students", route: "/students" },
+  { description: "Alumni", route: "/alumni" },
+  { description: "Competition Scores", route: "/competition-scores" },
+  { description: "About", route: "/about" },
 ];
 
 const lg_num_items = 7;
@@ -68,74 +45,141 @@ export default function Navbar() {
             />
           </Link>
           <div className="grow" />
+
+          {/* DESKTOP MENU ITEMS */}
           <div className="flex items-center gap-4">
             {pages.map((page, index) => {
+              const isActive = pathname === page.route;
+
               return (
                 <Link
                   href={page.route}
                   key={index}
-                  className={`hidden transition-all duration-100 ${
+                  className={`group relative hidden justify-items-center ${
                     index >= lg_num_items
                       ? ""
                       : index >= md_num_items
-                        ? "lg:inline"
+                        ? "lg:inline-grid"
                         : index >= sm_num_items
-                          ? "md:inline"
-                          : "sm:inline"
-                  } ${pathname == page.route ? "font-bold" : "hover:font-bold"}`}
+                          ? "md:inline-grid"
+                          : "sm:inline-grid"
+                  }`}
                 >
-                  {page.description}
+                  {/* Desktop Ghost Text */}
+                  <span
+                    className="invisible col-start-1 row-start-1 font-bold"
+                    aria-hidden="true"
+                    style={{ transform: "scale(1.1)" }}
+                  >
+                    {page.description}
+                  </span>
+
+                  {/* Desktop Animated Text */}
+                  <motion.span
+                    initial={false}
+                    animate={{
+                      scale: isActive ? 1.1 : 1,
+                    }}
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 30,
+                      mass: 1,
+                    }}
+                    style={{
+                      paintOrder: "stroke fill",
+                    }}
+                    className={`col-start-1 row-start-1 origin-center font-normal`}
+                  >
+                    {page.description}
+                  </motion.span>
                 </Link>
               );
             })}
           </div>
-          <button
-            onClick={() => {
-              setMenuOpen(!menuOpen);
-            }}
-          >
-            <motion.div animate={{ rotate: menuOpen ? 45 : 0 }}>
-              <Image
-                src={MenuButtonIcon}
-                alt="Menu bar icon"
-                className="h-auto w-5 hover:scale-115"
-              />
-            </motion.div>
-          </button>
+
+          {/* MENU BUTTON & DROPDOWN CONTAINER */}
+          <div className="relative flex items-center">
+            <button
+              onClick={() => {
+                setMenuOpen(!menuOpen);
+              }}
+              className="z-50 p-2" // Added padding for easier clicking
+            >
+              <motion.div animate={{ rotate: menuOpen ? 45 : 0 }}>
+                <Image
+                  src={MenuButtonIcon}
+                  alt="Menu bar icon"
+                  className="h-auto w-5 hover:scale-115"
+                />
+              </motion.div>
+            </button>
+
+            {/* DROPDOWN MENU */}
+            <AnimatePresence>
+              {menuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="bg-background absolute top-full right-0 mt-2 w-56 origin-top-right overflow-hidden rounded-xl border p-4 shadow-xl"
+                >
+                  <div className="flex flex-col items-start gap-4">
+                    {pages.map((page, index) => {
+                      const isActive = pathname === page.route;
+
+                      return (
+                        <Link
+                          key={index}
+                          href={page.route}
+                          onClick={() => setMenuOpen(false)}
+                          className="group inline-grid w-full"
+                        >
+                          {/* Mobile Ghost Text */}
+                          <span
+                            className="invisible col-start-1 row-start-1 origin-left font-bold"
+                            aria-hidden="true"
+                            style={{ transform: "scale(1.1)" }}
+                          >
+                            {page.description}
+                          </span>
+
+                          {/* Mobile Animated Text */}
+                          <motion.span
+                            initial={false}
+                            animate={{
+                              scale: isActive ? 1.1 : 1,
+                            }}
+                            whileHover={{
+                              scale: 1.1,
+                            }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 400,
+                              damping: 30,
+                              mass: 1,
+                            }}
+                            style={{
+                              paintOrder: "stroke fill",
+                            }}
+                            className="col-start-1 row-start-1 origin-left font-normal"
+                          >
+                            {page.description}
+                          </motion.span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </nav>
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            exit={{ opacity: 0, scale: 1.1, transition: { ease: "easeInOut" } }}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              transition: { ease: "easeInOut" },
-            }}
-            className="bg-background fixed top-0 left-0 z-49 h-screen w-screen"
-          >
-            <div className="pb-[var(--navbar-height)]" />
-            <div className="mx-auto max-w-6xl p-6 text-2xl">
-              {pages.map((page, index) => {
-                return (
-                  <Link
-                    className={`block ${pathname == page.route ? "font-bold" : "transition-all duration-100 hover:font-bold"}`}
-                    onClick={() => {
-                      setMenuOpen(false);
-                    }}
-                    href={page.route}
-                    key={index}
-                  >
-                    {page.description}
-                  </Link>
-                );
-              })}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
       <div className="pb-[var(--navbar-height)]" />
     </div>
   );
