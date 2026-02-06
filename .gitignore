@@ -48,8 +48,6 @@ public/oss-licenses.json
 commit.bat
 run.bat
 
-cdn-build
-
 # Local Netlify folder
 .netlify
 

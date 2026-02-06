@@ -8,12 +8,7 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS",
   },
-  "kv_namespaces": [
-    {
-      "binding": "NEXT_INC_CACHE_KV",
-      "id": "80385cad895446bdb9c35a0e5435e778",
-    },
-  ],
+  "preview_urls": true,
   "d1_databases": [
     {
       "binding": "NEXT_TAG_CACHE_D1",
@@ -38,6 +33,18 @@
   "env": {
     "production": {
       "name": "cs-club-site",
+      "kv_namespaces": [
+        {
+          "binding": "NEXT_INC_CACHE_KV",
+          "id": "80385cad895446bdb9c35a0e5435e778",
+        },
+      ],
+      "services": [
+        {
+          "binding": "WORKER_SELF_REFERENCE",
+          "service": "cs-club-site",
+        },
+      ],
       "d1_databases": [
         {
           "binding": "DB",
@@ -58,6 +65,18 @@
     },
     "preview": {
       "name": "cs-club-site",
+      "kv_namespaces": [
+        {
+          "binding": "NEXT_INC_CACHE_KV",
+          "id": "80385cad895446bdb9c35a0e5435e778",
+        },
+      ],
+      "services": [
+        {
+          "binding": "WORKER_SELF_REFERENCE",
+          "service": "cs-club-site",
+        },
+      ],
       "d1_databases": [
         {
           "binding": "DB",

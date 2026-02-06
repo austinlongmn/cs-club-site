@@ -12,7 +12,6 @@ const compat = new FlatCompat({
 const ignorePatterns = [
   "**/deploy/**",
   "**/netlify/**",
-  "**/cdn-build/**",
   "**/node_modules/**",
   "**/.next/**",
   "**/out/**",
@@ -22,6 +21,7 @@ const ignorePatterns = [
   "out",
   "build",
   "node_modules",
+  "cloudflare-env.d.ts",
 ];
 
 const eslintConfig = [
