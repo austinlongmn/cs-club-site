@@ -1,5 +1,11 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+  "routes": [
+    {
+      "pattern": "unwcsclub.dev",
+      "custom_domain": true,
+    },
+  ],
   "main": ".open-next/worker.js",
   "name": "cs-club-site",
   "compatibility_date": "2024-12-30",
