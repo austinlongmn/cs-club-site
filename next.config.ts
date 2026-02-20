@@ -1,4 +1,3 @@
-import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -21,4 +20,16 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 
-initOpenNextCloudflareForDev();
+// Use .then() instead of top-level await to avoid ERR_REQUIRE_ASYNC_MODULE.
+// Next.js internally uses require() to load the compiled config, which cannot
+// handle async ES modules produced by top-level await.
+import("@opennextjs/cloudflare")
+  .then(({ initOpenNextCloudflareForDev }) => {
+    initOpenNextCloudflareForDev();
+  })
+  .catch(() => {
+    // Doesn't work on Arm64 Windows.
+    console.warn(
+      "Could not import @opennextjs/cloudflare. Cloudflare integration will be disabled in development."
+    );
+  });
