@@ -17,6 +17,7 @@ const ignorePatterns = [
   "**/out/**",
   "**/build/**",
   "**/next-env.d.ts",
+  "**/.open-next/**",
   ".next",
   "out",
   "build",
