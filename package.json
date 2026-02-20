@@ -17,7 +17,6 @@
     "postinstall": "npm run cf-typegen"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1.16.3",
     "cs-club-site": "file:",
     "highlight.js": "^11.11.1",
     "isomorphic-dompurify": "^2.22.0",
@@ -31,6 +30,9 @@
     "react-syntax-highlighter": "^15.6.1",
     "recharts": "^2.15.3",
     "sharp": "^0.34.1"
+  },
+  "optionalDependencies": {
+    "@opennextjs/cloudflare": "^1.16.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
